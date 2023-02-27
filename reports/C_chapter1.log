@@ -17,14 +17,17 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-fizz + eggs
+a,b,*c=1,2,3,4,5
+print(a)
+print(b)
+print(c)
+print(type(a)), type(b),type(c))
 ------------------
 
-[1;31m---------------------------------------------------------------------------[0m
-[1;31mNameError[0m                                 Traceback (most recent call last)
-[1;32m<ipython-input-44-624b8cb71dc8>[0m in [0;36m<module>[1;34m[0m
-[1;32m----> 1[1;33m [0mfizz[0m [1;33m+[0m [0meggs[0m[1;33m[0m[1;33m[0m[0m
-[0m
-[1;31mNameError[0m: name 'fizz' is not defined
-NameError: name 'fizz' is not defined
+[1;36m  File [1;32m"<ipython-input-47-caac9030acee>"[1;36m, line [1;32m5[0m
+[1;33m    print(type(a)), type(b),type(c))[0m
+[1;37m                                   ^[0m
+[1;31mSyntaxError[0m[1;31m:[0m invalid syntax
+
+SyntaxError: invalid syntax (<ipython-input-47-caac9030acee>, line 5)
 
