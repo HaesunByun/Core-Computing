@@ -1,0 +1,1532 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>L0444.000500 컴퓨팅 핵심: 컴퓨터로 생각하기 &#8212; Core Computing</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "haesunbyun/Core-Computing");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo_cc.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Core Computing</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    소개
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="C_chapter1.html">
+   1장. 기본자료형과 변수
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="note3.html">
+   Content with notebooks
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://colab.research.google.com/github/haesunbyun/Core-Computing/blob/main/_build/jupyter_execute/string_format.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/string_format.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   L0444.000500 컴퓨팅 핵심: 컴퓨터로 생각하기
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#core-computing-thinking-with-computers">
+   Core Computing: Thinking with Computers
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#string">
+     제7강: String
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#old-style-string-formatting">
+       (Old Style) String formatting
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#new-style-string-formating">
+       “New Style” String Formating
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#string-interpolation-f-strings">
+       String Interpolation (f-strings)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#string-functions">
+       String functions
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#count">
+         count()
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#index">
+         index()
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#find">
+         find()
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#replace">
+         replace()
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#split">
+         split()
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#lstrip-rstrip-strip">
+         lstrip() rstrip() strip()
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#join">
+         join()
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#upper-lower">
+         upper() lower()
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercises">
+       Exercises
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>L0444.000500 컴퓨팅 핵심: 컴퓨터로 생각하기</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   L0444.000500 컴퓨팅 핵심: 컴퓨터로 생각하기
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#core-computing-thinking-with-computers">
+   Core Computing: Thinking with Computers
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#string">
+     제7강: String
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#old-style-string-formatting">
+       (Old Style) String formatting
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#new-style-string-formating">
+       “New Style” String Formating
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#string-interpolation-f-strings">
+       String Interpolation (f-strings)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#string-functions">
+       String functions
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#count">
+         count()
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#index">
+         index()
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#find">
+         find()
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#replace">
+         replace()
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#split">
+         split()
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#lstrip-rstrip-strip">
+         lstrip() rstrip() strip()
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#join">
+         join()
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#upper-lower">
+         upper() lower()
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercises">
+       Exercises
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="l0444-000500">
+<h1>L0444.000500 컴퓨팅 핵심: 컴퓨터로 생각하기<a class="headerlink" href="#l0444-000500" title="Permalink to this headline">#</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="core-computing-thinking-with-computers">
+<h1>Core Computing: Thinking with Computers<a class="headerlink" href="#core-computing-thinking-with-computers" title="Permalink to this headline">#</a></h1>
+<div class="section" id="string">
+<h2>제7강: String<a class="headerlink" href="#string" title="Permalink to this headline">#</a></h2>
+<hr class="docutils" />
+<div class="section" id="old-style-string-formatting">
+<h3>(Old Style) String formatting<a class="headerlink" href="#old-style-string-formatting" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>deprecated</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;I eat </span><span class="si">%d</span><span class="s2"> apples.&quot;</span> <span class="o">%</span> <span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I eat 3 apples.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;I eat </span><span class="si">%s</span><span class="s2"> apples.&quot;</span> <span class="o">%</span> <span class="s2">&quot;five&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;I eat five apples.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span><span class="o">=</span><span class="mi">3</span>
+<span class="s2">&quot;I eat </span><span class="si">%d</span><span class="s2"> apples.&quot;</span> <span class="o">%</span> <span class="n">number</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;I eat 3 apples.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">day</span> <span class="o">=</span> <span class="s2">&quot;three&quot;</span>
+<span class="s2">&quot;I ate </span><span class="si">%d</span><span class="s2"> apples. so I was sick for </span><span class="si">%s</span><span class="s2"> days.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">day</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;I ate 10 apples. so I was sick for three days.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;I have </span><span class="si">%s</span><span class="s2"> apples&quot;</span> <span class="o">%</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;I have 3 apples&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;The rate is </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="mf">3.234</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;The rate is 3.234000&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;The error rate is </span><span class="si">%d%%</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="mi">98</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;The error rate is 98%.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39; </span><span class="se">\&quot;</span><span class="s1"> </span><span class="se">\&quot;</span><span class="s1">&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> &quot; &quot;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="new-style-string-formating">
+<h3>“New Style” String Formating<a class="headerlink" href="#new-style-string-formating" title="Permalink to this headline">#</a></h3>
+<p>str.format()</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Bob&#39;</span>
+<span class="s1">&#39;Hello, </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hello, Bob&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;I eat </span><span class="si">{}</span><span class="s2"> apples&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;I eat 3 apples&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;I eat </span><span class="si">{}</span><span class="s2"> apples&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;five&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;I eat five apples&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;We are the </span><span class="si">{}</span><span class="s1"> who say &quot;</span><span class="si">{}</span><span class="s1">!&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;knights&#39;</span><span class="p">,</span> <span class="s1">&#39;Ni&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>We are the knights who say &quot;Ni!&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#{}가 여러개 있는 경우, index를 붙이기도 함</span>
+<span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">day</span> <span class="o">=</span> <span class="s2">&quot;three&quot;</span>
+<span class="s2">&quot;I ate </span><span class="si">{0}</span><span class="s2"> apples. so I was sick for </span><span class="si">{1}</span><span class="s2"> days.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">day</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;I ate 10 apples. so I was sick for three days.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#index를 키워드로 붙이는 경우</span>
+<span class="s2">&quot;I ate </span><span class="si">{number}</span><span class="s2"> apples. so I was sick for </span><span class="si">{day}</span><span class="s2"> days.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;I ate 10 apples. so I was sick for 3 days.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#index를 숫자와, 키워드로 섞어쓰는 경우</span>
+<span class="s2">&quot;I ate </span><span class="si">{0}</span><span class="s2"> apples. so I was sick for </span><span class="si">{day}</span><span class="s2"> days.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;I ate 10 apples. so I was sick for 3 days.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 10칸에서 오른쪽으로 정렬해서 출력</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:&gt;10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:&gt;10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:&gt;10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:&gt;10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">10000</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>He paid         10 dollars.
+He paid        100 dollars.
+He paid       1000 dollars.
+He paid      10000 dollars.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 10칸에서 왼쪽으로 정렬해서 출력</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:&lt;10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:&lt;10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:&lt;10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:&lt;10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">10000</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>He paid 10         dollars.
+He paid 100        dollars.
+He paid 1000       dollars.
+He paid 10000      dollars.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 10칸에서 중간 정렬해서 출력</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:^10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:^10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:^10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:^10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">10000</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>He paid     10     dollars.
+He paid    100     dollars.
+He paid    1000    dollars.
+He paid   10000    dollars.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 10칸에서 점으로 채워서 왼쪽정렬해서 출력</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:.&lt;10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:.&lt;10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:.&lt;10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:.&lt;10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">10000</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>He paid 10........ dollars.
+He paid 100....... dollars.
+He paid 1000...... dollars.
+He paid 10000..... dollars.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:0.2f}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:0.3f}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:0.4f}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:0.5f}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>He paid 3.14 dollars.
+He paid 3.142 dollars.
+He paid 3.1416 dollars.
+He paid 3.14159 dollars.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:10.2f}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:10.3f}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:10.4f}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:10.5f}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>He paid       3.14 dollars.
+He paid      3.142 dollars.
+He paid     3.1416 dollars.
+He paid    3.14159 dollars.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:&lt;10.2f}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:&lt;10.3f}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:&lt;10.4f}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:&lt;10.5f}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>He paid 3.14       dollars.
+He paid 3.142      dollars.
+He paid 3.1416     dollars.
+He paid 3.14159    dollars.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># string속에 존재하는 포맷팅을 위한 키워드와 변수</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Bob&#39;</span>
+<span class="n">error</span> <span class="o">=</span> <span class="mi">98</span>
+<span class="s1">&#39;Hey </span><span class="si">{name}</span><span class="s1">, there is a </span><span class="si">{error}% e</span><span class="s1">rror.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span><span class="n">error</span><span class="o">=</span><span class="n">error</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hey Bob, there is a 98% error.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="string-interpolation-f-strings">
+<h3>String Interpolation (f-strings)<a class="headerlink" href="#string-interpolation-f-strings" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Bob&#39;</span>
+<span class="n">f</span><span class="s1">&#39;Hello, </span><span class="si">{name}</span><span class="s1">!&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hello, Bob!&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">f</span><span class="s1">&#39;Five plus ten is {a + b} and not {2 * (a + b)}.&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Five plus ten is 15 and not 30.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;홍길동&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span><span class="mi">30</span><span class="p">}</span>
+<span class="n">f</span><span class="s1">&#39;나의 이름은 </span><span class="si">{d[&quot;name&quot;]}</span><span class="s1">입니다. 나이는 </span><span class="si">{d[&quot;age&quot;]}</span><span class="s1">입니다.&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;나의 이름은 홍길동입니다. 나이는 30입니다.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="s1">&#39;Hey </span><span class="si">{name}</span><span class="s1">, there is a </span><span class="si">{error}% e</span><span class="s1">rror.&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hey Bob, there is a 98% error.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{math.pi:10.4f}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;    3.1416&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{math.pi:10.5}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;    3.1416&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Kim&#39;</span><span class="p">:</span> <span class="mi">4127</span><span class="p">,</span> <span class="s1">&#39;Byun&#39;</span><span class="p">:</span> <span class="mi">4785</span><span class="p">,</span> <span class="s1">&#39;Kang&#39;</span><span class="p">:</span> <span class="mi">7678</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">phone</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{name:10}</span><span class="s1"> ==&gt; </span><span class="si">{phone:10f}</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1">#string 왼쪽 정렬, 정수는 오른쪽 정렬</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kim        ==&gt; 4127.000000
+Byun       ==&gt; 4785.000000
+Kang       ==&gt; 7678.000000
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="string-functions">
+<h3>String functions<a class="headerlink" href="#string-functions" title="Permalink to this headline">#</a></h3>
+<p>count, find, index, join, lower, upper, lstrip, rstrip, strip, replace, split</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="s1">&#39;&#39;&#39;정부가 실무형으로 양성해 기업의 업무에 바로 투입할 수 있는 블록체인 개발자 양성에 팔을 걷어붙였다. 게임, 인공지능(AI), 블록체인 등 정보기술(IT) 전 분야에 걸쳐 개발자 인력난이 심화되고 있는 가운데, 급성장하고 있는 블록체인 개발인력을 집중 육성한다는 것이다.</span>
+
+
+<span class="s1">정보통신기획평가원(IITP)은 &#39;2021년 혁신성장 청년인재 집중양성사업&#39; 블록체인 분야 신규 교육사업자로 한국핀테크연합회와 한국전파진흥협회를 선정했다고 밝혔다.</span>
+
+<span class="s1">12일 정보통신기획평가원(IITP)은 &#39;2021년 혁신성장 청년인재 집중양성사업&#39; 블록체인 분야 신규 교육사업자 2곳을 추가 선정했다고 밝혔다. 지난해까지는 블록체인 청년인재 집중 양성 기관이 전파진흥협회, 한국표준협회, 에프앤이노에듀 등 3개였는데, 블록체인 분야 개발인력 부족이 심화되면서 올해 한국핀테크연합회와 한경닷컴을 추가 선정한 것이다.</span>
+
+<span class="s1">이들 5개 기관을 통해 올 연말 기업에 투입될 블록체인 개발 인력은 96명이다.</span>
+
+<span class="s1">과학기술정보통신부와 IITP가 공동 추진하는 혁신성장 청년인재 집중양성사업은 인공지능, 클라우드, 빅데이터, 블록체인 등 4차 산업혁명 선도분야의 청년인재를 집중양성해 산업체 인력수요를 해소하고 청년 실업문제를 해결하는 것을 목표로 한다. 교육비는 정부에서 전액 지원하기 때문에 교육생은 무료로 프로그램에 참여할 수 있다.</span>
+
+<span class="s1">이번에 블록체인 교육 신규 사업자로 선정된 한국핀테크연합회는 오는 5월부터 10월까지 6개월간 대구에 소재한 한국IT교육원에서 &#39;고블록(goBlock) 실무 프로젝트&#39; 교육을 전개할 예정이다. 연합회는 해당 교육을 통해 총 48명의 블록체인 전문인력을 배출할 계획으로, 원거리 교육생을 고려해 온라인 원격 수업도 병행될 예정이다.</span>
+
+<span class="s1">금번 교육과정은 취업약정 과정으로 6개월간의 교육 후 바로 실무에 투입될 수 있는 인력을 키우는 것을 목표로 하기 때문에 프로젝트 개발 위주로 진행된다는게 연합회 측 설명이다. 한국핀테크연합회 측은 &quot;블록체인 수요가 높은 금융권을 비롯해 사이버보안 및 플랫폼 기업에서 실제 업무를 수행할 수 있는 전문 개발자를 양성하는 과정&quot;이라며 &quot;이를 위해 해커톤과 데모데이를 비롯해 교육생들이 직접 취업 약정업체에 방문해 실무 프로젝트에 참가할 수 있는 기회를 부여할 예정&quot;이라 말했다.</span>
+
+<span class="s1">구체적인 커리큘럼은 블록체인 개발언어 중 하나인 고(Go)를 비롯해 프라이빗 블록체인인 하이퍼레저 패브릭, 블록 합의알고리즘, 분산 신원인증(DID, Decentralized ID), 오라클(외부 데이터를 특정 블록체인에 안전하게 가져오는 기술) 등으로 구성됐다.</span>
+
+<span class="s1">교육대상은 고등학교, 전문대학교, 4년제 대학교 졸업자 및 2021년 8월 졸업예정자다. 이공계 졸업자가 아니더라도 과기정통부의 소프트웨어 역량평가(TOPCIT) 성적우수자(300점 이상 득점자)의 경우 지원할 수 있다.</span>
+<span class="s1">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>정부가 실무형으로 양성해 기업의 업무에 바로 투입할 수 있는 블록체인 개발자 양성에 팔을 걷어붙였다. 게임, 인공지능(AI), 블록체인 등 정보기술(IT) 전 분야에 걸쳐 개발자 인력난이 심화되고 있는 가운데, 급성장하고 있는 블록체인 개발인력을 집중 육성한다는 것이다.
+
+
+정보통신기획평가원(IITP)은 &#39;2021년 혁신성장 청년인재 집중양성사업&#39; 블록체인 분야 신규 교육사업자로 한국핀테크연합회와 한국전파진흥협회를 선정했다고 밝혔다.
+
+12일 정보통신기획평가원(IITP)은 &#39;2021년 혁신성장 청년인재 집중양성사업&#39; 블록체인 분야 신규 교육사업자 2곳을 추가 선정했다고 밝혔다. 지난해까지는 블록체인 청년인재 집중 양성 기관이 전파진흥협회, 한국표준협회, 에프앤이노에듀 등 3개였는데, 블록체인 분야 개발인력 부족이 심화되면서 올해 한국핀테크연합회와 한경닷컴을 추가 선정한 것이다.
+
+이들 5개 기관을 통해 올 연말 기업에 투입될 블록체인 개발 인력은 96명이다.
+
+과학기술정보통신부와 IITP가 공동 추진하는 혁신성장 청년인재 집중양성사업은 인공지능, 클라우드, 빅데이터, 블록체인 등 4차 산업혁명 선도분야의 청년인재를 집중양성해 산업체 인력수요를 해소하고 청년 실업문제를 해결하는 것을 목표로 한다. 교육비는 정부에서 전액 지원하기 때문에 교육생은 무료로 프로그램에 참여할 수 있다.
+
+이번에 블록체인 교육 신규 사업자로 선정된 한국핀테크연합회는 오는 5월부터 10월까지 6개월간 대구에 소재한 한국IT교육원에서 &#39;고블록(goBlock) 실무 프로젝트&#39; 교육을 전개할 예정이다. 연합회는 해당 교육을 통해 총 48명의 블록체인 전문인력을 배출할 계획으로, 원거리 교육생을 고려해 온라인 원격 수업도 병행될 예정이다.
+
+금번 교육과정은 취업약정 과정으로 6개월간의 교육 후 바로 실무에 투입될 수 있는 인력을 키우는 것을 목표로 하기 때문에 프로젝트 개발 위주로 진행된다는게 연합회 측 설명이다. 한국핀테크연합회 측은 &quot;블록체인 수요가 높은 금융권을 비롯해 사이버보안 및 플랫폼 기업에서 실제 업무를 수행할 수 있는 전문 개발자를 양성하는 과정&quot;이라며 &quot;이를 위해 해커톤과 데모데이를 비롯해 교육생들이 직접 취업 약정업체에 방문해 실무 프로젝트에 참가할 수 있는 기회를 부여할 예정&quot;이라 말했다.
+
+구체적인 커리큘럼은 블록체인 개발언어 중 하나인 고(Go)를 비롯해 프라이빗 블록체인인 하이퍼레저 패브릭, 블록 합의알고리즘, 분산 신원인증(DID, Decentralized ID), 오라클(외부 데이터를 특정 블록체인에 안전하게 가져오는 기술) 등으로 구성됐다.
+
+교육대상은 고등학교, 전문대학교, 4년제 대학교 졸업자 및 2021년 8월 졸업예정자다. 이공계 졸업자가 아니더라도 과기정통부의 소프트웨어 역량평가(TOPCIT) 성적우수자(300점 이상 득점자)의 경우 지원할 수 있다.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1397
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="count">
+<h4>count()<a class="headerlink" href="#count" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;블록&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;은&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;빠빠빠&quot;</span> <span class="ow">in</span> <span class="n">data</span>
+<span class="s2">&quot;혁신성장&quot;</span> <span class="ow">in</span> <span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="index">
+<h4>index()<a class="headerlink" href="#index" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;실무형&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="s1">&#39;hello&#39;</span>
+<span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;h&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;정부&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;쿠쿠루삥뽕&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">41</span><span class="o">-</span><span class="mi">2770</span><span class="n">ed0a0c1b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;쿠쿠루삥뽕&quot;</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: substring not found
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="find">
+<h4>find()<a class="headerlink" href="#find" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;실무형&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;쿠쿠루삥뽕&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>ASCII 2**8</p></li>
+<li><p>EBCDIC</p></li>
+<li><p>Unicode(utf-8) 2**16</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="sa">b</span><span class="s1">&#39;abcde&#39;</span>
+<span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1">#97출력</span>
+<span class="n">a</span><span class="o">=</span><span class="sa">b</span><span class="s1">&#39;안녕하세요.&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-49-e177f096a0ad&gt;&quot;</span><span class="gt">, line </span><span class="mi">3</span>
+    <span class="n">a</span><span class="o">=</span><span class="sa">b</span><span class="s1">&#39;안녕하세요.&#39;</span>
+     <span class="o">^</span>
+<span class="ne">SyntaxError</span>: bytes can only contain ASCII literal characters.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;안녕하세요&#39;</span>
+<span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">&gt;</span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;안&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;abcde&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1">#&#39;a&#39;</span>
+<span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1">#unicode값 출력</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>97
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;ㄱ&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12593
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="replace">
+<h4>replace()<a class="headerlink" href="#replace" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modified</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;혁신성장&quot;</span><span class="p">,</span> <span class="s2">&quot;쿠쿠루삥뽕&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">modified</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>정부가 실무형으로 양성해 기업의 업무에 바로 투입할 수 있는 블록체인 개발자 양성에 팔을 걷어붙였다. 게임, 인공지능(AI), 블록체인 등 정보기술(IT) 전 분야에 걸쳐 개발자 인력난이 심화되고 있는 가운데, 급성장하고 있는 블록체인 개발인력을 집중 육성한다는 것이다.
+
+
+정보통신기획평가원(IITP)은 &#39;2021년 쿠쿠루삥뽕 청년인재 집중양성사업&#39; 블록체인 분야 신규 교육사업자로 한국핀테크연합회와 한국전파진흥협회를 선정했다고 밝혔다.
+
+12일 정보통신기획평가원(IITP)은 &#39;2021년 쿠쿠루삥뽕 청년인재 집중양성사업&#39; 블록체인 분야 신규 교육사업자 2곳을 추가 선정했다고 밝혔다. 지난해까지는 블록체인 청년인재 집중 양성 기관이 전파진흥협회, 한국표준협회, 에프앤이노에듀 등 3개였는데, 블록체인 분야 개발인력 부족이 심화되면서 올해 한국핀테크연합회와 한경닷컴을 추가 선정한 것이다.
+
+이들 5개 기관을 통해 올 연말 기업에 투입될 블록체인 개발 인력은 96명이다.
+
+과학기술정보통신부와 IITP가 공동 추진하는 쿠쿠루삥뽕 청년인재 집중양성사업은 인공지능, 클라우드, 빅데이터, 블록체인 등 4차 산업혁명 선도분야의 청년인재를 집중양성해 산업체 인력수요를 해소하고 청년 실업문제를 해결하는 것을 목표로 한다. 교육비는 정부에서 전액 지원하기 때문에 교육생은 무료로 프로그램에 참여할 수 있다.
+
+이번에 블록체인 교육 신규 사업자로 선정된 한국핀테크연합회는 오는 5월부터 10월까지 6개월간 대구에 소재한 한국IT교육원에서 &#39;고블록(goBlock) 실무 프로젝트&#39; 교육을 전개할 예정이다. 연합회는 해당 교육을 통해 총 48명의 블록체인 전문인력을 배출할 계획으로, 원거리 교육생을 고려해 온라인 원격 수업도 병행될 예정이다.
+
+금번 교육과정은 취업약정 과정으로 6개월간의 교육 후 바로 실무에 투입될 수 있는 인력을 키우는 것을 목표로 하기 때문에 프로젝트 개발 위주로 진행된다는게 연합회 측 설명이다. 한국핀테크연합회 측은 &quot;블록체인 수요가 높은 금융권을 비롯해 사이버보안 및 플랫폼 기업에서 실제 업무를 수행할 수 있는 전문 개발자를 양성하는 과정&quot;이라며 &quot;이를 위해 해커톤과 데모데이를 비롯해 교육생들이 직접 취업 약정업체에 방문해 실무 프로젝트에 참가할 수 있는 기회를 부여할 예정&quot;이라 말했다.
+
+구체적인 커리큘럼은 블록체인 개발언어 중 하나인 고(Go)를 비롯해 프라이빗 블록체인인 하이퍼레저 패브릭, 블록 합의알고리즘, 분산 신원인증(DID, Decentralized ID), 오라클(외부 데이터를 특정 블록체인에 안전하게 가져오는 기술) 등으로 구성됐다.
+
+교육대상은 고등학교, 전문대학교, 4년제 대학교 졸업자 및 2021년 8월 졸업예정자다. 이공계 졸업자가 아니더라도 과기정통부의 소프트웨어 역량평가(TOPCIT) 성적우수자(300점 이상 득점자)의 경우 지원할 수 있다.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="split">
+<h4>split()<a class="headerlink" href="#split" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="n">modified</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;정부가&#39;, &#39;실무형으로&#39;, &#39;양성해&#39;, &#39;기업의&#39;, &#39;업무에&#39;, &#39;바로&#39;, &#39;투입할&#39;, &#39;수&#39;, &#39;있는&#39;, &#39;블록체인&#39;, &#39;개발자&#39;, &#39;양성에&#39;, &#39;팔을&#39;, &#39;걷어붙였다.&#39;, &#39;게임,&#39;, &#39;인공지능(AI),&#39;, &#39;블록체인&#39;, &#39;등&#39;, &#39;정보기술(IT)&#39;, &#39;전&#39;, &#39;분야에&#39;, &#39;걸쳐&#39;, &#39;개발자&#39;, &#39;인력난이&#39;, &#39;심화되고&#39;, &#39;있는&#39;, &#39;가운데,&#39;, &#39;급성장하고&#39;, &#39;있는&#39;, &#39;블록체인&#39;, &#39;개발인력을&#39;, &#39;집중&#39;, &#39;육성한다는&#39;, &#39;것이다.&#39;, &#39;정보통신기획평가원(IITP)은&#39;, &quot;&#39;2021년&quot;, &#39;쿠쿠루삥뽕&#39;, &#39;청년인재&#39;, &quot;집중양성사업&#39;&quot;, &#39;블록체인&#39;, &#39;분야&#39;, &#39;신규&#39;, &#39;교육사업자로&#39;, &#39;한국핀테크연합회와&#39;, &#39;한국전파진흥협회를&#39;, &#39;선정했다고&#39;, &#39;밝혔다.&#39;, &#39;12일&#39;, &#39;정보통신기획평가원(IITP)은&#39;, &quot;&#39;2021년&quot;, &#39;쿠쿠루삥뽕&#39;, &#39;청년인재&#39;, &quot;집중양성사업&#39;&quot;, &#39;블록체인&#39;, &#39;분야&#39;, &#39;신규&#39;, &#39;교육사업자&#39;, &#39;2곳을&#39;, &#39;추가&#39;, &#39;선정했다고&#39;, &#39;밝혔다.&#39;, &#39;지난해까지는&#39;, &#39;블록체인&#39;, &#39;청년인재&#39;, &#39;집중&#39;, &#39;양성&#39;, &#39;기관이&#39;, &#39;전파진흥협회,&#39;, &#39;한국표준협회,&#39;, &#39;에프앤이노에듀&#39;, &#39;등&#39;, &#39;3개였는데,&#39;, &#39;블록체인&#39;, &#39;분야&#39;, &#39;개발인력&#39;, &#39;부족이&#39;, &#39;심화되면서&#39;, &#39;올해&#39;, &#39;한국핀테크연합회와&#39;, &#39;한경닷컴을&#39;, &#39;추가&#39;, &#39;선정한&#39;, &#39;것이다.&#39;, &#39;이들&#39;, &#39;5개&#39;, &#39;기관을&#39;, &#39;통해&#39;, &#39;올&#39;, &#39;연말&#39;, &#39;기업에&#39;, &#39;투입될&#39;, &#39;블록체인&#39;, &#39;개발&#39;, &#39;인력은&#39;, &#39;96명이다.&#39;, &#39;과학기술정보통신부와&#39;, &#39;IITP가&#39;, &#39;공동&#39;, &#39;추진하는&#39;, &#39;쿠쿠루삥뽕&#39;, &#39;청년인재&#39;, &#39;집중양성사업은&#39;, &#39;인공지능,&#39;, &#39;클라우드,&#39;, &#39;빅데이터,&#39;, &#39;블록체인&#39;, &#39;등&#39;, &#39;4차&#39;, &#39;산업혁명&#39;, &#39;선도분야의&#39;, &#39;청년인재를&#39;, &#39;집중양성해&#39;, &#39;산업체&#39;, &#39;인력수요를&#39;, &#39;해소하고&#39;, &#39;청년&#39;, &#39;실업문제를&#39;, &#39;해결하는&#39;, &#39;것을&#39;, &#39;목표로&#39;, &#39;한다.&#39;, &#39;교육비는&#39;, &#39;정부에서&#39;, &#39;전액&#39;, &#39;지원하기&#39;, &#39;때문에&#39;, &#39;교육생은&#39;, &#39;무료로&#39;, &#39;프로그램에&#39;, &#39;참여할&#39;, &#39;수&#39;, &#39;있다.&#39;, &#39;이번에&#39;, &#39;블록체인&#39;, &#39;교육&#39;, &#39;신규&#39;, &#39;사업자로&#39;, &#39;선정된&#39;, &#39;한국핀테크연합회는&#39;, &#39;오는&#39;, &#39;5월부터&#39;, &#39;10월까지&#39;, &#39;6개월간&#39;, &#39;대구에&#39;, &#39;소재한&#39;, &#39;한국IT교육원에서&#39;, &quot;&#39;고블록(goBlock)&quot;, &#39;실무&#39;, &quot;프로젝트&#39;&quot;, &#39;교육을&#39;, &#39;전개할&#39;, &#39;예정이다.&#39;, &#39;연합회는&#39;, &#39;해당&#39;, &#39;교육을&#39;, &#39;통해&#39;, &#39;총&#39;, &#39;48명의&#39;, &#39;블록체인&#39;, &#39;전문인력을&#39;, &#39;배출할&#39;, &#39;계획으로,&#39;, &#39;원거리&#39;, &#39;교육생을&#39;, &#39;고려해&#39;, &#39;온라인&#39;, &#39;원격&#39;, &#39;수업도&#39;, &#39;병행될&#39;, &#39;예정이다.&#39;, &#39;금번&#39;, &#39;교육과정은&#39;, &#39;취업약정&#39;, &#39;과정으로&#39;, &#39;6개월간의&#39;, &#39;교육&#39;, &#39;후&#39;, &#39;바로&#39;, &#39;실무에&#39;, &#39;투입될&#39;, &#39;수&#39;, &#39;있는&#39;, &#39;인력을&#39;, &#39;키우는&#39;, &#39;것을&#39;, &#39;목표로&#39;, &#39;하기&#39;, &#39;때문에&#39;, &#39;프로젝트&#39;, &#39;개발&#39;, &#39;위주로&#39;, &#39;진행된다는게&#39;, &#39;연합회&#39;, &#39;측&#39;, &#39;설명이다.&#39;, &#39;한국핀테크연합회&#39;, &#39;측은&#39;, &#39;&quot;블록체인&#39;, &#39;수요가&#39;, &#39;높은&#39;, &#39;금융권을&#39;, &#39;비롯해&#39;, &#39;사이버보안&#39;, &#39;및&#39;, &#39;플랫폼&#39;, &#39;기업에서&#39;, &#39;실제&#39;, &#39;업무를&#39;, &#39;수행할&#39;, &#39;수&#39;, &#39;있는&#39;, &#39;전문&#39;, &#39;개발자를&#39;, &#39;양성하는&#39;, &#39;과정&quot;이라며&#39;, &#39;&quot;이를&#39;, &#39;위해&#39;, &#39;해커톤과&#39;, &#39;데모데이를&#39;, &#39;비롯해&#39;, &#39;교육생들이&#39;, &#39;직접&#39;, &#39;취업&#39;, &#39;약정업체에&#39;, &#39;방문해&#39;, &#39;실무&#39;, &#39;프로젝트에&#39;, &#39;참가할&#39;, &#39;수&#39;, &#39;있는&#39;, &#39;기회를&#39;, &#39;부여할&#39;, &#39;예정&quot;이라&#39;, &#39;말했다.&#39;, &#39;구체적인&#39;, &#39;커리큘럼은&#39;, &#39;블록체인&#39;, &#39;개발언어&#39;, &#39;중&#39;, &#39;하나인&#39;, &#39;고(Go)를&#39;, &#39;비롯해&#39;, &#39;프라이빗&#39;, &#39;블록체인인&#39;, &#39;하이퍼레저&#39;, &#39;패브릭,&#39;, &#39;블록&#39;, &#39;합의알고리즘,&#39;, &#39;분산&#39;, &#39;신원인증(DID,&#39;, &#39;Decentralized&#39;, &#39;ID),&#39;, &#39;오라클(외부&#39;, &#39;데이터를&#39;, &#39;특정&#39;, &#39;블록체인에&#39;, &#39;안전하게&#39;, &#39;가져오는&#39;, &#39;기술)&#39;, &#39;등으로&#39;, &#39;구성됐다.&#39;, &#39;교육대상은&#39;, &#39;고등학교,&#39;, &#39;전문대학교,&#39;, &#39;4년제&#39;, &#39;대학교&#39;, &#39;졸업자&#39;, &#39;및&#39;, &#39;2021년&#39;, &#39;8월&#39;, &#39;졸업예정자다.&#39;, &#39;이공계&#39;, &#39;졸업자가&#39;, &#39;아니더라도&#39;, &#39;과기정통부의&#39;, &#39;소프트웨어&#39;, &#39;역량평가(TOPCIT)&#39;, &#39;성적우수자(300점&#39;, &#39;이상&#39;, &#39;득점자)의&#39;, &#39;경우&#39;, &#39;지원할&#39;, &#39;수&#39;, &#39;있다.&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weird_words</span> <span class="o">=</span> <span class="n">modified</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">weird_words</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;정부가 실무형으로 양성해 기업의 업무에 바로 투입할 수 있는 블록체인 개발자 양성에 팔을 걷어붙였다&#39;, &#39; 게임, 인공지능(AI), 블록체인 등 정보기술(IT) 전 분야에 걸쳐 개발자 인력난이 심화되고 있는 가운데, 급성장하고 있는 블록체인 개발인력을 집중 육성한다는 것이다&#39;, &quot;\n\n\n정보통신기획평가원(IITP)은 &#39;2021년 쿠쿠루삥뽕 청년인재 집중양성사업&#39; 블록체인 분야 신규 교육사업자로 한국핀테크연합회와 한국전파진흥협회를 선정했다고 밝혔다&quot;, &quot;\n\n12일 정보통신기획평가원(IITP)은 &#39;2021년 쿠쿠루삥뽕 청년인재 집중양성사업&#39; 블록체인 분야 신규 교육사업자 2곳을 추가 선정했다고 밝혔다&quot;, &#39; 지난해까지는 블록체인 청년인재 집중 양성 기관이 전파진흥협회, 한국표준협회, 에프앤이노에듀 등 3개였는데, 블록체인 분야 개발인력 부족이 심화되면서 올해 한국핀테크연합회와 한경닷컴을 추가 선정한 것이다&#39;, &#39;\n\n이들 5개 기관을 통해 올 연말 기업에 투입될 블록체인 개발 인력은 96명이다&#39;, &#39;\n\n과학기술정보통신부와 IITP가 공동 추진하는 쿠쿠루삥뽕 청년인재 집중양성사업은 인공지능, 클라우드, 빅데이터, 블록체인 등 4차 산업혁명 선도분야의 청년인재를 집중양성해 산업체 인력수요를 해소하고 청년 실업문제를 해결하는 것을 목표로 한다&#39;, &#39; 교육비는 정부에서 전액 지원하기 때문에 교육생은 무료로 프로그램에 참여할 수 있다&#39;, &quot;\n\n이번에 블록체인 교육 신규 사업자로 선정된 한국핀테크연합회는 오는 5월부터 10월까지 6개월간 대구에 소재한 한국IT교육원에서 &#39;고블록(goBlock) 실무 프로젝트&#39; 교육을 전개할 예정이다&quot;, &#39; 연합회는 해당 교육을 통해 총 48명의 블록체인 전문인력을 배출할 계획으로, 원거리 교육생을 고려해 온라인 원격 수업도 병행될 예정이다&#39;, &#39;\n\n금번 교육과정은 취업약정 과정으로 6개월간의 교육 후 바로 실무에 투입될 수 있는 인력을 키우는 것을 목표로 하기 때문에 프로젝트 개발 위주로 진행된다는게 연합회 측 설명이다&#39;, &#39; 한국핀테크연합회 측은 &quot;블록체인 수요가 높은 금융권을 비롯해 사이버보안 및 플랫폼 기업에서 실제 업무를 수행할 수 있는 전문 개발자를 양성하는 과정&quot;이라며 &quot;이를 위해 해커톤과 데모데이를 비롯해 교육생들이 직접 취업 약정업체에 방문해 실무 프로젝트에 참가할 수 있는 기회를 부여할 예정&quot;이라 말했다&#39;, &#39;\n\n구체적인 커리큘럼은 블록체인 개발언어 중 하나인 고(Go)를 비롯해 프라이빗 블록체인인 하이퍼레저 패브릭, 블록 합의알고리즘, 분산 신원인증(DID, Decentralized ID), 오라클(외부 데이터를 특정 블록체인에 안전하게 가져오는 기술) 등으로 구성됐다&#39;, &#39;\n\n교육대상은 고등학교, 전문대학교, 4년제 대학교 졸업자 및 2021년 8월 졸업예정자다&#39;, &#39; 이공계 졸업자가 아니더라도 과기정통부의 소프트웨어 역량평가(TOPCIT) 성적우수자(300점 이상 득점자)의 경우 지원할 수 있다&#39;, &#39;\n&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="lstrip-rstrip-strip">
+<h4>lstrip() rstrip() strip()<a class="headerlink" href="#lstrip-rstrip-strip" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;     hi     &quot;</span>
+<span class="n">a</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;hi     &#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;     hi&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;hi&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weird_words</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;\n\n\n정보통신기획평가원(IITP)은 &#39;2021년 쿠쿠루삥뽕 청년인재 집중양성사업&#39; 블록체인 분야 신규 교육사업자로 한국핀테크연합회와 한국전파진흥협회를 선정했다고 밝혔다&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weird_words</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;정보통신기획평가원(IITP)은 &#39;2021년 쿠쿠루삥뽕 청년인재 집중양성사업&#39; 블록체인 분야 신규 교육사업자로 한국핀테크연합회와 한국전파진흥협회를 선정했다고 밝혔다&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="join">
+<h4>join()<a class="headerlink" href="#join" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;abc&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;efg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;eabcfabcg&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="upper-lower">
+<h4>upper() lower()<a class="headerlink" href="#upper-lower" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;hello&#39;</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="s1">&#39;HEllo&#39;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;hello&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercises">
+<h3>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;컴퓨터&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myFind</span><span class="p">(</span> <span class="n">data</span><span class="p">,</span> <span class="n">word</span> <span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="n">temp</span> <span class="o">==</span> <span class="n">word</span> <span class="p">):</span>
+            <span class="k">return</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myFind</span><span class="p">(</span> <span class="n">data</span><span class="p">,</span> <span class="s1">&#39;혁신성장&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="s2">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span>
+<span class="n">word</span><span class="o">=</span><span class="s1">&#39;wxyz&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myFind</span><span class="p">(</span> <span class="n">data</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By hs Byun<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

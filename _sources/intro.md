@@ -1,6 +1,7 @@
-# 소개의 글
+# 소개
 
-파이썬 프로그래밍에 조금 익숙한 사용자들이 컴퓨팅 사고력을 배양하기 위해 파이썬 프로그래밍 고급과 알고리즘을 다룬다.
+L0444.000500 컴퓨팅 핵심: 컴퓨터로 생각하기
+Core Computing: Thinking with Computers
 
 
 ```{tableofcontents}
