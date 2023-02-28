@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1장. 기본자료형과 변수 &#8212; Core Computing</title>
+    <title>1장. 기본자료형과 변수 &#8212; Core Computing_Thinking with Computers</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -131,7 +131,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="_static/logo_cc.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">Core Computing</h1>
+      <h1 class="site-logo" id="site-title">Core Computing_Thinking with Computers</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -1104,9 +1104,6 @@ True
  &quot;충치가 깊네요&quot; 	 라고 말했다. 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 <ul class="simple">
@@ -1221,6 +1218,9 @@ True
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>파이썬은 즐거워! 파이썬은 즐거워! 파이썬은 즐거워! 
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="tip admonition">
@@ -1321,6 +1321,9 @@ True
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hon
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -1593,7 +1596,7 @@ str(42) 등과 같이 작성하면 기존에 정의된 기능이 동작하지 �
 </div>
 <ul class="simple">
 <li><p>이번에는 이와 같이 코드를 작성했다면 변수 spam에 저장되어 있는 값은 무엇일까?</p></li>
-<li><p>라인 2에서 변수 spam을 가진 연산식은 어떤 순서로 실행될까? 대입연산자(=)가 쓰인 코드의 순서는 항상 = 기호 오른쪽의 연산을 먼저 실행한 후, 그 결과를 = 기호 왼쪽의 변수에 저장한다. 따라서 spam + 5의 연산을 먼저 실행하고 그 결과를 대입연산자 왼쪽에 있는 변수 spam에 저장한다.</p></li>
+<li><p>spam = spam + 5에서 연산식은 어떤 순서로 실행될까? 대입연산자(=)가 쓰인 코드의 순서는 항상 = 기호 오른쪽의 연산을 먼저 실행한 후, 그 결과를 = 기호 왼쪽의 변수에 저장한다. 따라서 spam + 5의 연산을 먼저 실행하고 그 결과를 대입연산자 왼쪽에 있는 변수 spam에 저장한다.</p></li>
 <li><p>결과 20이 출력된다.</p></li>
 </ul>
 <div class="cell docutils container">
@@ -1717,15 +1720,15 @@ str(42) 등과 같이 작성하면 기존에 정의된 기능이 동작하지 �
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)),</span> <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">),</span><span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-47-caac9030acee&gt;&quot;</span><span class="gt">, line </span><span class="mi">5</span>
-    <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)),</span> <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">),</span><span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
-                                   <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+[3, 4, 5]
+&lt;class &#39;int&#39;&gt; &lt;class &#39;int&#39;&gt; &lt;class &#39;list&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -1740,12 +1743,18 @@ str(42) 등과 같이 작성하면 기존에 정의된 기능이 동작하지 �
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 4, 5]
+3 4 5
+</pre></div>
+</div>
+</div>
 </div>
 <div class="warning admonition">
 <p class="admonition-title">주의</p>
 <p>단, 단독으로 변수를 정의할 때 변수앞에 *를 붙여서 정의할 수는 없다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">*</span><span class="n">x</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">300</span>
-
+<span class="o">---------------------------------------------------------------------------</span>
  <span class="n">File</span> <span class="s2">&quot;&lt;ipython-input-1-004397f380fb&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2</span>
     <span class="o">*</span><span class="n">x</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">300</span>
     <span class="o">^</span>
@@ -1768,6 +1777,17 @@ str(42) 등과 같이 작성하면 기존에 정의된 기능이 동작하지 �
 <span class="n">a</span><span class="p">,</span><span class="o">*</span><span class="n">c</span> <span class="o">=</span> <span class="o">*</span><span class="n">c</span><span class="p">,</span> <span class="n">a</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;a: </span><span class="si">{a}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;c: </span><span class="si">{c}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>===swap전===
+a: 20
+c: [30, 40]
+
+===swap후===
+a: 30
+c: [40, 20]
 </pre></div>
 </div>
 </div>
