@@ -87,7 +87,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Chapter 1_기초. 기본자료형과 변수" href="C_chapter1_%EA%B8%B0%EC%B4%88.html" />
+    <link rel="prev" title="Chapter 1(기초). 기본자료형과 변수" href="C_chapter1_%EA%B8%B0%EC%B4%88.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -160,7 +160,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="C_chapter1_%EA%B8%B0%EC%B4%88.html">
-   Chapter 1_기초. 기본자료형과 변수
+   Chapter 1(기초). 기본자료형과 변수
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -1176,6 +1176,20 @@ True
 </div>
 </div>
 </div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">문자열 포맷팅 ✏️</p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text">자세한 문자열 포매팅 방법은 여기를 참고하자.</p>
+</div>
+<a class="sd-stretched-link reference internal" href="string_format.html"><span class="doc"></span></a></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="id8">
 <h4>문자열 연산자<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h4>
@@ -1240,7 +1254,7 @@ True
 </div>
 <div class="section" id="id9">
 <h4>문자열 인덱싱<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h4>
-<p><strong>인덱스</strong>는 문자열 내 아이템의 주소이다.</p>
+<p><strong>인덱스</strong>는 데이터의 순서를 나타내는 주소이다.</p>
 <div class="info admonition">
 <p class="admonition-title">참고</p>
 <p>문자열 뿐만 아니라 리스트, 튜플 등의 데이터 타입에서도 인덱스가 사용된다.</p>
@@ -1275,7 +1289,10 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n o h t
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n o 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>h t
 </pre></div>
 </div>
 </div>
@@ -1340,6 +1357,9 @@ True
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Life is too short, You need Pyt
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -1733,7 +1753,7 @@ str(42) 등과 같이 작성하면 기존에 정의된 기능이 동작하지 �
 </div>
 </div>
 <ul class="simple">
-<li><p>print(c)는 리스트형태로 출력을 하지만 print(*c)는 리스트변수 안의 아이템들만 출력해준다.</p></li>
+<li><p>print(c)는 리스트형태로 출력 해주지만 print(*c)는 리스트변수 안의 아이템들만 출력해준다.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1819,9 +1839,11 @@ c: [40, 20]
 <ul class="simple">
 <li><p>데이터는 그 값의 속성에 따라 타입(형)이 존재하며 프로그래밍에서는 데이터의 타입이 매우 중요하다.</p></li>
 <li><p>데이터의 타입마다 지원하는 연산이 다르다.</p></li>
+<li><p>f-string은 문자열 앞에 f를 붙이면 변수에 해당되는 값을 유동적으로 문자열에 넣어서 문자열을 만들 수 있게 해준다. 주로 print() 함수에서 많이 사용된다.</p></li>
+<li><p>인덱스는 데이터의 순서를 나타내는 주소로, 양수, 음수 모두 사용할 수 있다.</p></li>
+<li><p>문자열, 리스트, 튜플, 배열 등에서 인덱스가 사용된다.</p></li>
 <li><p>변수는 컴퓨터 메모리 공간에 이름을 붙인 것으로 숫자나 문자열 등의 데이터를 저장하는 공간이다.</p></li>
 <li><p>변수에 새로운 값을 저장하면 이전에 있던 값은 사라진다.</p></li>
-<li><p>문자열을 표현하기 위해서는 문자열의 앞과 뒤에 홑 따옴표(‘), 쌍 따옴표(“), 트리플 따옴표(‘’’ 또는 “””) 기호를 붙인다.</p></li>
 </ul>
 </div>
 </div>
@@ -1857,7 +1879,7 @@ c: [40, 20]
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Chapter 1_기초. 기본자료형과 변수</p>
+            <p class="prev-next-title">Chapter 1(기초). 기본자료형과 변수</p>
         </div>
     </a>
 </div>

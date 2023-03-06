@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>L0444.000500 컴퓨팅 핵심: 컴퓨터로 생각하기 &#8212; Core Computing_Thinking with Computers</title>
+    <title>문자열 포맷팅 &#8212; Core Computing_Thinking with Computers</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -152,12 +152,17 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="C_chapter0.html">
-   0장. 프로그래밍 언어와 파이썬
+   Chapter 0. 프로그래밍 언어와 파이썬
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="C_chapter1_%EA%B8%B0%EC%B4%88.html">
+   Chapter 1(기초). 기본자료형과 변수
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="C_chapter1.html">
-   1장. 기본자료형과 변수
+   Chapter 1. 기본자료형과 변수
   </a>
  </li>
 </ul>
@@ -321,91 +326,37 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   L0444.000500 컴퓨팅 핵심: 컴퓨터로 생각하기
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#old-style-string-formatting">
+   “Old Style” String formatting
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#core-computing-thinking-with-computers">
-   Core Computing: Thinking with Computers
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#new-style-string-formating">
+   “New Style” String Formating
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#string">
-     제7강: String
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     문자열 정렬
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#old-style-string-formatting">
-       (Old Style) String formatting
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#new-style-string-formating">
-       “New Style” String Formating
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#string-interpolation-f-strings">
-       String Interpolation (f-strings)
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#string-functions">
-       String functions
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#count">
-         count()
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#index">
-         index()
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#find">
-         find()
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#replace">
-         replace()
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#split">
-         split()
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#lstrip-rstrip-strip">
-         lstrip() rstrip() strip()
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#join">
-         join()
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#upper-lower">
-         upper() lower()
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercises">
-       Exercises
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     문자열 채우기
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     실수 표현
+    </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#string-interpolation-f-strings">
+   String Interpolation (f-strings)
+  </a>
  </li>
 </ul>
 
@@ -416,7 +367,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>L0444.000500 컴퓨팅 핵심: 컴퓨터로 생각하기</h1>
+                <h1>문자열 포맷팅</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -426,91 +377,37 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   L0444.000500 컴퓨팅 핵심: 컴퓨터로 생각하기
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#old-style-string-formatting">
+   “Old Style” String formatting
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#core-computing-thinking-with-computers">
-   Core Computing: Thinking with Computers
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#new-style-string-formating">
+   “New Style” String Formating
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#string">
-     제7강: String
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     문자열 정렬
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#old-style-string-formatting">
-       (Old Style) String formatting
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#new-style-string-formating">
-       “New Style” String Formating
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#string-interpolation-f-strings">
-       String Interpolation (f-strings)
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#string-functions">
-       String functions
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#count">
-         count()
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#index">
-         index()
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#find">
-         find()
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#replace">
-         replace()
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#split">
-         split()
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#lstrip-rstrip-strip">
-         lstrip() rstrip() strip()
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#join">
-         join()
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#upper-lower">
-         upper() lower()
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercises">
-       Exercises
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     문자열 채우기
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     실수 표현
+    </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#string-interpolation-f-strings">
+   String Interpolation (f-strings)
+  </a>
  </li>
 </ul>
 
@@ -522,23 +419,24 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="l0444-000500">
-<h1>L0444.000500 컴퓨팅 핵심: 컴퓨터로 생각하기<a class="headerlink" href="#l0444-000500" title="Permalink to this headline">#</a></h1>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="core-computing-thinking-with-computers">
-<h1>Core Computing: Thinking with Computers<a class="headerlink" href="#core-computing-thinking-with-computers" title="Permalink to this headline">#</a></h1>
-<div class="section" id="string">
-<h2>제7강: String<a class="headerlink" href="#string" title="Permalink to this headline">#</a></h2>
-<hr class="docutils" />
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>문자열 포맷팅<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<p>문자열을 만들때 상용의 문구(글의 구절)는 정해져있고 문구 사이에 예를 들어, 이름, 나이, 주소 등을 바꿔 끼워서 사용하는 일이 빈번하게 발생한다. 문자열 포맷팅은 틀(양식, 포맷)은 갖추어져있고 그 안에 키워드들만 바꿔가면서 작업을 할 수 있도록 하는 것을 의미한다.</p>
 <div class="section" id="old-style-string-formatting">
-<h3>(Old Style) String formatting<a class="headerlink" href="#old-style-string-formatting" title="Permalink to this headline">#</a></h3>
+<h2>“Old Style” String formatting<a class="headerlink" href="#old-style-string-formatting" title="Permalink to this headline">#</a></h2>
+<p>변수를 문자열과 함께 출력할 때 연결(concatenate)하는 방법으로 % 기호를 쓴다. 이때 % 뒤에 어떤 알파벳을 붙이느냐에 따라 데이터 타입의 의미가 달라진다. %s, %c, %d 등 %와 함께 쓰는 알파벳을 <strong>형식지정자</strong>라 한다.</p>
 <ul class="simple">
 <li></li>
 <li></li>
 <li></li>
 <li></li>
 </ul>
-<p>deprecated</p>
+<p>이 포맷팅 방법은 현재 deprecated 상태이다. 즉, 중요도가 떨어져 더 이상 사용하지 않고 앞으로 사라지게 될 기능을 말한다. 그러나 오래전부터 코딩을 해오던 개발자들 일부는 이 포맷팅 방법을 여전히 사용하고 있기도 한다.</p>
+<p>여러분들에게 이 포맷팅 방법을 사용하라고 권장하지는 않지만 이와 같은 코드를 만났을 때 무슨 뜻인지 이해는 할 수 있으면 도움이 될 것 같다.</p>
+<ul class="simple">
+<li><p>문자열안에 %d와 문자열 뒤의 %3이 서로 매핑된다. 숫자 3이 들어갈 자리에 %d를 써준다.</p></li>
+<li></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;I eat </span><span class="si">%d</span><span class="s2"> apples.&quot;</span> <span class="o">%</span> <span class="mi">3</span>
@@ -548,18 +446,6 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I eat 3 apples.
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;I eat </span><span class="si">%s</span><span class="s2"> apples.&quot;</span> <span class="o">%</span> <span class="s2">&quot;five&quot;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;I eat five apples.&#39;
 </pre></div>
 </div>
 </div>
@@ -577,6 +463,25 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>문자열 ‘five’가 들어갈 자리에 %s를 써준다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;I eat </span><span class="si">%s</span><span class="s2"> apples.&quot;</span> <span class="o">%</span> <span class="s2">&quot;five&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;I eat five apples.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>변수가 2개 이상일 경우에는 소괄호() 즉, 튜플로 묶어준다.</p></li>
+<li><p>아래 코드에서 차례대로 변수 number는 %d 자리에, day는 %s 자리에 들어간다.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
@@ -591,6 +496,10 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>숫자 3은 정수데이터이다. 그러나 숫자3이 들어갈 자리에 문자열 형식지정자인 %s를 써도 에러가 나지 않는다. 다른 프로그래밍 언어에서는 에러가 나지만 파이썬에서는 의미가 없어졌다.</p></li>
+<li><p>즉, 정수 3이 문자열 ‘3’으로 변환되어 출력된다.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;I have </span><span class="si">%s</span><span class="s2"> apples&quot;</span> <span class="o">%</span> <span class="mi">3</span>
@@ -603,6 +512,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>실수 3.234가 실수형 형식지정자인 %f와 매핑되어 소수점 6자리로 출력된다.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;The rate is </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="mf">3.234</span>
@@ -615,6 +527,10 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>지끔까지 봤던 것처럼 %는 특수기능을 가지고 있는 문자이다. 그럼 % 기호 자체를 출력하려면 어떻게 해야 할까?</p></li>
+<li><p>Escape characters에서 처럼 % 기호를 앞에 한번 더 붙여주면 된다.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;The error rate is </span><span class="si">%d%%</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="mi">98</span>
@@ -627,22 +543,18 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39; </span><span class="se">\&quot;</span><span class="s1"> </span><span class="se">\&quot;</span><span class="s1">&#39;</span><span class="p">)</span> 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> &quot; &quot;
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 <div class="section" id="new-style-string-formating">
-<h3>“New Style” String Formating<a class="headerlink" href="#new-style-string-formating" title="Permalink to this headline">#</a></h3>
-<p>str.format()</p>
+<h2>“New Style” String Formating<a class="headerlink" href="#new-style-string-formating" title="Permalink to this headline">#</a></h2>
+<p>Old style 포맷팅은 데이터 타입에 맞게 형식지정자를 적어줘야 했다. format() 함수는 이러한 번거로움을 없앴다.
+format() 함수의 형식은 다음과 같다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">문자열</span> <span class="p">{</span> <span class="p">}</span> <span class="n">문자열</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>format() 함수에서는 데이터가 들어갈 자리를 { }로 표시해 놓는다.</p>
+<ul class="simple">
+<li><p>{ } 자리에 변수 name의 값이 들어간다.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Bob&#39;</span>
@@ -656,6 +568,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>{ } 자리에 정수 3이 들어간다.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;I eat </span><span class="si">{}</span><span class="s2"> apples&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -668,6 +583,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>{ } 자리에 문자열 ‘five’가 들어간다.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;I eat </span><span class="si">{}</span><span class="s2"> apples&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;five&quot;</span><span class="p">)</span>
@@ -680,6 +598,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>데이터가 여러개라면 format( ) 괄호안에 인자로 나열해준다.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;We are the </span><span class="si">{}</span><span class="s1"> who say &quot;</span><span class="si">{}</span><span class="s1">!&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;knights&#39;</span><span class="p">,</span> <span class="s1">&#39;Ni&#39;</span><span class="p">))</span>
@@ -692,10 +613,12 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>{ }가 여러개 있는 경우 인덱스를 붙여주기도 한다.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#{}가 여러개 있는 경우, index를 붙이기도 함</span>
-<span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">day</span> <span class="o">=</span> <span class="s2">&quot;three&quot;</span>
 <span class="s2">&quot;I ate </span><span class="si">{0}</span><span class="s2"> apples. so I was sick for </span><span class="si">{1}</span><span class="s2"> days.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">day</span><span class="p">)</span>
 </pre></div>
@@ -707,10 +630,13 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>인덱스를 정수로 붙여주기도 하지만 키워드로 붙일 수도 있다.</p></li>
+<li><p>아직 배우지 않았지만 number와 day는 키워드 인자(keyword arguments)이다. 이 내용은 함수파트에서 다룬다.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#index를 키워드로 붙이는 경우</span>
-<span class="s2">&quot;I ate </span><span class="si">{number}</span><span class="s2"> apples. so I was sick for </span><span class="si">{day}</span><span class="s2"> days.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;I ate </span><span class="si">{number}</span><span class="s2"> apples. so I was sick for </span><span class="si">{day}</span><span class="s2"> days.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -720,10 +646,12 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>인덱스와 키워드 인자를 혼합하여 써도 된다.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#index를 숫자와, 키워드로 섞어쓰는 경우</span>
-<span class="s2">&quot;I ate </span><span class="si">{0}</span><span class="s2"> apples. so I was sick for </span><span class="si">{day}</span><span class="s2"> days.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;I ate </span><span class="si">{0}</span><span class="s2"> apples. so I was sick for </span><span class="si">{day}</span><span class="s2"> days.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -733,13 +661,20 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<div class="section" id="id2">
+<h3>문자열 정렬<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>인덱스에 대해 문자열을 지정된 길이로 만든 뒤 오른쪽으로 정렬하고 남는 공간을 공백으로 채운다.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;{인덱스:&gt;길이}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">값</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 10칸에서 오른쪽으로 정렬해서 출력</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:&gt;10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:&gt;10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:&gt;10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:&gt;10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:&gt;10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">10000</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{2:&gt;10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">200000</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -747,15 +682,20 @@ title="Print to PDF"
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>He paid         10 dollars.
 He paid        100 dollars.
 He paid       1000 dollars.
-He paid      10000 dollars.
+He paid     200000 dollars.
 </pre></div>
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>인덱스에 대해 문자열을 지정된 길이로 만든 뒤 왼쪽으로 정렬하고 남는 공간을 공백으로 채운다.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;{인덱스:&lt;길이}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">값</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 10칸에서 왼쪽으로 정렬해서 출력</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:&lt;10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:&lt;10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:&lt;10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:&lt;10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:&lt;10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">10000</span><span class="p">))</span>
@@ -771,10 +711,15 @@ He paid 10000      dollars.
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>인덱스에 대해 문자열을 지정된 길이로 만든 뒤 중앙으로 정렬하고 남는 공간을 공백으로 채운다.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;{인덱스:^길이}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">값</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 10칸에서 중간 정렬해서 출력</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:^10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:^10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:^10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:^10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:^10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">10000</span><span class="p">))</span>
@@ -790,10 +735,19 @@ He paid   10000    dollars.
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="id3">
+<h3>문자열 채우기<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>인덱스에 대해 문자열을 지정된 길이로 만든 뒤 왼쪽으로 정렬하고 남는 공간을 점으로 채운다.</p></li>
+<li><p>점(.) 대신에 다른 대체 문자를 넣을 수 있다.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;{인덱스:.&lt;길이}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">값</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 10칸에서 점으로 채워서 왼쪽정렬해서 출력</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:.&lt;10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:.&lt;10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:.&lt;10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:.&lt;10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;He paid </span><span class="si">{0:.&lt;10}</span><span class="s2"> dollars.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">10000</span><span class="p">))</span>
@@ -809,6 +763,12 @@ He paid 10000..... dollars.
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="id4">
+<h3>실수 표현<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>모듈 math에 변수 pi를 이용하여 실수값에 대해 포맷팅을 해보자.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
@@ -821,6 +781,12 @@ He paid 10000..... dollars.
 </pre></div>
 </div>
 </div>
+</div>
+<ul class="simple">
+<li><p>인덱스에 대해 총자리수 가운데 소수점이하 자리수로 표현한다.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;{인덱스:총자리수.소수점자리수}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">값</span><span class="p">)</span>
+</pre></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -876,10 +842,16 @@ He paid 3.14159    dollars.
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>문자열 속에 들어갈 값이 여러 개일 경우 변수명과 키워드인자를 동일하게 주기도 한다.</p></li>
+<li><p>예를 들어, 오른쪽 name은 키워드 인자, 왼쪽 name은 변수명이다.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span><span class="n">error</span><span class="o">=</span><span class="n">error</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># string속에 존재하는 포맷팅을 위한 키워드와 변수</span>
-<span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Bob&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Bob&#39;</span>
 <span class="n">error</span> <span class="o">=</span> <span class="mi">98</span>
 <span class="s1">&#39;Hey </span><span class="si">{name}</span><span class="s1">, there is a </span><span class="si">{error}% e</span><span class="s1">rror.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span><span class="n">error</span><span class="o">=</span><span class="n">error</span><span class="p">)</span>
 </pre></div>
@@ -892,8 +864,12 @@ He paid 3.14159    dollars.
 </div>
 </div>
 </div>
+</div>
 <div class="section" id="string-interpolation-f-strings">
-<h3>String Interpolation (f-strings)<a class="headerlink" href="#string-interpolation-f-strings" title="Permalink to this headline">#</a></h3>
+<h2>String Interpolation (f-strings)<a class="headerlink" href="#string-interpolation-f-strings" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>변수명과 키워드인자를 동일하게 쓰는 번거로움(.format(name=name))을 없애고 문자열의 중괄호안에 {변수명 또는 연산식}을 직접 쓴다.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Bob&#39;</span>
@@ -921,6 +897,9 @@ He paid 3.14159    dollars.
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>딕셔너리도 가능하다.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;홍길동&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span><span class="mi">30</span><span class="p">}</span>
@@ -936,7 +915,9 @@ He paid 3.14159    dollars.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="s1">&#39;Hey </span><span class="si">{name}</span><span class="s1">, there is a </span><span class="si">{error}% e</span><span class="s1">rror.&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Bob&#39;</span>
+<span class="n">error</span> <span class="o">=</span> <span class="mi">98</span>
+<span class="n">f</span><span class="s1">&#39;Hey </span><span class="si">{name}</span><span class="s1">, there is a </span><span class="si">{error}% e</span><span class="s1">rror.&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -970,11 +951,14 @@ He paid 3.14159    dollars.
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>별다른 지시가 없으면 기본적으로 문자열은 왼쪽 정렬, 숫자는 오른쪽 정렬된다.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Kim&#39;</span><span class="p">:</span> <span class="mi">4127</span><span class="p">,</span> <span class="s1">&#39;Byun&#39;</span><span class="p">:</span> <span class="mi">4785</span><span class="p">,</span> <span class="s1">&#39;Kang&#39;</span><span class="p">:</span> <span class="mi">7678</span><span class="p">}</span>
 <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">phone</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-  <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{name:10}</span><span class="s1"> ==&gt; </span><span class="si">{phone:10f}</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1">#string 왼쪽 정렬, 정수는 오른쪽 정렬</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{name:10}</span><span class="s1"> ==&gt; </span><span class="si">{phone:10f}</span><span class="s1">&#39;</span><span class="p">)</span>  
 </pre></div>
 </div>
 </div>
@@ -983,494 +967,6 @@ He paid 3.14159    dollars.
 Byun       ==&gt; 4785.000000
 Kang       ==&gt; 7678.000000
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="string-functions">
-<h3>String functions<a class="headerlink" href="#string-functions" title="Permalink to this headline">#</a></h3>
-<p>count, find, index, join, lower, upper, lstrip, rstrip, strip, replace, split</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="s1">&#39;&#39;&#39;정부가 실무형으로 양성해 기업의 업무에 바로 투입할 수 있는 블록체인 개발자 양성에 팔을 걷어붙였다. 게임, 인공지능(AI), 블록체인 등 정보기술(IT) 전 분야에 걸쳐 개발자 인력난이 심화되고 있는 가운데, 급성장하고 있는 블록체인 개발인력을 집중 육성한다는 것이다.</span>
-
-
-<span class="s1">정보통신기획평가원(IITP)은 &#39;2021년 혁신성장 청년인재 집중양성사업&#39; 블록체인 분야 신규 교육사업자로 한국핀테크연합회와 한국전파진흥협회를 선정했다고 밝혔다.</span>
-
-<span class="s1">12일 정보통신기획평가원(IITP)은 &#39;2021년 혁신성장 청년인재 집중양성사업&#39; 블록체인 분야 신규 교육사업자 2곳을 추가 선정했다고 밝혔다. 지난해까지는 블록체인 청년인재 집중 양성 기관이 전파진흥협회, 한국표준협회, 에프앤이노에듀 등 3개였는데, 블록체인 분야 개발인력 부족이 심화되면서 올해 한국핀테크연합회와 한경닷컴을 추가 선정한 것이다.</span>
-
-<span class="s1">이들 5개 기관을 통해 올 연말 기업에 투입될 블록체인 개발 인력은 96명이다.</span>
-
-<span class="s1">과학기술정보통신부와 IITP가 공동 추진하는 혁신성장 청년인재 집중양성사업은 인공지능, 클라우드, 빅데이터, 블록체인 등 4차 산업혁명 선도분야의 청년인재를 집중양성해 산업체 인력수요를 해소하고 청년 실업문제를 해결하는 것을 목표로 한다. 교육비는 정부에서 전액 지원하기 때문에 교육생은 무료로 프로그램에 참여할 수 있다.</span>
-
-<span class="s1">이번에 블록체인 교육 신규 사업자로 선정된 한국핀테크연합회는 오는 5월부터 10월까지 6개월간 대구에 소재한 한국IT교육원에서 &#39;고블록(goBlock) 실무 프로젝트&#39; 교육을 전개할 예정이다. 연합회는 해당 교육을 통해 총 48명의 블록체인 전문인력을 배출할 계획으로, 원거리 교육생을 고려해 온라인 원격 수업도 병행될 예정이다.</span>
-
-<span class="s1">금번 교육과정은 취업약정 과정으로 6개월간의 교육 후 바로 실무에 투입될 수 있는 인력을 키우는 것을 목표로 하기 때문에 프로젝트 개발 위주로 진행된다는게 연합회 측 설명이다. 한국핀테크연합회 측은 &quot;블록체인 수요가 높은 금융권을 비롯해 사이버보안 및 플랫폼 기업에서 실제 업무를 수행할 수 있는 전문 개발자를 양성하는 과정&quot;이라며 &quot;이를 위해 해커톤과 데모데이를 비롯해 교육생들이 직접 취업 약정업체에 방문해 실무 프로젝트에 참가할 수 있는 기회를 부여할 예정&quot;이라 말했다.</span>
-
-<span class="s1">구체적인 커리큘럼은 블록체인 개발언어 중 하나인 고(Go)를 비롯해 프라이빗 블록체인인 하이퍼레저 패브릭, 블록 합의알고리즘, 분산 신원인증(DID, Decentralized ID), 오라클(외부 데이터를 특정 블록체인에 안전하게 가져오는 기술) 등으로 구성됐다.</span>
-
-<span class="s1">교육대상은 고등학교, 전문대학교, 4년제 대학교 졸업자 및 2021년 8월 졸업예정자다. 이공계 졸업자가 아니더라도 과기정통부의 소프트웨어 역량평가(TOPCIT) 성적우수자(300점 이상 득점자)의 경우 지원할 수 있다.</span>
-<span class="s1">&#39;&#39;&#39;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>정부가 실무형으로 양성해 기업의 업무에 바로 투입할 수 있는 블록체인 개발자 양성에 팔을 걷어붙였다. 게임, 인공지능(AI), 블록체인 등 정보기술(IT) 전 분야에 걸쳐 개발자 인력난이 심화되고 있는 가운데, 급성장하고 있는 블록체인 개발인력을 집중 육성한다는 것이다.
-
-
-정보통신기획평가원(IITP)은 &#39;2021년 혁신성장 청년인재 집중양성사업&#39; 블록체인 분야 신규 교육사업자로 한국핀테크연합회와 한국전파진흥협회를 선정했다고 밝혔다.
-
-12일 정보통신기획평가원(IITP)은 &#39;2021년 혁신성장 청년인재 집중양성사업&#39; 블록체인 분야 신규 교육사업자 2곳을 추가 선정했다고 밝혔다. 지난해까지는 블록체인 청년인재 집중 양성 기관이 전파진흥협회, 한국표준협회, 에프앤이노에듀 등 3개였는데, 블록체인 분야 개발인력 부족이 심화되면서 올해 한국핀테크연합회와 한경닷컴을 추가 선정한 것이다.
-
-이들 5개 기관을 통해 올 연말 기업에 투입될 블록체인 개발 인력은 96명이다.
-
-과학기술정보통신부와 IITP가 공동 추진하는 혁신성장 청년인재 집중양성사업은 인공지능, 클라우드, 빅데이터, 블록체인 등 4차 산업혁명 선도분야의 청년인재를 집중양성해 산업체 인력수요를 해소하고 청년 실업문제를 해결하는 것을 목표로 한다. 교육비는 정부에서 전액 지원하기 때문에 교육생은 무료로 프로그램에 참여할 수 있다.
-
-이번에 블록체인 교육 신규 사업자로 선정된 한국핀테크연합회는 오는 5월부터 10월까지 6개월간 대구에 소재한 한국IT교육원에서 &#39;고블록(goBlock) 실무 프로젝트&#39; 교육을 전개할 예정이다. 연합회는 해당 교육을 통해 총 48명의 블록체인 전문인력을 배출할 계획으로, 원거리 교육생을 고려해 온라인 원격 수업도 병행될 예정이다.
-
-금번 교육과정은 취업약정 과정으로 6개월간의 교육 후 바로 실무에 투입될 수 있는 인력을 키우는 것을 목표로 하기 때문에 프로젝트 개발 위주로 진행된다는게 연합회 측 설명이다. 한국핀테크연합회 측은 &quot;블록체인 수요가 높은 금융권을 비롯해 사이버보안 및 플랫폼 기업에서 실제 업무를 수행할 수 있는 전문 개발자를 양성하는 과정&quot;이라며 &quot;이를 위해 해커톤과 데모데이를 비롯해 교육생들이 직접 취업 약정업체에 방문해 실무 프로젝트에 참가할 수 있는 기회를 부여할 예정&quot;이라 말했다.
-
-구체적인 커리큘럼은 블록체인 개발언어 중 하나인 고(Go)를 비롯해 프라이빗 블록체인인 하이퍼레저 패브릭, 블록 합의알고리즘, 분산 신원인증(DID, Decentralized ID), 오라클(외부 데이터를 특정 블록체인에 안전하게 가져오는 기술) 등으로 구성됐다.
-
-교육대상은 고등학교, 전문대학교, 4년제 대학교 졸업자 및 2021년 8월 졸업예정자다. 이공계 졸업자가 아니더라도 과기정통부의 소프트웨어 역량평가(TOPCIT) 성적우수자(300점 이상 득점자)의 경우 지원할 수 있다.
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1397
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="count">
-<h4>count()<a class="headerlink" href="#count" title="Permalink to this headline">#</a></h4>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;블록&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;은&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;빠빠빠&quot;</span> <span class="ow">in</span> <span class="n">data</span>
-<span class="s2">&quot;혁신성장&quot;</span> <span class="ow">in</span> <span class="n">data</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="index">
-<h4>index()<a class="headerlink" href="#index" title="Permalink to this headline">#</a></h4>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;실무형&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="s1">&#39;hello&#39;</span>
-<span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;h&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;정부&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;쿠쿠루삥뽕&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">41</span><span class="o">-</span><span class="mi">2770</span><span class="n">ed0a0c1b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;쿠쿠루삥뽕&quot;</span><span class="p">)</span>
-
-<span class="ne">ValueError</span>: substring not found
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="find">
-<h4>find()<a class="headerlink" href="#find" title="Permalink to this headline">#</a></h4>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;실무형&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;쿠쿠루삥뽕&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
-</pre></div>
-</div>
-</div>
-</div>
-<ul class="simple">
-<li><p>ASCII 2**8</p></li>
-<li><p>EBCDIC</p></li>
-<li><p>Unicode(utf-8) 2**16</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="sa">b</span><span class="s1">&#39;abcde&#39;</span>
-<span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1">#97출력</span>
-<span class="n">a</span><span class="o">=</span><span class="sa">b</span><span class="s1">&#39;안녕하세요.&#39;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-49-e177f096a0ad&gt;&quot;</span><span class="gt">, line </span><span class="mi">3</span>
-    <span class="n">a</span><span class="o">=</span><span class="sa">b</span><span class="s1">&#39;안녕하세요.&#39;</span>
-     <span class="o">^</span>
-<span class="ne">SyntaxError</span>: bytes can only contain ASCII literal characters.
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;안녕하세요&#39;</span>
-<span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">&gt;</span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;안&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;abcde&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1">#&#39;a&#39;</span>
-<span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1">#unicode값 출력</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>97
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;ㄱ&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12593
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="replace">
-<h4>replace()<a class="headerlink" href="#replace" title="Permalink to this headline">#</a></h4>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modified</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;혁신성장&quot;</span><span class="p">,</span> <span class="s2">&quot;쿠쿠루삥뽕&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">modified</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>정부가 실무형으로 양성해 기업의 업무에 바로 투입할 수 있는 블록체인 개발자 양성에 팔을 걷어붙였다. 게임, 인공지능(AI), 블록체인 등 정보기술(IT) 전 분야에 걸쳐 개발자 인력난이 심화되고 있는 가운데, 급성장하고 있는 블록체인 개발인력을 집중 육성한다는 것이다.
-
-
-정보통신기획평가원(IITP)은 &#39;2021년 쿠쿠루삥뽕 청년인재 집중양성사업&#39; 블록체인 분야 신규 교육사업자로 한국핀테크연합회와 한국전파진흥협회를 선정했다고 밝혔다.
-
-12일 정보통신기획평가원(IITP)은 &#39;2021년 쿠쿠루삥뽕 청년인재 집중양성사업&#39; 블록체인 분야 신규 교육사업자 2곳을 추가 선정했다고 밝혔다. 지난해까지는 블록체인 청년인재 집중 양성 기관이 전파진흥협회, 한국표준협회, 에프앤이노에듀 등 3개였는데, 블록체인 분야 개발인력 부족이 심화되면서 올해 한국핀테크연합회와 한경닷컴을 추가 선정한 것이다.
-
-이들 5개 기관을 통해 올 연말 기업에 투입될 블록체인 개발 인력은 96명이다.
-
-과학기술정보통신부와 IITP가 공동 추진하는 쿠쿠루삥뽕 청년인재 집중양성사업은 인공지능, 클라우드, 빅데이터, 블록체인 등 4차 산업혁명 선도분야의 청년인재를 집중양성해 산업체 인력수요를 해소하고 청년 실업문제를 해결하는 것을 목표로 한다. 교육비는 정부에서 전액 지원하기 때문에 교육생은 무료로 프로그램에 참여할 수 있다.
-
-이번에 블록체인 교육 신규 사업자로 선정된 한국핀테크연합회는 오는 5월부터 10월까지 6개월간 대구에 소재한 한국IT교육원에서 &#39;고블록(goBlock) 실무 프로젝트&#39; 교육을 전개할 예정이다. 연합회는 해당 교육을 통해 총 48명의 블록체인 전문인력을 배출할 계획으로, 원거리 교육생을 고려해 온라인 원격 수업도 병행될 예정이다.
-
-금번 교육과정은 취업약정 과정으로 6개월간의 교육 후 바로 실무에 투입될 수 있는 인력을 키우는 것을 목표로 하기 때문에 프로젝트 개발 위주로 진행된다는게 연합회 측 설명이다. 한국핀테크연합회 측은 &quot;블록체인 수요가 높은 금융권을 비롯해 사이버보안 및 플랫폼 기업에서 실제 업무를 수행할 수 있는 전문 개발자를 양성하는 과정&quot;이라며 &quot;이를 위해 해커톤과 데모데이를 비롯해 교육생들이 직접 취업 약정업체에 방문해 실무 프로젝트에 참가할 수 있는 기회를 부여할 예정&quot;이라 말했다.
-
-구체적인 커리큘럼은 블록체인 개발언어 중 하나인 고(Go)를 비롯해 프라이빗 블록체인인 하이퍼레저 패브릭, 블록 합의알고리즘, 분산 신원인증(DID, Decentralized ID), 오라클(외부 데이터를 특정 블록체인에 안전하게 가져오는 기술) 등으로 구성됐다.
-
-교육대상은 고등학교, 전문대학교, 4년제 대학교 졸업자 및 2021년 8월 졸업예정자다. 이공계 졸업자가 아니더라도 과기정통부의 소프트웨어 역량평가(TOPCIT) 성적우수자(300점 이상 득점자)의 경우 지원할 수 있다.
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="split">
-<h4>split()<a class="headerlink" href="#split" title="Permalink to this headline">#</a></h4>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="n">modified</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;정부가&#39;, &#39;실무형으로&#39;, &#39;양성해&#39;, &#39;기업의&#39;, &#39;업무에&#39;, &#39;바로&#39;, &#39;투입할&#39;, &#39;수&#39;, &#39;있는&#39;, &#39;블록체인&#39;, &#39;개발자&#39;, &#39;양성에&#39;, &#39;팔을&#39;, &#39;걷어붙였다.&#39;, &#39;게임,&#39;, &#39;인공지능(AI),&#39;, &#39;블록체인&#39;, &#39;등&#39;, &#39;정보기술(IT)&#39;, &#39;전&#39;, &#39;분야에&#39;, &#39;걸쳐&#39;, &#39;개발자&#39;, &#39;인력난이&#39;, &#39;심화되고&#39;, &#39;있는&#39;, &#39;가운데,&#39;, &#39;급성장하고&#39;, &#39;있는&#39;, &#39;블록체인&#39;, &#39;개발인력을&#39;, &#39;집중&#39;, &#39;육성한다는&#39;, &#39;것이다.&#39;, &#39;정보통신기획평가원(IITP)은&#39;, &quot;&#39;2021년&quot;, &#39;쿠쿠루삥뽕&#39;, &#39;청년인재&#39;, &quot;집중양성사업&#39;&quot;, &#39;블록체인&#39;, &#39;분야&#39;, &#39;신규&#39;, &#39;교육사업자로&#39;, &#39;한국핀테크연합회와&#39;, &#39;한국전파진흥협회를&#39;, &#39;선정했다고&#39;, &#39;밝혔다.&#39;, &#39;12일&#39;, &#39;정보통신기획평가원(IITP)은&#39;, &quot;&#39;2021년&quot;, &#39;쿠쿠루삥뽕&#39;, &#39;청년인재&#39;, &quot;집중양성사업&#39;&quot;, &#39;블록체인&#39;, &#39;분야&#39;, &#39;신규&#39;, &#39;교육사업자&#39;, &#39;2곳을&#39;, &#39;추가&#39;, &#39;선정했다고&#39;, &#39;밝혔다.&#39;, &#39;지난해까지는&#39;, &#39;블록체인&#39;, &#39;청년인재&#39;, &#39;집중&#39;, &#39;양성&#39;, &#39;기관이&#39;, &#39;전파진흥협회,&#39;, &#39;한국표준협회,&#39;, &#39;에프앤이노에듀&#39;, &#39;등&#39;, &#39;3개였는데,&#39;, &#39;블록체인&#39;, &#39;분야&#39;, &#39;개발인력&#39;, &#39;부족이&#39;, &#39;심화되면서&#39;, &#39;올해&#39;, &#39;한국핀테크연합회와&#39;, &#39;한경닷컴을&#39;, &#39;추가&#39;, &#39;선정한&#39;, &#39;것이다.&#39;, &#39;이들&#39;, &#39;5개&#39;, &#39;기관을&#39;, &#39;통해&#39;, &#39;올&#39;, &#39;연말&#39;, &#39;기업에&#39;, &#39;투입될&#39;, &#39;블록체인&#39;, &#39;개발&#39;, &#39;인력은&#39;, &#39;96명이다.&#39;, &#39;과학기술정보통신부와&#39;, &#39;IITP가&#39;, &#39;공동&#39;, &#39;추진하는&#39;, &#39;쿠쿠루삥뽕&#39;, &#39;청년인재&#39;, &#39;집중양성사업은&#39;, &#39;인공지능,&#39;, &#39;클라우드,&#39;, &#39;빅데이터,&#39;, &#39;블록체인&#39;, &#39;등&#39;, &#39;4차&#39;, &#39;산업혁명&#39;, &#39;선도분야의&#39;, &#39;청년인재를&#39;, &#39;집중양성해&#39;, &#39;산업체&#39;, &#39;인력수요를&#39;, &#39;해소하고&#39;, &#39;청년&#39;, &#39;실업문제를&#39;, &#39;해결하는&#39;, &#39;것을&#39;, &#39;목표로&#39;, &#39;한다.&#39;, &#39;교육비는&#39;, &#39;정부에서&#39;, &#39;전액&#39;, &#39;지원하기&#39;, &#39;때문에&#39;, &#39;교육생은&#39;, &#39;무료로&#39;, &#39;프로그램에&#39;, &#39;참여할&#39;, &#39;수&#39;, &#39;있다.&#39;, &#39;이번에&#39;, &#39;블록체인&#39;, &#39;교육&#39;, &#39;신규&#39;, &#39;사업자로&#39;, &#39;선정된&#39;, &#39;한국핀테크연합회는&#39;, &#39;오는&#39;, &#39;5월부터&#39;, &#39;10월까지&#39;, &#39;6개월간&#39;, &#39;대구에&#39;, &#39;소재한&#39;, &#39;한국IT교육원에서&#39;, &quot;&#39;고블록(goBlock)&quot;, &#39;실무&#39;, &quot;프로젝트&#39;&quot;, &#39;교육을&#39;, &#39;전개할&#39;, &#39;예정이다.&#39;, &#39;연합회는&#39;, &#39;해당&#39;, &#39;교육을&#39;, &#39;통해&#39;, &#39;총&#39;, &#39;48명의&#39;, &#39;블록체인&#39;, &#39;전문인력을&#39;, &#39;배출할&#39;, &#39;계획으로,&#39;, &#39;원거리&#39;, &#39;교육생을&#39;, &#39;고려해&#39;, &#39;온라인&#39;, &#39;원격&#39;, &#39;수업도&#39;, &#39;병행될&#39;, &#39;예정이다.&#39;, &#39;금번&#39;, &#39;교육과정은&#39;, &#39;취업약정&#39;, &#39;과정으로&#39;, &#39;6개월간의&#39;, &#39;교육&#39;, &#39;후&#39;, &#39;바로&#39;, &#39;실무에&#39;, &#39;투입될&#39;, &#39;수&#39;, &#39;있는&#39;, &#39;인력을&#39;, &#39;키우는&#39;, &#39;것을&#39;, &#39;목표로&#39;, &#39;하기&#39;, &#39;때문에&#39;, &#39;프로젝트&#39;, &#39;개발&#39;, &#39;위주로&#39;, &#39;진행된다는게&#39;, &#39;연합회&#39;, &#39;측&#39;, &#39;설명이다.&#39;, &#39;한국핀테크연합회&#39;, &#39;측은&#39;, &#39;&quot;블록체인&#39;, &#39;수요가&#39;, &#39;높은&#39;, &#39;금융권을&#39;, &#39;비롯해&#39;, &#39;사이버보안&#39;, &#39;및&#39;, &#39;플랫폼&#39;, &#39;기업에서&#39;, &#39;실제&#39;, &#39;업무를&#39;, &#39;수행할&#39;, &#39;수&#39;, &#39;있는&#39;, &#39;전문&#39;, &#39;개발자를&#39;, &#39;양성하는&#39;, &#39;과정&quot;이라며&#39;, &#39;&quot;이를&#39;, &#39;위해&#39;, &#39;해커톤과&#39;, &#39;데모데이를&#39;, &#39;비롯해&#39;, &#39;교육생들이&#39;, &#39;직접&#39;, &#39;취업&#39;, &#39;약정업체에&#39;, &#39;방문해&#39;, &#39;실무&#39;, &#39;프로젝트에&#39;, &#39;참가할&#39;, &#39;수&#39;, &#39;있는&#39;, &#39;기회를&#39;, &#39;부여할&#39;, &#39;예정&quot;이라&#39;, &#39;말했다.&#39;, &#39;구체적인&#39;, &#39;커리큘럼은&#39;, &#39;블록체인&#39;, &#39;개발언어&#39;, &#39;중&#39;, &#39;하나인&#39;, &#39;고(Go)를&#39;, &#39;비롯해&#39;, &#39;프라이빗&#39;, &#39;블록체인인&#39;, &#39;하이퍼레저&#39;, &#39;패브릭,&#39;, &#39;블록&#39;, &#39;합의알고리즘,&#39;, &#39;분산&#39;, &#39;신원인증(DID,&#39;, &#39;Decentralized&#39;, &#39;ID),&#39;, &#39;오라클(외부&#39;, &#39;데이터를&#39;, &#39;특정&#39;, &#39;블록체인에&#39;, &#39;안전하게&#39;, &#39;가져오는&#39;, &#39;기술)&#39;, &#39;등으로&#39;, &#39;구성됐다.&#39;, &#39;교육대상은&#39;, &#39;고등학교,&#39;, &#39;전문대학교,&#39;, &#39;4년제&#39;, &#39;대학교&#39;, &#39;졸업자&#39;, &#39;및&#39;, &#39;2021년&#39;, &#39;8월&#39;, &#39;졸업예정자다.&#39;, &#39;이공계&#39;, &#39;졸업자가&#39;, &#39;아니더라도&#39;, &#39;과기정통부의&#39;, &#39;소프트웨어&#39;, &#39;역량평가(TOPCIT)&#39;, &#39;성적우수자(300점&#39;, &#39;이상&#39;, &#39;득점자)의&#39;, &#39;경우&#39;, &#39;지원할&#39;, &#39;수&#39;, &#39;있다.&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weird_words</span> <span class="o">=</span> <span class="n">modified</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">weird_words</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;정부가 실무형으로 양성해 기업의 업무에 바로 투입할 수 있는 블록체인 개발자 양성에 팔을 걷어붙였다&#39;, &#39; 게임, 인공지능(AI), 블록체인 등 정보기술(IT) 전 분야에 걸쳐 개발자 인력난이 심화되고 있는 가운데, 급성장하고 있는 블록체인 개발인력을 집중 육성한다는 것이다&#39;, &quot;\n\n\n정보통신기획평가원(IITP)은 &#39;2021년 쿠쿠루삥뽕 청년인재 집중양성사업&#39; 블록체인 분야 신규 교육사업자로 한국핀테크연합회와 한국전파진흥협회를 선정했다고 밝혔다&quot;, &quot;\n\n12일 정보통신기획평가원(IITP)은 &#39;2021년 쿠쿠루삥뽕 청년인재 집중양성사업&#39; 블록체인 분야 신규 교육사업자 2곳을 추가 선정했다고 밝혔다&quot;, &#39; 지난해까지는 블록체인 청년인재 집중 양성 기관이 전파진흥협회, 한국표준협회, 에프앤이노에듀 등 3개였는데, 블록체인 분야 개발인력 부족이 심화되면서 올해 한국핀테크연합회와 한경닷컴을 추가 선정한 것이다&#39;, &#39;\n\n이들 5개 기관을 통해 올 연말 기업에 투입될 블록체인 개발 인력은 96명이다&#39;, &#39;\n\n과학기술정보통신부와 IITP가 공동 추진하는 쿠쿠루삥뽕 청년인재 집중양성사업은 인공지능, 클라우드, 빅데이터, 블록체인 등 4차 산업혁명 선도분야의 청년인재를 집중양성해 산업체 인력수요를 해소하고 청년 실업문제를 해결하는 것을 목표로 한다&#39;, &#39; 교육비는 정부에서 전액 지원하기 때문에 교육생은 무료로 프로그램에 참여할 수 있다&#39;, &quot;\n\n이번에 블록체인 교육 신규 사업자로 선정된 한국핀테크연합회는 오는 5월부터 10월까지 6개월간 대구에 소재한 한국IT교육원에서 &#39;고블록(goBlock) 실무 프로젝트&#39; 교육을 전개할 예정이다&quot;, &#39; 연합회는 해당 교육을 통해 총 48명의 블록체인 전문인력을 배출할 계획으로, 원거리 교육생을 고려해 온라인 원격 수업도 병행될 예정이다&#39;, &#39;\n\n금번 교육과정은 취업약정 과정으로 6개월간의 교육 후 바로 실무에 투입될 수 있는 인력을 키우는 것을 목표로 하기 때문에 프로젝트 개발 위주로 진행된다는게 연합회 측 설명이다&#39;, &#39; 한국핀테크연합회 측은 &quot;블록체인 수요가 높은 금융권을 비롯해 사이버보안 및 플랫폼 기업에서 실제 업무를 수행할 수 있는 전문 개발자를 양성하는 과정&quot;이라며 &quot;이를 위해 해커톤과 데모데이를 비롯해 교육생들이 직접 취업 약정업체에 방문해 실무 프로젝트에 참가할 수 있는 기회를 부여할 예정&quot;이라 말했다&#39;, &#39;\n\n구체적인 커리큘럼은 블록체인 개발언어 중 하나인 고(Go)를 비롯해 프라이빗 블록체인인 하이퍼레저 패브릭, 블록 합의알고리즘, 분산 신원인증(DID, Decentralized ID), 오라클(외부 데이터를 특정 블록체인에 안전하게 가져오는 기술) 등으로 구성됐다&#39;, &#39;\n\n교육대상은 고등학교, 전문대학교, 4년제 대학교 졸업자 및 2021년 8월 졸업예정자다&#39;, &#39; 이공계 졸업자가 아니더라도 과기정통부의 소프트웨어 역량평가(TOPCIT) 성적우수자(300점 이상 득점자)의 경우 지원할 수 있다&#39;, &#39;\n&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="lstrip-rstrip-strip">
-<h4>lstrip() rstrip() strip()<a class="headerlink" href="#lstrip-rstrip-strip" title="Permalink to this headline">#</a></h4>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;     hi     &quot;</span>
-<span class="n">a</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;hi     &#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;     hi&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;hi&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weird_words</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;\n\n\n정보통신기획평가원(IITP)은 &#39;2021년 쿠쿠루삥뽕 청년인재 집중양성사업&#39; 블록체인 분야 신규 교육사업자로 한국핀테크연합회와 한국전파진흥협회를 선정했다고 밝혔다&quot;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weird_words</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;정보통신기획평가원(IITP)은 &#39;2021년 쿠쿠루삥뽕 청년인재 집중양성사업&#39; 블록체인 분야 신규 교육사업자로 한국핀테크연합회와 한국전파진흥협회를 선정했다고 밝혔다&quot;
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="join">
-<h4>join()<a class="headerlink" href="#join" title="Permalink to this headline">#</a></h4>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;abc&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;efg&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;eabcfabcg&#39;
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="upper-lower">
-<h4>upper() lower()<a class="headerlink" href="#upper-lower" title="Permalink to this headline">#</a></h4>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;hello&#39;</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
-<span class="s1">&#39;HEllo&#39;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;hello&#39;
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="exercises">
-<h3>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;컴퓨터&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myFind</span><span class="p">(</span> <span class="n">data</span><span class="p">,</span> <span class="n">word</span> <span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-        <span class="n">temp</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)]</span>
-        <span class="k">if</span> <span class="p">(</span> <span class="n">temp</span> <span class="o">==</span> <span class="n">word</span> <span class="p">):</span>
-            <span class="k">return</span> <span class="n">i</span>
-    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myFind</span><span class="p">(</span> <span class="n">data</span><span class="p">,</span> <span class="s1">&#39;혁신성장&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="s2">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span>
-<span class="n">word</span><span class="o">=</span><span class="s1">&#39;wxyz&#39;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myFind</span><span class="p">(</span> <span class="n">data</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22
-</pre></div>
-</div>
 </div>
 </div>
 </div>
