@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chapter 2(기초). 입출력과 타입변환 &#8212; Core Computing_Thinking with Computers</title>
+    <title>입출력과 타입변환(기초) &#8212; Core Computing_Thinking with Computers</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -87,8 +87,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Chapter 2. 입출력과 타입변환" href="C_chapter2.html" />
-    <link rel="prev" title="문자열 포맷팅" href="string_format.html" />
+    <link rel="next" title="함수(기초)" href="C_chapter5_%EA%B8%B0%EC%B4%88.html" />
+    <link rel="prev" title="Chapter 2. 입출력과 타입변환" href="C_chapter2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -159,11 +159,6 @@ const thebe_selector_output = ".output, .cell_output"
    Chapter 0. 프로그래밍 언어와 파이썬
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="C_chapter1_%EA%B8%B0%EC%B4%88.html">
-   Chapter 1(기초). 기본자료형과 변수
-  </a>
- </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="C_chapter1.html">
    Chapter 1. 기본자료형과 변수
@@ -175,25 +170,30 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="C_chapter1_%EA%B8%B0%EC%B4%88.html">
+     기본자료형과 변수(기초)
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="string_format.html">
      문자열 포맷팅
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Chapter 2(기초). 입출력과 타입변환
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="C_chapter2.html">
    Chapter 2. 입출력과 타입변환
   </a>
  </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   입출력과 타입변환(기초)
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="C_chapter5_%EA%B8%B0%EC%B4%88.html">
-   Chapter 5(기초). 함수
+   함수(기초)
   </a>
  </li>
 </ul>
@@ -373,7 +373,7 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
+    <a class="reference internal nav-link" href="#id2">
      연습문제
     </a>
    </li>
@@ -385,7 +385,7 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
+    <a class="reference internal nav-link" href="#id3">
      연습문제
     </a>
    </li>
@@ -419,12 +419,12 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
+  <a class="reference internal nav-link" href="#id4">
    종합 연습문제
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
+  <a class="reference internal nav-link" href="#id5">
    마무리
   </a>
  </li>
@@ -437,7 +437,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Chapter 2(기초). 입출력과 타입변환</h1>
+                <h1>입출력과 타입변환(기초)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -463,7 +463,7 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
+    <a class="reference internal nav-link" href="#id2">
      연습문제
     </a>
    </li>
@@ -475,7 +475,7 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
+    <a class="reference internal nav-link" href="#id3">
      연습문제
     </a>
    </li>
@@ -509,12 +509,12 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
+  <a class="reference internal nav-link" href="#id4">
    종합 연습문제
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
+  <a class="reference internal nav-link" href="#id5">
    마무리
   </a>
  </li>
@@ -528,8 +528,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="chapter-2">
-<h1>Chapter 2(기초). 입출력과 타입변환<a class="headerlink" href="#chapter-2" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>입출력과 타입변환(기초)<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
 <p>이 장에서는 주석을 처리하는 방법, 데이터를 입력하고, 출력하는 방법, 데이터 타입을 변환하는 방법에 대해 알아본다.</p>
 <div class="info admonition">
 <p class="admonition-title">학습목표와 기대효과 </p>
@@ -832,8 +832,8 @@ print(...)
 </div>
 </div>
 </div>
-<div class="section" id="id1">
-<h3>연습문제<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<div class="section" id="id2">
+<h3>연습문제<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
 <div class="sd-col sd-d-flex-row docutils">
@@ -975,8 +975,8 @@ You are 20 years old.
 </div>
 </div>
 </div>
-<div class="section" id="id2">
-<h3>연습문제<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<div class="section" id="id3">
+<h3>연습문제<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
 <div class="sd-col sd-d-flex-row docutils">
@@ -1166,10 +1166,7 @@ int()는 정수로 변환해주는 함수이다.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>홍길동
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 님의 나이는 20 살 입니다.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>홍길동 님의 나이는 20 살 입니다.
 홍길동님의 나이는20살 입니다.
 홍길동님의 나이는 20살 입니다.
 </pre></div>
@@ -1195,8 +1192,8 @@ int()는 정수로 변환해주는 함수이다.</p>
 </div>
 </div>
 </div>
-<div class="section" id="id3">
-<h2>종합 연습문제<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id4">
+<h2>종합 연습문제<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
 <div class="sd-col sd-d-flex-row docutils">
@@ -1247,8 +1244,8 @@ int()는 정수로 변환해주는 함수이다.</p>
 </div>
 </div>
 </div>
-<div class="section" id="id4">
-<h2>마무리<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id5">
+<h2>마무리<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>‘#’은 주석처리 기호이며, 주석은 프로그램과 소스코드에 대한 부연 설명으로 프로그램의 실행에 영향을 미치지 않는다.</p></li>
 <li><p>print ( ) 함수는 표준출력장치인 스크린에 값을 출력하는 함수이며, 출력하고자 하는 내용을 괄호 안에 넣어주면 된다.</p></li>
@@ -1288,17 +1285,17 @@ int()는 정수로 변환해주는 함수이다.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="string_format.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="C_chapter2.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">문자열 포맷팅</p>
+            <p class="prev-next-title">Chapter 2. 입출력과 타입변환</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="C_chapter2.html" title="next page">
+    <a class='right-next' id="next-link" href="C_chapter5_%EA%B8%B0%EC%B4%88.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Chapter 2. 입출력과 타입변환</p>
+        <p class="prev-next-title">함수(기초)</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
