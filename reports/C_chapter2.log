@@ -17,20 +17,14 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-eggs = 20
-fizz = 10
-spam = fizz + eggz
-spam
+print(f'소수점 3자리까지 출력: {3.141592:.3f}'
+print(f'정수로 출력: {3.141592:.0f}')
 ------------------
 
-[1;31m---------------------------------------------------------------------------[0m
-[1;31mNameError[0m                                 Traceback (most recent call last)
-[1;32m<ipython-input-38-ba8dae9bd2c7>[0m in [0;36m<module>[1;34m[0m
-[0;32m      1[0m [0meggs[0m [1;33m=[0m [1;36m20[0m[1;33m[0m[1;33m[0m[0m
-[0;32m      2[0m [0mfizz[0m [1;33m=[0m [1;36m10[0m[1;33m[0m[1;33m[0m[0m
-[1;32m----> 3[1;33m [0mspam[0m [1;33m=[0m [0mfizz[0m [1;33m+[0m [0meggz[0m[1;33m[0m[1;33m[0m[0m
-[0m[0;32m      4[0m [0mspam[0m[1;33m[0m[1;33m[0m[0m
+[1;36m  File [1;32m"<ipython-input-5-665d42dad670>"[1;36m, line [1;32m2[0m
+[1;33m    print(f'정수로 출력: {3.141592:.0f}')[0m
+[1;37m        ^[0m
+[1;31mSyntaxError[0m[1;31m:[0m invalid syntax
 
-[1;31mNameError[0m: name 'eggz' is not defined
-NameError: name 'eggz' is not defined
+SyntaxError: invalid syntax (<ipython-input-5-665d42dad670>, line 2)
 
