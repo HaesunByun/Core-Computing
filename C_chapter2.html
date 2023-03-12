@@ -642,7 +642,7 @@ ctrl + a를 누르면 현재 셀의 모든 코드를 한꺼번에 블럭설정 �
 <span class="sd">멀티라인 스트링 기호를 써서 </span>
 <span class="sd">여러 줄을 주석으로 처리할 수도 있다. </span>
 <span class="sd">&#39;&#39;&#39;</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Welcome!!&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Welcome!!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -876,9 +876,6 @@ Nice to meet you
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>민지는 20살이야
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 <ul class="simple">
@@ -1062,8 +1059,9 @@ print(...)
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">input</span><span class="p">()</span>
 <span class="k">print</span> <span class="p">(</span><span class="n">f</span><span class="s1">&#39;Welcome, {myName}.&#39;</span><span class="p">)</span>
-
-<span class="n">Alice</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Alice</span>
 <span class="n">Welcome</span><span class="p">,</span> <span class="n">sunny</span><span class="o">.</span>
 </pre></div>
 </div>
@@ -1457,13 +1455,13 @@ int()는 정수로 변환해주는 함수이다.</p>
 <li><p>입력값으로 최대값을 구하는 max([1, 2, 3, 4])를  넣어보자.</p></li>
 <li><p>이럴 수가!! 최대값이 출력된다.</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
 </pre></div>
 </div>
-<div class="tip admonition">
-<p class="admonition-title">Tip</p>
+<div class="warning admonition">
+<p class="admonition-title">주의</p>
 <ul class="simple">
 <li><p>eval() 함수를 사용하는 것은 매우 강력하지만 한편으로는 매우 위험하다.</p></li>
 <li><p>악의적인 사용자가 시스템에 손상을 주는 함수호출을 입력값으로 넣는다던지 고의적으로 함수를 실행시킨다던지 등 보안상 문제를 일으킬 수 있으므로 신중히 사용하기 바란다.</p></li>
