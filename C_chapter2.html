@@ -723,16 +723,14 @@ hello!  sunny
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;소수점 3자리까지 출력: </span><span class="si">{3.141592:.3f}</span><span class="s1">&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;소수점 3자리까지 출력: </span><span class="si">{3.141592:.3f}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;정수로 출력: </span><span class="si">{3.141592:.0f}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-5-665d42dad670&gt;&quot;</span><span class="gt">, line </span><span class="mi">2</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;정수로 출력: {3.141592:.0f}&#39;</span><span class="p">)</span>
-        <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>소수점 3자리까지 출력: 3.142
+정수로 출력: 3
 </pre></div>
 </div>
 </div>
@@ -746,6 +744,11 @@ hello!  sunny
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hello world&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>만약 아래의 코드처럼 여러줄을 print()없이 썼다면 전체 문장을 출력하는 것이 아니라 가장 마지막 줄만 출력한다.</p></li>
@@ -755,6 +758,11 @@ hello!  sunny
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Hello world&#39;</span>
 <span class="s1">&#39;How are you?&#39;</span>
 <span class="s1">&#39;Nice to meet you&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Nice to meet you&#39;
 </pre></div>
 </div>
 </div>
@@ -774,6 +782,16 @@ hello!  sunny
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello world
+How are you?
+Nice to meet you
+Hello world
+How are you?
+Nice to meet you
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>print() 괄호안에 아무런 내용없다면 한 줄 공백을 출력한다.</p></li>
@@ -783,6 +801,13 @@ hello!  sunny
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span> <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nice to meet you&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello
+
+Nice to meet you
 </pre></div>
 </div>
 </div>
@@ -796,11 +821,21 @@ hello!  sunny
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>내 나이는 20 살이야
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;10년 후의 나이는&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">+</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;살이야&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10년 후의 나이는 30 살이야
 </pre></div>
 </div>
 </div>
@@ -818,6 +853,13 @@ hello!  sunny
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>내 나이는20살이야
+2323-18549
+010-1234-5678
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>f-string과 함께 사용하면 띄어쓰기, 데이터타입 등을 고민 할 필요없이 수월하게 출력할 수 있다.</p></li>
@@ -830,6 +872,14 @@ hello!  sunny
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>민지는 20살이야
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>print() 함수는 줄바꿈(\n) 기능이 포함되어 있다. 줄바꿈 기능을 바꾸고 싶다면 옵션 end를 변경하면 된다. \t는 일정한 간격으로 분리해주는 tab 기능이다.</p></li>
@@ -838,6 +888,11 @@ hello!  sunny
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;나&#39;</span><span class="p">,</span><span class="s1">&#39;너&#39;</span><span class="p">,</span><span class="s1">&#39;우리&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;나&#39;</span><span class="p">,</span><span class="s1">&#39;너&#39;</span><span class="p">,</span><span class="s1">&#39;우리&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;^^;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>나 너 우리	나 너 우리^^;
 </pre></div>
 </div>
 </div>
@@ -865,6 +920,21 @@ hello!  sunny
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">print</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on built-in function print in module builtins:
+
+print(...)
+    print(value, ..., sep=&#39; &#39;, end=&#39;\n&#39;, file=sys.stdout, flush=False)
+    
+    Prints the values to a stream, or to sys.stdout by default.
+    Optional keyword arguments:
+    file:  a file-like object (stream); defaults to the current sys.stdout.
+    sep:   string inserted between values, default a space.
+    end:   string appended after the last value, default a newline.
+    flush: whether to forcibly flush the stream.
 </pre></div>
 </div>
 </div>
@@ -897,6 +967,12 @@ hello!  sunny
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>홍길동님의 나이는20살 입니다.
+홍길동님의 나이는 20살 입니다.
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>콤마(,)를 사용하는 경우, 콤마 있는 부분이 자동 한칸 띄어쓰기가 되므로 <code class="docutils literal notranslate"><span class="pre">20살</span></code>과 같이 나오게 하려면 <code class="docutils literal notranslate"><span class="pre">sep=''</span></code> 옵션을 줘서 띄어쓰기를 없애줘야 한다.</p></li>
@@ -910,6 +986,13 @@ hello!  sunny
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>홍길동 님의 나이는 20 살 입니다.
+홍길동님의 나이는20살 입니다.
+홍길동님의 나이는 20살 입니다.
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>f-string으로 처리하는 것이 가장 편하다.</p></li>
@@ -919,6 +1002,12 @@ hello!  sunny
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{name}</span><span class="s1">님의 나이는 </span><span class="si">{age}</span><span class="s1">살입니다.&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{name}</span><span class="s1">님의 나이는 </span><span class="si">{age}</span><span class="s1">살입니다.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>홍길동님의 나이는 20살입니다.
+홍길동님의 나이는 20살입니다.
 </pre></div>
 </div>
 </div>
@@ -1170,6 +1259,14 @@ int()는 정수로 변환해주는 함수이다.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+3
+42
+42
+</pre></div>
+</div>
+</div>
 </div>
 <div class="warning admonition">
 <p class="admonition-title">참고</p>
@@ -1201,6 +1298,14 @@ int()는 정수로 변환해주는 함수이다.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42.0
+3.5
+3.0
+3.6
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="str">
@@ -1212,6 +1317,14 @@ int()는 정수로 변환해주는 함수이다.</p>
 <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="mf">3.5</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="s1">&#39;42&#39;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="s1">&#39;3.5&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+3.5
+42
+3.5
 </pre></div>
 </div>
 </div>
