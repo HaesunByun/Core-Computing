@@ -416,39 +416,15 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   튜플(기초)
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   튜플 생성
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     튜플 생성
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#iteration">
-     튜플 주요 메서드와 iteration
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   집합(기초)
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iteration">
+   튜플 주요 메서드와 iteration
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#set">
-     set 생성
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#set-iteration">
-     set 주요 메서드와 iteration
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -469,39 +445,15 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   튜플(기초)
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   튜플 생성
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     튜플 생성
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#iteration">
-     튜플 주요 메서드와 iteration
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   집합(기초)
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iteration">
+   튜플 주요 메서드와 iteration
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#set">
-     set 생성
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#set-iteration">
-     set 주요 메서드와 iteration
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -638,188 +590,6 @@ title="Print to PDF"
 2023-23346
 2023-23346
 2023-23347
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="id3">
-<h1>집합(기초)<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h1>
-<p>리스트에서는 index를, 딕셔너리에서는 key를 사용하여 value에 접근할 수 있었다. 그렇다면 index나 key는 반드시 필요할까?</p>
-<p>집합은 그 틀을 깼다. 집합(set)은 index나 key가 없다. 그렇기 때문에 순서가 없으며, 값이 중복되지 않는 특징을 가진 자료구조이다. 수학의 집합과 개념적으로 아주 비슷하다.</p>
-<div class="section" id="set">
-<h2>set 생성<a class="headerlink" href="#set" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>중괄호 { }안에 아이템을 콤마로 나열하여 직접 생성할 수 있다.</p></li>
-<li><p>또한 <code class="docutils literal notranslate"><span class="pre">변수명</span> <span class="pre">=</span> <span class="pre">set()</span></code>나 <code class="docutils literal notranslate"><span class="pre">변수명</span> <span class="pre">=</span> <span class="pre">{}</span></code>와 같이 쓰면 비어있는 set을 생성할 수 있다.</p></li>
-<li><p>set은 아이템의 중복을 수용하지 않기 때문에 중복을 제거할 필요가 있는 데이터라면 set으로 만들면 된다.</p></li>
-</ul>
-<div class="tip admonition">
-<p class="admonition-title">동적타이핑(Dynamic typing)  </p>
-<p>빈 딕셔너리를 만들거나 빈 set을 만들때 <code class="docutils literal notranslate"><span class="pre">변수명</span> <span class="pre">=</span> <span class="pre">{}</span></code>와 같이 선언하는데, 그렇다면 어떻게 딕셔너리 변수인지 set변수인지 구분할 수 있을까? 파이썬은 동적으로 형(type)을 정의해주는 동적타이핑 기능을 지원하고 있다. 따라서 변수에 저장되는 데이터가 딕셔너리 형태이면 딕셔너리변수가 되고, set형태이면 set변수가 된다. 다른 언어를 다뤄본 사람이라면 파이썬에서 지원하는 이 기능이 얼마나 프로그래머에게 편의를 제공해주는지 말하지 않아도 알 것이다.😄</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;baz&#39;</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;qux&#39;</span><span class="p">}</span>
-<span class="n">s2</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">s3</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-<span class="n">s4</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="n">s3</span><span class="p">,</span> <span class="n">s4</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;foo&#39;, &#39;qux&#39;, &#39;baz&#39;, &#39;bar&#39;}
-{}
-set()
-{1, 2, 3, 4, 6, 7, 8, 10}
-</pre></div>
-</div>
-</div>
-</div>
-<ul class="simple">
-<li><p>set은 순서가 없기 때문에 인덱싱이나 슬라이싱을 할 수 없다.</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;muzi&#39;</span><span class="p">,</span> <span class="s1">&#39;con&#39;</span><span class="p">,</span> <span class="s1">&#39;apeach&#39;</span><span class="p">,</span> <span class="s1">&#39;jay-G&#39;</span><span class="p">,</span> <span class="s1">&#39;frodo&#39;</span><span class="p">,</span> <span class="s1">&#39;neo&#39;</span><span class="p">,</span> <span class="s1">&#39;tube&#39;</span><span class="p">,</span> <span class="s1">&#39;ryan&#39;</span><span class="p">,</span> <span class="s1">&#39;choonsik&#39;</span><span class="p">}</span>
-<span class="n">s1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">s1</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>set에 대해서 인덱싱 또는 슬라이싱을 해야 하거나 아이템을 추가, 삽입, 수정, 삭제, 정렬 등의 작업을 해야 할 필요가 생긴다면 list()함수나 tuple()함수로 타입을 변환하면 된다.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;muzi&#39;</span><span class="p">,</span> <span class="s1">&#39;con&#39;</span><span class="p">,</span> <span class="s1">&#39;apeach&#39;</span><span class="p">,</span> <span class="s1">&#39;jay-G&#39;</span><span class="p">,</span> <span class="s1">&#39;frodo&#39;</span><span class="p">,</span> <span class="s1">&#39;neo&#39;</span><span class="p">,</span> <span class="s1">&#39;tube&#39;</span><span class="p">,</span> <span class="s1">&#39;ryan&#39;</span><span class="p">,</span> <span class="s1">&#39;choonsik&#39;</span><span class="p">}</span>
-<span class="n">l</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
-<span class="n">t</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">l</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">t</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;neo&#39;, &#39;frodo&#39;, &#39;choonsik&#39;, &#39;jay-G&#39;, &#39;muzi&#39;, &#39;tube&#39;, &#39;con&#39;, &#39;ryan&#39;, &#39;apeach&#39;]
-(&#39;neo&#39;, &#39;frodo&#39;, &#39;choonsik&#39;, &#39;jay-G&#39;, &#39;muzi&#39;, &#39;tube&#39;, &#39;con&#39;, &#39;ryan&#39;, &#39;apeach&#39;)
-</pre></div>
-</div>
-</div>
-</div>
-<ul class="simple">
-<li><p>set은 순서가 없기 때문에 반복이 안된다? 아니다! 순서는 없지만 반복가능한(iterable) 데이터타입이다.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">s1</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;kakao-</span><span class="si">{item}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>kakao-neo
-kakao-frodo
-kakao-choonsik
-kakao-jay-G
-kakao-muzi
-kakao-tube
-kakao-con
-kakao-ryan
-kakao-apeach
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="set-iteration">
-<h2>set 주요 메서드와 iteration<a class="headerlink" href="#set-iteration" title="Permalink to this headline">#</a></h2>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:center head"><p>사용 방법</p></th>
-<th class="text-align:left head"><p>의미</p></th>
-<th class="text-align:left head"><p>예시<br> s1={1,4,7} b={1,3,6,8,10}</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:center"><p>a.union(b) or <br> a|b</p></td>
-<td class="text-align:left"><p>합집합</p></td>
-<td class="text-align:left"><p>a|b ➡ {1, 3, 4, 6, 7, 8, 10}</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p>a.difference(b) or <br> a-b</p></td>
-<td class="text-align:left"><p>차집합</p></td>
-<td class="text-align:left"><p>a-b ➡ {4, 7}</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p>a.intersection(b) or <br> a&amp;b</p></td>
-<td class="text-align:left"><p>교집합</p></td>
-<td class="text-align:left"><p>a&amp;b ➡ {1}</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p>a.symmetric_difference(b) or <br> a^b</p></td>
-<td class="text-align:left"><p>대칭차집합</p></td>
-<td class="text-align:left"><p>a^b ➡ {3, 4, 6, 7, 8, 10}</p></td>
-</tr>
-</tbody>
-</table>
-<p>이외에도 몇 가지 메서드가 있으니 살펴보기 바란다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">}</span>
-<span class="n">b</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">|</span> <span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 3, 4, 6, 7, 8, 10}
-{1, 3, 4, 6, 7, 8, 10}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{4, 7}
-{4, 7}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1}
-{1}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">symmetric_difference</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">^</span> <span class="n">b</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{3, 4, 6, 7, 8, 10}
-{3, 4, 6, 7, 8, 10}
 </pre></div>
 </div>
 </div>

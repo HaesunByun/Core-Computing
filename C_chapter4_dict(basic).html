@@ -554,22 +554,8 @@ title="Print to PDF"
 <ul class="simple">
 <li><p>당연한 말이지만 value에 접근할 때 key가 딕셔너리에 없으면 에러가 난다.</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">dict1</span><span class="p">[</span><span class="s1">&#39;address&#39;</span><span class="p">]</span> <span class="p">)</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span> <span class="n">dict1</span><span class="p">[</span><span class="s1">&#39;address&#39;</span><span class="p">]</span> <span class="p">)</span> 
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">77383834</span><span class="n">a2d7</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">print</span><span class="p">(</span> <span class="n">dict1</span><span class="p">[</span><span class="s1">&#39;address&#39;</span><span class="p">]</span> <span class="p">)</span>
-
-<span class="ne">KeyError</span>: &#39;address&#39;
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="insertion-and-modification">
@@ -586,6 +572,12 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="n">sports</span><span class="p">)</span>
 <span class="n">sports</span><span class="p">[</span><span class="s1">&#39;계단오르기&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span> 
 <span class="nb">print</span><span class="p">(</span><span class="n">sports</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;걷기&#39;: 4, &#39;조깅&#39;: 7, &#39;수영&#39;: 9, &#39;계단오르기&#39;: 15}
+{&#39;걷기&#39;: 4, &#39;조깅&#39;: 7, &#39;수영&#39;: 9, &#39;계단오르기&#39;: 5}
 </pre></div>
 </div>
 </div>
@@ -643,6 +635,11 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>또는 멤버 연산자 in을 사용하여 먼저 검색한 후 key가 있을 경우에만 가져오게 하는 것도 방법이다.</p></li>
@@ -654,6 +651,11 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>딕셔너리의 모든 key와 values를 가져올때는 items()를 사용한다.</p></li>
@@ -661,6 +663,11 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sports</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_items([(&#39;걷기&#39;, 4), (&#39;조깅&#39;, 7), (&#39;수영&#39;, 9)])
 </pre></div>
 </div>
 </div>
@@ -676,6 +683,13 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;걷기&#39;, 4)
+(&#39;조깅&#39;, 7)
+(&#39;수영&#39;, 9)
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>for의 반복변수를 두 개를 쓰면 각각 변수에 key와 value를 가져온다.</p></li>
@@ -684,6 +698,13 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">sports</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
   <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>걷기 4
+조깅 7
+수영 9
 </pre></div>
 </div>
 </div>
@@ -697,11 +718,23 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;걷기&#39;, &#39;조깅&#39;, &#39;수영&#39;])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">sports</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
   <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>걷기
+조깅
+수영
 </pre></div>
 </div>
 </div>
@@ -715,11 +748,23 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_values([4, 7, 9])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">sports</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
   <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+7
+9
 </pre></div>
 </div>
 </div>
@@ -732,6 +777,14 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">sports</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;조깅&#39;</span><span class="p">))</span>
 <span class="n">sports</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;걷기&#39;: 4, &#39;수영&#39;: 9}
 </pre></div>
 </div>
 </div>
@@ -752,33 +805,20 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;걷기&#39;: 4, &#39;수영&#39;: 9, &#39;피겨&#39;: 10, &#39;축구&#39;: 10, &#39;야구&#39;: 9}
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>딕셔너리의 아이템 제거할 때에는 del 키워드를 사용할 수 있다. 또는 앞서 설명했던 pop()메서드를 사용해도 된다. 두 방법 모두 key가 없으면 에러가 난다.</p></li>
 <li><p>clear()는 딕셔너리의 모든 아이템을 제거한다.</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">sports</span><span class="p">[</span><span class="s1">&#39;조깅&#39;</span><span class="p">]</span>
-<span class="n">sports</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">sports</span><span class="p">[</span><span class="s1">&#39;요가&#39;</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">sports</span><span class="p">[</span><span class="s1">&#39;요가&#39;</span><span class="p">]</span>
 <span class="n">sports</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;요가&#39;</span><span class="p">)</span>
+<span class="n">sports</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 </pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sports</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 </div>
