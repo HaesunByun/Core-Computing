@@ -285,6 +285,24 @@ const thebe_selector_output = ".output, .cell_output"
 </a>
 </li>
       
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
   </ul>
 </div>
 
@@ -405,19 +423,17 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">아이템 수정</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">슬라이싱(Slicing)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#len">아이템 개수 확인 len() 함수</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">슬라이싱(Slicing)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">리스트 주요 메서드</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#append-item">아이템 추가 append(item)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">아이템 추가</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-index-data">아이템 삽입 insert(index, data)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-data">아이템 인덱스 번호 찾기 index(data)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-data">아이템 제거 remove(data)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">아이템 인덱스 번호 찾기</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">아이템 제거</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">리스트 연산자</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">리스트 연산자</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-comprehension">List comprehension(리스트 축약법)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">마무리</a></li>
 </ul>
             </nav>
         </div>
@@ -436,18 +452,23 @@ document.write(`
 <p>파이썬에서는 다수의 데이터를 하나로 묶어서 처리할 수 있는 다양한 자료형을 제공한다. 그 중에 하나인 리스트를 알아보자.</p>
 <p>이 장에서는 리스트의 개념, 리스트의 인덱싱, 슬라이싱, 리스트 연산자 등에 대해서 알아본다. :::</p>
 </div>
-<section id="id2">
+<div align="center"><img src="https://haesunbyun.github.io/common/images/list1.png" style="width:500px;"></div><section id="id2">
 <h2>리스트 생성<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>리스트는 숫자, 문자, 리스트, 딕셔너리 등 어떠한 데이터 타입이든 다 담을 수 있는 만물박스이다.</p></li>
 <li><p>리스트는 대괄호[   ]로 묶어준다.</p></li>
 <li><p>리스트에 들어있는 데이터를 아이템, 원소, 요소이라고 부른다.</p></li>
 <li><p>리스트 내 아이템은 콤마(,)로 구분한다.</p></li>
+<li><p>형식은 다음과 같다.</p></li>
 </ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">아이템1</span><span class="p">,</span> <span class="n">아이템2</span><span class="p">,</span> <span class="n">아이템3</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">아이템n</span><span class="p">]</span>
+</pre></div>
+</div>
 <section id="id3">
 <h3>직접 생성<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>대괄호 안에 아이템을 콤마로 나열하여 직접 생성할 수 있다.</p></li>
+<li><p>아이템없이 대괄호만 있으면 비어있는 리스트를 생성한다.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -464,7 +485,7 @@ document.write(`
 <section id="list">
 <h3>list() 함수로 생성<a class="headerlink" href="#list" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p>list() 함수는 빈 리스트, 숫자리스트, 문자열을 낱개로 분리하여 리스트로 만드는 함수이다.</p></li>
+<li><p>list() 함수는 빈 리스트, 숫자리스트, 문자열을 낱개문자로 분리하여 리스트로 만드는 함수이다.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -473,6 +494,9 @@ document.write(`
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>range()함수와 같이 사용하면 수열로 이루어진 리스트를 생성한다.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
@@ -486,6 +510,57 @@ document.write(`
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">range() 함수  </p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>사용 방법</p></th>
+<th class="head text-left"><p>의미</p></th>
+<th class="head text-left"><p>예시</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">range(끝)</span></code></p></td>
+<td class="text-left"><p>[0, 1, 2, 3, …, 끝-1]</p></td>
+<td class="text-left"><p>range(4) → [0, 1, 2, 3]</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">range(시작,</span> <span class="pre">끝)</span></code></p></td>
+<td class="text-left"><p>[시작, 시작+1, 시작+2, …, 끝-1]</p></td>
+<td class="text-left"><p>range(3, 5) → [3, 4]</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">range(시작,</span> <span class="pre">끝,</span> <span class="pre">증감)</span></code></p></td>
+<td class="text-left"><p>[시작, 시작+증감, 시작+증감×2, …, 시작+증감×k]</p></td>
+<td class="text-left"><p>range(2, 11, 2) → [2, 4, 6, 8, 10]</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">range(시작,</span> <span class="pre">끝,</span> <span class="pre">-증감)</span></code></p></td>
+<td class="text-left"><p>[시작, 시작-증감, 시작-증감×2, …, 시작-증감×k]</p></td>
+<td class="text-left"><p>range(9, 1, -2) → [9, 7, 5, 3]</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>range() 함수는 일정한 규칙에 따라 나열된 수열을 생성한다.</p></li>
+<li><p>끝은 범위에 미포함이다.</p></li>
+<li><p>range 함수의 결과는 리스트 형태로 나오지 않는다. 리스트로 보고싶으면 list() 함수와 같이 사용한다.</p></li>
+</ul>
+</div>
+<ul class="simple">
+<li><p>문자열을 각 문자로 분리하여 리스트를 생성한다.</p></li>
+</ul>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>사용 방법</p></th>
+<th class="head text-left"><p>의미</p></th>
+<th class="head text-left"><p>예시</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">list(문자열)</span></code></p></td>
+<td class="text-left"><p>문자열을 한 글자씩 분리하여 리스트 생성</p></td>
+<td class="text-left"><p>list(‘12345’) → [‘1’, ‘2’, ‘3’, ‘4’, ‘5’]</p></td>
+</tr>
+</tbody>
+</table>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
@@ -503,13 +578,30 @@ document.write(`
 <section id="split">
 <h3>split() 메서드로 생성<a class="headerlink" href="#split" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p>split() 함수는 문자열을 특정 기준에 따라 분리하여 리스트로 만드는 함수이다. 형식은 다음과 같다.</p></li>
+<li><p>split() 함수는 문자열을 특정 기준에 따라 분리하여 리스트로 만드는 함수이다.</p></li>
+<li><p>문자열을 괄호안의 ‘분리기준’으로 분리하며, 괄호안에 분리기준이 없으면 공백을 기준으로 분리한다.</p></li>
+<li><p>분리되면서 분리기준은 제거된다.</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">문자열</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">분리기준</span> <span class="n">문자열</span><span class="p">)</span>
-</pre></div>
-</div>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>사용 방법</p></th>
+<th class="head text-left"><p>의미</p></th>
+<th class="head text-left"><p>예시</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">split()</span></code></p></td>
+<td class="text-left"><p>공백(’ ‘)을 기준으로 문자열을 나눠 리스트를 생성</p></td>
+<td class="text-left"><p>‘1 2 3 4 5’.split() → [‘1’, ‘2’, ‘3’, ‘4’, ‘5’]</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">split(분리기준)</span></code></p></td>
+<td class="text-left"><p>분리기준를 기준으로 문자열을 나눠 리스트를 생성</p></td>
+<td class="text-left"><p>‘1:2:3:4:5’.split(‘:’) → [‘1’, ‘2’, ‘3’, ‘4’, ‘5’]</p></td>
+</tr>
+</tbody>
+</table>
 <ul class="simple">
-<li><p>문자열을 괄호안의 ‘분리기준 문자열’을 기준으로 분리하며, 괄호안에 아무것도 없으면 공백을 기준으로 분리한다.</p></li>
+<li><p>split() 괄호안에 분리기준이 없으므로 공백을 기준으로 분리한다.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -525,6 +617,10 @@ document.write(`
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>split()괄호안에 적히 ‘, ‘를 기준으로 분리한다.</p></li>
+<li><p>이때 콤마만 기준으로 주지 않고 콤마 다음에 공백까지 포함하여 분리하면 공백까지 제거된다.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">item</span> <span class="o">=</span> <span class="s1">&#39;바나나, 딸기, 복숭아&#39;</span>
@@ -569,8 +665,8 @@ square
 </div>
 </div>
 <ul class="simple">
-<li><p>리스트안에 리스트가 있는 경우 대괄호를 연속하여 쓰면 된다.</p></li>
-<li><p>예를 들어, ‘banana’를 꺼내려면 c[2][0]과 같이 접근할 수 있다.</p></li>
+<li><p>리스트안에 리스트가 있는 경우 대괄호를 연속하여 쓴다.</p></li>
+<li><p>예를 들어, ‘banana’는 c[2][0]과 같이 접근할 수 있다.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -617,7 +713,13 @@ banana
 <section id="id4">
 <h3>아이템 수정<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p>인덱스를 이용하여 아이템을 수정할 수 있다.</p></li>
+<li><p>리스트안의 아이템은 인덱스를 이용하여 수정한다.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">리스트변수명</span><span class="p">[</span><span class="n">인덱스</span><span class="p">]</span><span class="o">=</span><span class="n">값</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>리스트변수 shape의 인덱스2의 값을 100으로 수정한다.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -643,12 +745,12 @@ banana
 </div>
 <ul class="simple">
 <li><p>start: 슬라이싱 시작 인덱스</p></li>
-<li><p>end: 슬라이싱하려는 끝 인덱스+1</p></li>
+<li><p>end: 슬라이싱 끝 인덱스(끝 인덱스는 미포함)</p></li>
 <li><p>step: 이동간격, 양수이면 오른쪽으로 step만큼 이동한다. 음수이면 왼쪽으로 step만큼 이동한다.</p></li>
 <li><p>start, end, step 모두 생략 가능하다.</p></li>
 </ul>
 <ul class="simple">
-<li><p>아래의 코드를 통해 실습해보자. 처음부터 인덱스 3 이전까지 오른쪽으로 이동하여 슬라이싱한다.</p></li>
+<li><p>아래의 코드를 통해 실습해보자. 처음부터 인덱스 3 이전까지 오른쪽으로 1씩 이동하여 슬라이싱한다.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -664,7 +766,7 @@ banana
 </div>
 </div>
 <ul class="simple">
-<li><p>인덱스 -3부터 끝까지 오른쪽으로 이동하여 슬라이싱한다.</p></li>
+<li><p>인덱스 -3부터 끝까지 오른쪽으로 1씩 이동하여 슬라이싱한다.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -679,7 +781,7 @@ banana
 </div>
 </div>
 <ul class="simple">
-<li><p>처음부터 인덱스 -3 이전까지 오른쪽으로 이동하여 슬라이싱한다.</p></li>
+<li><p>처음부터 인덱스 -3 이전까지 오른쪽으로 1씩 이동하여 슬라이싱한다.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -694,7 +796,7 @@ banana
 </div>
 </div>
 <ul class="simple">
-<li><p>처음부터 인덱스 -3 이전까지 왼쪽으로 이동하여 슬라이싱한다.</p></li>
+<li><p>처음부터 인덱스 -3 이전까지 왼쪽으로 1씩 이동하여 슬라이싱한다.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -706,13 +808,10 @@ banana
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;diamond&#39;, &#39;square&#39;]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 <ul class="simple">
-<li><p>처음부터 인덱스 -3 이전까지 2씩 건너뛰면서 왼쪽으로 이동하여 슬라이싱한다.</p></li>
+<li><p>처음부터 인덱스 -3 이전까지 왼쪽으로 2씩 건너뛰면서 슬라이싱한다.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -747,7 +846,10 @@ banana
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L i f e
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> i f e
 n o h t
 34
 </pre></div>
@@ -768,26 +870,17 @@ thon
 </div>
 </div>
 </div>
-<section id="len">
-<h3>아이템 개수 확인 len() 함수<a class="headerlink" href="#len" title="Permalink to this heading">#</a></h3>
+<div class="tip admonition">
+<p class="admonition-title">아이템 개수 확인 len() 함수  </p>
 <ul class="simple">
 <li><p>len() 함수는 리스트의 아이템 개수를 반환한다.</p></li>
-<li><p>리스트뿐만 아니라 문자열, 딕셔너리, 튜플, 집합 등 len() 함수를 통해 아이템의 개수를 알 수 있다.</p></li>
+<li><p>리스트뿐만 아니라 문자열, 딕셔너리, 튜플, 집합 등 문자열의 개수 또는 아이템의 개수를 확인할 때 사용한다.</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shape</span><span class="o">=</span> <span class="p">[</span><span class="s1">&#39;turtle&#39;</span><span class="p">,</span> <span class="s1">&#39;arrow&#39;</span><span class="p">,</span> <span class="s1">&#39;circle&#39;</span><span class="p">,</span> <span class="s1">&#39;square&#39;</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">shape</span><span class="o">=</span> <span class="p">[</span><span class="s1">&#39;turtle&#39;</span><span class="p">,</span> <span class="s1">&#39;arrow&#39;</span><span class="p">,</span> <span class="s1">&#39;circle&#39;</span><span class="p">,</span> <span class="s1">&#39;square&#39;</span><span class="p">]</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 </section>
 <section id="id5">
 <h2>리스트 주요 메서드<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
@@ -849,12 +942,15 @@ thon
 </tr>
 </tbody>
 </table>
-<section id="append-item">
-<h3>아이템 추가 append(item)<a class="headerlink" href="#append-item" title="Permalink to this heading">#</a></h3>
+<section id="id6">
+<h3>아이템 추가<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>append() 메서드는 아이템을 마지막에 추가한다.</p></li>
 <li><p>append() 메서드는 반환값이 없다. 따라서 print(shape.append(200))와 같이 쓰면 ‘None’이 출력된다.</p></li>
 </ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">리스트변수명</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shape</span><span class="o">=</span> <span class="p">[</span><span class="s1">&#39;turtle&#39;</span><span class="p">,</span> <span class="s1">&#39;arrow&#39;</span><span class="p">,</span> <span class="s1">&#39;circle&#39;</span><span class="p">,</span> <span class="s1">&#39;square&#39;</span><span class="p">,</span> <span class="s1">&#39;diamond&#39;</span><span class="p">]</span>
@@ -870,7 +966,9 @@ thon
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;turtle&#39;, &#39;arrow&#39;, &#39;circle&#39;, &#39;square&#39;, &#39;diamond&#39;]
-[&#39;turtle&#39;, &#39;arrow&#39;, &#39;circle&#39;, &#39;square&#39;, &#39;diamond&#39;, 5]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;turtle&#39;, &#39;arrow&#39;, &#39;circle&#39;, &#39;square&#39;, &#39;diamond&#39;, 5]
 [&#39;turtle&#39;, &#39;arrow&#39;, &#39;circle&#39;, &#39;square&#39;, &#39;diamond&#39;, 5, &#39;hello&#39;]
 None
 </pre></div>
@@ -880,6 +978,10 @@ None
 </section>
 <section id="insert-index-data">
 <h3>아이템 삽입 insert(index, data)<a class="headerlink" href="#insert-index-data" title="Permalink to this heading">#</a></h3>
+<p>-리스트의 인덱스 위치에 값을 삽입힌다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">리스트변수명</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">인덱스</span><span class="p">,</span><span class="n">값</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shape</span><span class="o">=</span> <span class="p">[</span><span class="s1">&#39;turtle&#39;</span><span class="p">,</span> <span class="s1">&#39;arrow&#39;</span><span class="p">,</span> <span class="s1">&#39;circle&#39;</span><span class="p">,</span> <span class="s1">&#39;square&#39;</span><span class="p">,</span> <span class="s1">&#39;diamond&#39;</span><span class="p">]</span>
@@ -893,11 +995,14 @@ None
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[13, &#39;turtle&#39;, &#39;arrow&#39;, &#39;circle&#39;, &#39;banana&#39;, &#39;square&#39;, &#39;diamond&#39;]
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </div>
 </div>
 </section>
-<section id="index-data">
-<h3>아이템 인덱스 번호 찾기 index(data)<a class="headerlink" href="#index-data" title="Permalink to this heading">#</a></h3>
+<section id="id7">
+<h3>아이템 인덱스 번호 찾기<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>아이템의 인덱스 번호를 반환한다.</p></li>
 <li><p>아이템이 없으면 에러가 난다.
@@ -917,8 +1022,8 @@ None
 </div>
 </div>
 </section>
-<section id="remove-data">
-<h3>아이템 제거 remove(data)<a class="headerlink" href="#remove-data" title="Permalink to this heading">#</a></h3>
+<section id="id8">
+<h3>아이템 제거<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>아이템을 제거한다.</p></li>
 <li><p>아이템이 없으면 에러가 난다.
@@ -1023,8 +1128,8 @@ Input Sample</p>
 </div>
 </section>
 </section>
-<section id="id6">
-<h2>리스트 연산자<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<section id="id9">
+<h2>리스트 연산자<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>연산 기호</p></th>
@@ -1077,13 +1182,15 @@ Input Sample</p>
 <section id="list-comprehension">
 <h2>List comprehension(리스트 축약법)<a class="headerlink" href="#list-comprehension" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>반복문과 조건문을 한 줄의 코드로 축약하여 리스트를 만들 수 있다.</p></li>
-<li><p>리스트뿐만 아니라 딕셔너리, 집합에서도 축약하여 만들 수 있다.</p></li>
+<li><p>리스트를 생성할 때 더 간결한 방법으로 생성하는 문법이다.</p></li>
+<li><p>대괄호안에 for문이나 if문을 이용해 한 줄의 코드로 리스트를 만든다.</p></li>
+<li><p>리스트 축약뿐만 아니라 딕셔너리 축약, 집합축약도 만들 수 있다.</p></li>
 <li><p>이러한 축약법은 파이썬이 <code class="docutils literal notranslate"><span class="pre">파이썬스럽다</span></code> 라는 것을 보여주는 대표적인 예이다.</p></li>
+<li><p>아래 예를 통해 풀어 쓴 코드와 축약형 코드의 차이를 확인해보자.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;풀어쓴 코드======&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;풀어 쓴 코드======&#39;</span><span class="p">)</span>
 <span class="n">x</span><span class="o">=</span><span class="p">[</span> <span class="p">]</span>
 <span class="k">for</span> <span class="n">i</span>  <span class="ow">in</span>  <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span> 
     <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
@@ -1096,7 +1203,7 @@ Input Sample</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>풀어쓴 코드======
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>풀어 쓴 코드======
 [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 축약형 코드======
 [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
@@ -1106,7 +1213,7 @@ Input Sample</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;풀어쓴 코드======&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;풀어 쓴 코드======&#39;</span><span class="p">)</span>
 <span class="n">x</span><span class="o">=</span><span class="p">[</span> <span class="p">]</span>
 <span class="k">for</span> <span class="n">i</span>  <span class="ow">in</span>  <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
      <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span>
@@ -1118,7 +1225,7 @@ Input Sample</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>풀어쓴 코드======
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>풀어 쓴 코드======
 [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
 축약형 코드======
 [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
@@ -1128,7 +1235,7 @@ Input Sample</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;풀어쓴 코드======&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;풀어 쓴 코드======&#39;</span><span class="p">)</span>
 <span class="n">x</span><span class="o">=</span><span class="p">[</span> <span class="p">]</span>
 <span class="k">for</span> <span class="n">i</span>  <span class="ow">in</span>  <span class="p">[</span><span class="s1">&#39;70&#39;</span><span class="p">,</span><span class="s1">&#39;90&#39;</span><span class="p">,</span><span class="s1">&#39;100&#39;</span><span class="p">]:</span>
      <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
@@ -1140,7 +1247,7 @@ Input Sample</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>풀어쓴 코드======
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>풀어 쓴 코드======
 [70, 90, 100]
 축약형 코드======
 [70, 90, 100]
@@ -1182,14 +1289,30 @@ Input Sample</p>
 </div>
 </div>
 </section>
+<section id="id10">
+<h2>마무리<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>list는 다수의 데이터를 묶어 하나의 변수로 처리할 때 유용하다.</p></li>
+<li><p>리스트의 인덱스는 0부터 시작한다.</p></li>
+<li><p>list( ) 함수를 활용하여 문자열이나 숫자 리스트를 생성한다.</p></li>
+<li><p>split( ) 함수는 문자열을 분리하여 리스트를 생성한다.</p></li>
+<li><p>range( )함수는 규칙적인 숫자열로 구성된 리스트를 생성한다.</p></li>
+<li><p>리스트에 아이템 추가는 객체명.append( )를 활용한다.</p></li>
+<li><p>리스트에 리스트 추가는 객체명.extend( )를 활용한다.</p></li>
+<li><p>리스트에 아이템을 삽입은 객체명.insert( )를 활용한다.</p></li>
+<li><p>리스트에서 첫번째로 나오는 아이템 제거는 객체명.remove( )를 활용한다.</p></li>
+<li><p>아이템의 인덱스 번호를 검색할 때에는 객체명.index( )를 활용한다.</p></li>
+<li><p>리스트의 아이템 정렬은 sort()와 sorted()를 활용한다.</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "haesunbyun/Core-Computing",
+            ref: "gh-pages",
         },
         codeMirrorConfig: {
             theme: "abcdef",
@@ -1257,19 +1380,17 @@ Input Sample</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">아이템 수정</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">슬라이싱(Slicing)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#len">아이템 개수 확인 len() 함수</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">슬라이싱(Slicing)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">리스트 주요 메서드</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#append-item">아이템 추가 append(item)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">아이템 추가</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-index-data">아이템 삽입 insert(index, data)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-data">아이템 인덱스 번호 찾기 index(data)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-data">아이템 제거 remove(data)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">아이템 인덱스 번호 찾기</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">아이템 제거</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">리스트 연산자</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">리스트 연산자</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-comprehension">List comprehension(리스트 축약법)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">마무리</a></li>
 </ul>
   </nav></div>
 

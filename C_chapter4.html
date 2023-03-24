@@ -287,6 +287,24 @@ const thebe_selector_output = ".output, .cell_output"
 </a>
 </li>
       
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
   </ul>
 </div>
 
@@ -577,7 +595,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140709154123656
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140709742833544
 </pre></div>
 </div>
 </div>
@@ -595,7 +613,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140709154126856
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140709742836744
 </pre></div>
 </div>
 </div>
@@ -647,7 +665,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2721051591936
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1846865715712
 </pre></div>
 </div>
 </div>
@@ -669,7 +687,7 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 4]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2721051591936
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1846865715712
 </pre></div>
 </div>
 </div>
@@ -1980,8 +1998,8 @@ document.write(`
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "haesunbyun/Core-Computing",
+            ref: "gh-pages",
         },
         codeMirrorConfig: {
             theme: "abcdef",

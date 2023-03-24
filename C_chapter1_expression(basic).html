@@ -287,6 +287,24 @@ const thebe_selector_output = ".output, .cell_output"
 </a>
 </li>
       
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
   </ul>
 </div>
 
@@ -1170,9 +1188,6 @@ str(42) 등과 같이 작성하면 기존에 정의된 기능이 동작하지 �
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>young
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 <ul class="simple">
@@ -1189,6 +1204,9 @@ str(42) 등과 같이 작성하면 기존에 정의된 기능이 동작하지 �
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>300
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -1327,8 +1345,8 @@ str(42) 등과 같이 작성하면 기존에 정의된 기능이 동작하지 �
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "haesunbyun/Core-Computing",
+            ref: "gh-pages",
         },
         codeMirrorConfig: {
             theme: "abcdef",

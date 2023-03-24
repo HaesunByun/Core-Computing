@@ -285,6 +285,24 @@ const thebe_selector_output = ".output, .cell_output"
 </a>
 </li>
       
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
   </ul>
 </div>
 
@@ -739,9 +757,6 @@ Nice to meet you
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>민지는 20살이야
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 <ul class="simple">
@@ -872,9 +887,7 @@ print(*args, sep=&#39; &#39;, end=&#39;\n&#39;, file=None, flush=False)
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>홍길동님의 나이는 20살입니다.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>홍길동님의 나이는 20살입니다.
+홍길동님의 나이는 20살입니다.
 </pre></div>
 </div>
 </div>
@@ -1543,8 +1556,8 @@ int()는 정수로 변환해주는 함수이다.</p>
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "haesunbyun/Core-Computing",
+            ref: "gh-pages",
         },
         codeMirrorConfig: {
             theme: "abcdef",

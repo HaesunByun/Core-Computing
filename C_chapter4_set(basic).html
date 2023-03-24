@@ -284,6 +284,24 @@ const thebe_selector_output = ".output, .cell_output"
 </a>
 </li>
       
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
   </ul>
 </div>
 
@@ -431,7 +449,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;, &#39;qux&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;qux&#39;, &#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;}
 {}
 set()
 {1, 2, 3, 4, 6, 7, 8, 10}
@@ -461,8 +479,8 @@ set()
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;neo&#39;, &#39;choonsik&#39;, &#39;frodo&#39;, &#39;jay-G&#39;, &#39;apeach&#39;, &#39;tube&#39;, &#39;ryan&#39;, &#39;muzi&#39;, &#39;con&#39;]
-(&#39;neo&#39;, &#39;choonsik&#39;, &#39;frodo&#39;, &#39;jay-G&#39;, &#39;apeach&#39;, &#39;tube&#39;, &#39;ryan&#39;, &#39;muzi&#39;, &#39;con&#39;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;apeach&#39;, &#39;choonsik&#39;, &#39;muzi&#39;, &#39;jay-G&#39;, &#39;ryan&#39;, &#39;con&#39;, &#39;neo&#39;, &#39;tube&#39;, &#39;frodo&#39;]
+(&#39;apeach&#39;, &#39;choonsik&#39;, &#39;muzi&#39;, &#39;jay-G&#39;, &#39;ryan&#39;, &#39;con&#39;, &#39;neo&#39;, &#39;tube&#39;, &#39;frodo&#39;)
 </pre></div>
 </div>
 </div>
@@ -478,15 +496,15 @@ set()
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>kakao-neo
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>kakao-apeach
 kakao-choonsik
-kakao-frodo
-kakao-jay-G
-kakao-apeach
-kakao-tube
-kakao-ryan
 kakao-muzi
+kakao-jay-G
+kakao-ryan
 kakao-con
+kakao-neo
+kakao-tube
+kakao-frodo
 </pre></div>
 </div>
 </div>
@@ -592,8 +610,8 @@ kakao-con
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "haesunbyun/Core-Computing",
+            ref: "gh-pages",
         },
         codeMirrorConfig: {
             theme: "abcdef",
