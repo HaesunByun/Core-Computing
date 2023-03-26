@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>집합(기초) &#8212; Core Computing_Thinking with Computers</title>
   
   
@@ -44,7 +43,6 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -100,7 +98,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="튜플(기초)" href="C_chapter4_tuple%28basic%29.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -269,7 +267,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/haesunbyun/Core-Computing/blob/gh-pages/_sources/C_chapter4_set(basic).ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/HaesunByun/Core-Computing/blob/gh-pages/_sources/C_chapter4_set(basic).ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -423,12 +421,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>집합(기초)<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>집합(기초)<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
 <p>리스트에서는 index를, 딕셔너리에서는 key를 사용하여 value에 접근할 수 있었다. 그렇다면 index나 key는 반드시 필요할까?</p>
 <p>집합은 그 틀을 깼다. 집합(set)은 index나 key가 없다. 그렇기 때문에 순서가 없으며, 값이 중복되지 않는 특징을 가진 자료구조이다. 수학의 집합과 개념적으로 아주 비슷하다.</p>
-<section id="set">
-<h2>set 생성<a class="headerlink" href="#set" title="Permalink to this heading">#</a></h2>
+<div class="section" id="set">
+<h2>set 생성<a class="headerlink" href="#set" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>중괄호 { }안에 아이템을 콤마로 나열하여 직접 생성할 수 있다.</p></li>
 <li><p>또한 <code class="docutils literal notranslate"><span class="pre">변수명</span> <span class="pre">=</span> <span class="pre">set()</span></code>나 <code class="docutils literal notranslate"><span class="pre">변수명</span> <span class="pre">=</span> <span class="pre">{}</span></code>와 같이 쓰면 비어있는 set을 생성할 수 있다.</p></li>
@@ -449,7 +447,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;qux&#39;, &#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;bar&#39;, &#39;qux&#39;, &#39;baz&#39;, &#39;foo&#39;}
 {}
 set()
 {1, 2, 3, 4, 6, 7, 8, 10}
@@ -479,8 +477,8 @@ set()
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;apeach&#39;, &#39;choonsik&#39;, &#39;muzi&#39;, &#39;jay-G&#39;, &#39;ryan&#39;, &#39;con&#39;, &#39;neo&#39;, &#39;tube&#39;, &#39;frodo&#39;]
-(&#39;apeach&#39;, &#39;choonsik&#39;, &#39;muzi&#39;, &#39;jay-G&#39;, &#39;ryan&#39;, &#39;con&#39;, &#39;neo&#39;, &#39;tube&#39;, &#39;frodo&#39;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;apeach&#39;, &#39;frodo&#39;, &#39;choonsik&#39;, &#39;con&#39;, &#39;tube&#39;, &#39;neo&#39;, &#39;ryan&#39;, &#39;muzi&#39;, &#39;jay-G&#39;]
+(&#39;apeach&#39;, &#39;frodo&#39;, &#39;choonsik&#39;, &#39;con&#39;, &#39;tube&#39;, &#39;neo&#39;, &#39;ryan&#39;, &#39;muzi&#39;, &#39;jay-G&#39;)
 </pre></div>
 </div>
 </div>
@@ -497,48 +495,69 @@ set()
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>kakao-apeach
+kakao-frodo
 kakao-choonsik
+kakao-con
+kakao-tube
+kakao-neo
+kakao-ryan
 kakao-muzi
 kakao-jay-G
-kakao-ryan
-kakao-con
-kakao-neo
-kakao-tube
-kakao-frodo
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="set-iteration">
-<h2>set 주요 메서드와 iteration<a class="headerlink" href="#set-iteration" title="Permalink to this heading">#</a></h2>
-<table class="table">
+</div>
+<div class="section" id="set-iteration">
+<h2>set 주요 메서드와 iteration<a class="headerlink" href="#set-iteration" title="Permalink to this headline">#</a></h2>
+<table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head text-center"><p>사용 방법</p></th>
-<th class="head text-left"><p>의미</p></th>
-<th class="head text-left"><p>예시<br> s1={1,4,7} b={1,3,6,8,10}</p></th>
+<tr class="row-odd"><th class="text-center head"><p>사용 방법</p></th>
+<th class="text-left head"><p>의미</p></th>
+<th class="text-left head"><p>예시<br> a={1,4,7} b={1,3,6,8,10}</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p>a.union(b) or <br> a|b</p></td>
+<tr class="row-even"><td class="text-center"><p>a.add(element)</p></td>
+<td class="text-left"><p>추가</p></td>
+<td class="text-left"><p>a.add(5) ➡ {1,4,5,7}</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>a.union(b) or <br> a|b</p></td>
 <td class="text-left"><p>합집합</p></td>
 <td class="text-left"><p>a|b ➡ {1, 3, 4, 6, 7, 8, 10}</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>a.difference(b) or <br> a-b</p></td>
+<tr class="row-even"><td class="text-center"><p>a.difference(b) or <br> a-b</p></td>
 <td class="text-left"><p>차집합</p></td>
 <td class="text-left"><p>a-b ➡ {4, 7}</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>a.intersection(b) or <br> a&amp;b</p></td>
+<tr class="row-odd"><td class="text-center"><p>a.intersection(b) or <br> a&amp;b</p></td>
 <td class="text-left"><p>교집합</p></td>
 <td class="text-left"><p>a&amp;b ➡ {1}</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>a.symmetric_difference(b) or <br> a^b</p></td>
+<tr class="row-even"><td class="text-center"><p>a.symmetric_difference(b) or <br> a^b</p></td>
 <td class="text-left"><p>대칭차집합</p></td>
 <td class="text-left"><p>a^b ➡ {3, 4, 6, 7, 8, 10}</p></td>
 </tr>
 </tbody>
 </table>
 <p>이외에도 몇 가지 메서드가 있으니 살펴보기 바란다.</p>
+<ul class="simple">
+<li><p>set에 원소를 추가한다. set에 이미 동일한 원소가 있다면 의미가 없다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">}</span>
+<span class="n">a</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 4, 5, 7}
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">}</span>
@@ -603,14 +622,14 @@ kakao-frodo
 </div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "haesunbyun/Core-Computing",
+            repo: "HaesunByun/Core-Computing",
             ref: "gh-pages",
         },
         codeMirrorConfig: {

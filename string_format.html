@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>문자열 포맷팅 &#8212; Core Computing_Thinking with Computers</title>
   
   
@@ -44,7 +43,6 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -101,7 +99,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Chapter 2. 입출력과 타입변환" href="C_chapter2.html" />
     <link rel="prev" title="기본자료형과 변수(기초)" href="C_chapter1_expression%28basic%29.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -270,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/haesunbyun/Core-Computing/blob/gh-pages/_sources/string_format.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/HaesunByun/Core-Computing/blob/gh-pages/_sources/string_format.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -430,11 +428,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>문자열 포맷팅<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>문자열 포맷팅<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
 <p>문자열을 만들때 상용의 문구(글의 구절)는 정해져있고 문구 사이에 예를 들어, 이름, 나이, 주소 등을 바꿔 끼워서 사용하는 일이 빈번하게 발생한다. 문자열 포맷팅은 틀(양식, 포맷)은 갖추어져있고 그 안에 키워드들만 바꿔가면서 작업을 할 수 있도록 하는 것을 의미한다.</p>
-<section id="old-style-string-formatting">
-<h2>“Old Style” String formatting<a class="headerlink" href="#old-style-string-formatting" title="Permalink to this heading">#</a></h2>
+<div class="section" id="old-style-string-formatting">
+<h2>“Old Style” String formatting<a class="headerlink" href="#old-style-string-formatting" title="Permalink to this headline">#</a></h2>
 <p>변수를 문자열과 함께 출력할 때 연결(concatenate)하는 방법으로 % 기호를 쓴다. 이때 % 뒤에 어떤 알파벳을 붙이느냐에 따라 데이터 타입의 의미가 달라진다. %s, %c, %d, %f 등 %와 함께 쓰는 알파벳을 <strong>형식지정자</strong>라 한다.</p>
 <ul class="simple">
 <li><p>%s : 문자열(string)을 의미한다.</p></li>
@@ -554,9 +552,9 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="new-style-string-formating">
-<h2>“New Style” String Formating<a class="headerlink" href="#new-style-string-formating" title="Permalink to this heading">#</a></h2>
+</div>
+<div class="section" id="new-style-string-formating">
+<h2>“New Style” String Formating<a class="headerlink" href="#new-style-string-formating" title="Permalink to this headline">#</a></h2>
 <p>Old style 포맷팅은 데이터 타입에 맞게 형식지정자를 적어줘야 했다. format() 함수는 이러한 번거로움을 없앴다.
 format() 함수의 형식은 다음과 같다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">문자열</span> <span class="p">{</span> <span class="p">}</span> <span class="n">문자열</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -672,8 +670,8 @@ format() 함수의 형식은 다음과 같다.</p>
 </div>
 </div>
 </div>
-<section id="id2">
-<h3>문자열 정렬<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<div class="section" id="id2">
+<h3>문자열 정렬<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>인덱스에 대해 문자열을 지정된 길이로 만든 뒤 오른쪽으로 정렬하고 남는 공간을 공백으로 채운다.</p></li>
 </ul>
@@ -746,9 +744,9 @@ He paid   10000    dollars.
 </div>
 </div>
 </div>
-</section>
-<section id="id3">
-<h3>문자열 채우기<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="id3">
+<h3>문자열 채우기<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>인덱스에 대해 문자열을 지정된 길이로 만든 뒤 왼쪽으로 정렬하고 남는 공간을 점으로 채운다.</p></li>
 <li><p>점(.) 대신에 다른 대체 문자를 넣을 수 있다.</p></li>
@@ -774,9 +772,9 @@ He paid 10000..... dollars.
 </div>
 </div>
 </div>
-</section>
-<section id="id4">
-<h3>실수 표현<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="id4">
+<h3>실수 표현<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>모듈 math에 변수 pi를 이용하여 실수값에 대해 포맷팅을 해보자.</p></li>
 </ul>
@@ -874,10 +872,10 @@ He paid 3.14159    dollars.
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="string-interpolation-f-strings">
-<h2>String Interpolation (f-strings)<a class="headerlink" href="#string-interpolation-f-strings" title="Permalink to this heading">#</a></h2>
+</div>
+</div>
+<div class="section" id="string-interpolation-f-strings">
+<h2>String Interpolation (f-strings)<a class="headerlink" href="#string-interpolation-f-strings" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>변수명과 키워드인자를 동일하게 쓰는 번거로움(.format(name=name))을 없애고 문자열의 중괄호안에 {변수명 또는 연산식}을 직접 쓴다.</p></li>
 </ul>
@@ -981,14 +979,14 @@ Kang       ==&gt; 7678.000000
 </div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "haesunbyun/Core-Computing",
+            repo: "HaesunByun/Core-Computing",
             ref: "gh-pages",
         },
         codeMirrorConfig: {

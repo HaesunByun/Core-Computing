@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>튜플(기초) &#8212; Core Computing_Thinking with Computers</title>
   
   
@@ -44,7 +43,6 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -101,7 +99,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="집합(기초)" href="C_chapter4_set%28basic%29.html" />
     <link rel="prev" title="딕셔너리(기초)" href="C_chapter4_dict%28basic%29.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -270,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/haesunbyun/Core-Computing/blob/gh-pages/_sources/C_chapter4_tuple(basic).ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/HaesunByun/Core-Computing/blob/gh-pages/_sources/C_chapter4_tuple(basic).ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -424,16 +422,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>튜플(기초)<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>튜플(기초)<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
 <p>튜플은 리스트와 같이 순서가 있는 아이템들의 묶음이며 괄호( )로 묶어준다. 리스트에서 사용하는 연산, 인덱싱, 슬라이싱 등 모두 동일하게 사용가능하다. 리스트와 튜플의 차이는 리스트는 가변(mutable) 특징을 가지고 있는 자료구조이고, 튜플은 불변(immutable) 특징을 가지고 있는 자료구조라는 차이가 있다.</p>
 <div class="tip admonition">
 <p class="admonition-title">mutable vs. immutable  </p>
 <p>가변(mutable)이라는 것은 객체가 만들어진 이후에도 데이터의 추가, 삽입, 삭제, 수정이 자유로운 특징을 가진 것을 의미한다. 리스트, 집합, 딕셔너리는 mutable 특징을 가진 데이터 타입이다.</p>
 <p>불편(immutable)이라는 것은 객체가 한번 만들어진 이후에는 데이터의 추가, 삽입, 삭제, 수정이 불가하다는 것을 의미한다. 정수, 실수, 문자열, 튜플 등은 immutable 특징을 가진 데이터 타입이다.</p>
 </div>
-<section id="id2">
-<h2>튜플 생성<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<div class="section" id="id2">
+<h2>튜플 생성<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>리스트와 마찬가지로 숫자, 문자, 리스트, 딕셔너리 등 어떠한 데이터 타입이든 다 담을 수 있는 만물박스이다.</p></li>
 <li><p>괄호( )안에 아이템을 콤마로 나열하여 직접 생성할 수 있다.</p></li>
@@ -484,18 +482,18 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="iteration">
-<h2>튜플 주요 메서드와 iteration<a class="headerlink" href="#iteration" title="Permalink to this heading">#</a></h2>
+</div>
+<div class="section" id="iteration">
+<h2>튜플 주요 메서드와 iteration<a class="headerlink" href="#iteration" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>리스트에서와는 달리 아이템의 수정, 삭제, 추가, 삽입은 불가능하다.</p></li>
 <li><p>따라서 append(), insert(), remove(), clear(), pop(), reverse(), sort(), copy() 등의 메서드는 지원하지 않는다.</p></li>
 </ul>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head text-center"><p>사용 방법</p></th>
-<th class="head text-left"><p>의미</p></th>
-<th class="head text-left"><p>예시<br> std_ID = (‘23345’, ‘23346’, ‘23346’, ‘23347’)</p></th>
+<tr class="row-odd"><th class="text-center head"><p>사용 방법</p></th>
+<th class="text-left head"><p>의미</p></th>
+<th class="text-left head"><p>예시<br> std_ID = (‘23345’, ‘23346’, ‘23346’, ‘23347’)</p></th>
 </tr>
 </thead>
 <tbody>
@@ -553,14 +551,14 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "haesunbyun/Core-Computing",
+            repo: "HaesunByun/Core-Computing",
             ref: "gh-pages",
         },
         codeMirrorConfig: {

@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>딕셔너리(기초) &#8212; Core Computing_Thinking with Computers</title>
   
   
@@ -44,7 +43,6 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -101,7 +99,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="튜플(기초)" href="C_chapter4_tuple%28basic%29.html" />
     <link rel="prev" title="리스트(기초)" href="C_chapter4_list%28basic%29.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -270,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/haesunbyun/Core-Computing/blob/gh-pages/_sources/C_chapter4_dict(basic).ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/HaesunByun/Core-Computing/blob/gh-pages/_sources/C_chapter4_dict(basic).ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -426,8 +424,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>딕셔너리(기초)<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>딕셔너리(기초)<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
 <p>인덱스는 항상 양의 정수로만 해야 할까?라는 생각을 한 번 쯤은 해본 적이 있을지도 모른다. 딕셔너리는 이러한 생각을 깨고 key를 인덱스로 사용한다.</p>
 <p>딕셔너리의 형식은 다음과 같다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">Key1</span><span class="p">:</span><span class="n">Value1</span><span class="p">,</span> <span class="n">Key2</span><span class="p">:</span><span class="n">Value2</span><span class="p">,</span> <span class="n">Key3</span><span class="p">:</span><span class="n">Value3</span><span class="p">,</span> <span class="o">...</span><span class="p">}</span>
@@ -438,8 +436,8 @@ document.write(`
 <li><p>딕셔너리의 key로는 숫자, 문자열, 튜플(숫자,문자열,튜플만 원소로 갖고 있는) 등 불변(immutable)하지 않은 데이터타입만 사용할 수 있다.</p></li>
 <li><p>딕셔너리의 value에는 숫자, 문자열, 리스트, 튜플, 집합, 딕셔너리까지 다양한 자료형이 들어갈 수 있다.</p></li>
 </ul>
-<section id="id2">
-<h2>딕셔너리 생성<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<div class="section" id="id2">
+<h2>딕셔너리 생성<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>중괄호 { }안에 key:value 쌍을 콤마로 나열하여 직접 생성할 수 있다.</p></li>
 <li><p>또한 dict() 함수안에 (key, value) 쌍을 순서적으로 넣어 생성할 수 있다.</p></li>
@@ -468,9 +466,9 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="key-value">
-<h2>key를 통한 value 접근(활용)<a class="headerlink" href="#key-value" title="Permalink to this heading">#</a></h2>
+</div>
+<div class="section" id="key-value">
+<h2>key를 통한 value 접근(활용)<a class="headerlink" href="#key-value" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>딕셔너리의 value에 접근하기 위해서는 딕셔너리변수명[key]를 이용한다.</p></li>
 </ul>
@@ -498,9 +496,9 @@ document.write(`
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">dict1</span><span class="p">[</span><span class="s1">&#39;address&#39;</span><span class="p">]</span> <span class="p">)</span> 
 </pre></div>
 </div>
-</section>
-<section id="insertion-and-modification">
-<h2>Insertion and modification<a class="headerlink" href="#insertion-and-modification" title="Permalink to this heading">#</a></h2>
+</div>
+<div class="section" id="insertion-and-modification">
+<h2>Insertion and modification<a class="headerlink" href="#insertion-and-modification" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>딕셔너리에 아이템을 추가 또는 수정하려면
 <code class="docutils literal notranslate"><span class="pre">딕셔너리변수명[key]</span> <span class="pre">=</span> <span class="pre">value</span></code>와 같이 하면 된다.</p></li>
@@ -523,42 +521,42 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="iteration">
-<h2>딕셔너리 주요 메서드와 iteration<a class="headerlink" href="#iteration" title="Permalink to this heading">#</a></h2>
-<table class="table">
+</div>
+<div class="section" id="iteration">
+<h2>딕셔너리 주요 메서드와 iteration<a class="headerlink" href="#iteration" title="Permalink to this headline">#</a></h2>
+<table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head text-center"><p>사용 방법</p></th>
-<th class="head text-left"><p>의미</p></th>
-<th class="head text-left"><p>예시 sports = { ‘걷기’ : 4, ‘조깅’: 7, ‘수영’: 9}</p></th>
+<tr class="row-odd"><th class="text-center head"><p>사용 방법</p></th>
+<th class="text-left head"><p>의미</p></th>
+<th class="text-left head"><p>예시 sports = { ‘걷기’ : 4, ‘조깅’: 7, ‘수영’: 9}</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p>dict.get(key)</p></td>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">dict.get(key)</span></code></p></td>
 <td class="text-left"><p>딕셔너리에 key가 있으면 그 key와 매핑하는 value을 반환하고<br> key가 없으면 반환없음</p></td>
 <td class="text-left"><p>sports.get(‘걷기’) ➡ 4</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>dict.items()</p></td>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">dict.items()</span></code></p></td>
 <td class="text-left"><p>딕셔너리의 아이템들을 리스트 형태로 반환</p></td>
 <td class="text-left"><p>sports.items() ➡ dict_items([(‘걷기’, 4), (‘조깅’, 7), (‘수영’, 9)])</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>dict.keys()</p></td>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">dict.keys()</span></code></p></td>
 <td class="text-left"><p>딕셔너리의 모든 key를 리스트 형태로 반환</p></td>
 <td class="text-left"><p>sports.keys() ➡ dict_keys([‘걷기’, ‘조깅’, ‘수영’])</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>dict.values()</p></td>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">dict.values()</span></code></p></td>
 <td class="text-left"><p>딕셔너리의 모든 value을 리스트 형태로 반환</p></td>
 <td class="text-left"><p>sports.values() ➡ dict_values([4, 7, 9]))</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>dict.pop(key)</p></td>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">dict.pop(key)</span></code></p></td>
 <td class="text-left"><p>딕셔너리의 key를 찾아 제거하고 value를 반환</p></td>
 <td class="text-left"><p>sports.pop(‘조깅’) ➡ 7</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>dict.update(dict2)</p></td>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">dict.update(dict2)</span></code></p></td>
 <td class="text-left"><p>다른 딕셔너리와 합함, 반환은 없음</p></td>
 <td class="text-left"><p>sports.update({‘피겨’:10, ‘축구’: 10, ‘야구’: 9}) ➡ sports = {‘걷기’ : 4, ‘조깅’: 7, ‘수영’: 9, ‘피겨’: 10, ‘축구’: 10, ‘야구’: 9}</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>dict.clear()</p></td>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">dict.clear()</span></code></p></td>
 <td class="text-left"><p>딕셔너리의 모든 아이템을 삭제</p></td>
 <td class="text-left"><p>sports.clear() ➡ { }</p></td>
 </tr>
@@ -761,14 +759,14 @@ document.write(`
 <span class="n">sports</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "haesunbyun/Core-Computing",
+            repo: "HaesunByun/Core-Computing",
             ref: "gh-pages",
         },
         codeMirrorConfig: {

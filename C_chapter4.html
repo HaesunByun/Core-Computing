@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chapter 4. 자료구조와 배열 &#8212; Core Computing_Thinking with Computers</title>
   
   
@@ -44,7 +43,6 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -103,7 +101,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="리스트(기초)" href="C_chapter4_list%28basic%29.html" />
     <link rel="prev" title="반복문(기초)" href="C_chapter3_iteration%28basic%29.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -272,7 +270,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/haesunbyun/Core-Computing/blob/gh-pages/_sources/C_chapter4.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/HaesunByun/Core-Computing/blob/gh-pages/_sources/C_chapter4.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -466,8 +464,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="chapter-4">
-<h1>Chapter 4. 자료구조와 배열<a class="headerlink" href="#chapter-4" title="Permalink to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="chapter-4">
+<h1>Chapter 4. 자료구조와 배열<a class="headerlink" href="#chapter-4" title="Permalink to this headline">#</a></h1>
 <div class="info admonition">
 <p class="admonition-title">학습목표와 기대효과 </p>
 <ul class="simple">
@@ -508,7 +506,7 @@ document.write(`
 <p class="sd-card-text">dict ✨</p>
 </div>
 <div class="sd-card-body docutils">
-<p class="sd-card-text">키-값 쌍(key-value pair)으로 이루어진 자료구조이다.
+<p class="sd-card-text">딕셔너리는 키-값 쌍(key-value pair)으로 이루어진 자료구조이다.
 딕셔너리는 여기를 학습하자.</p>
 </div>
 <a class="sd-stretched-link reference internal" href="C_chapter4_dict%28basic%29.html"><span class="doc"></span></a></div>
@@ -519,7 +517,7 @@ document.write(`
 <p class="sd-card-text">tuple ✏️</p>
 </div>
 <div class="sd-card-body docutils">
-<p class="sd-card-text">리스트와 비슷하지만 수정할 수 없는 특징을 가진 자료구조이다.
+<p class="sd-card-text">튜플은 리스트와 비슷하지만 값을 수정할 수 없는 특징을 가진 자료구조이다.
 튜플은 여기를 학습하자.</p>
 </div>
 <a class="sd-stretched-link reference internal" href="C_chapter4_tuple%28basic%29.html"><span class="doc"></span></a></div>
@@ -530,15 +528,15 @@ document.write(`
 <p class="sd-card-text">set ✨</p>
 </div>
 <div class="sd-card-body docutils">
-<p class="sd-card-text">순서가 없으며, 값이 중복되지 않는 특징을 가진 자료구조이다.
+<p class="sd-card-text">집합은 순서가 없으며, 값이 중복되지 않는 특징을 가진 자료구조이다.
 집합은 여기를 학습하자.</p>
 </div>
 <a class="sd-stretched-link reference internal" href="C_chapter4_set%28basic%29.html"><span class="doc"></span></a></div>
 </div>
 </div>
 </div>
-<section id="id1">
-<h2>➕데이터 타입의 분류<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<div class="section" id="id1">
+<h2>➕데이터 타입의 분류<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>데이터를 저장하기 위해서는 데이터의 종류, 묶음여부, 접근방법, 수정여부, 속성 여부 등을 고려하여 저장해야 한다.
 이들을 고려하여 아래와 같이 분류할 수 있다.</p>
 <ul class="simple">
@@ -573,9 +571,9 @@ document.write(`
 </li>
 </ul>
 <p>파이썬에는 여기서 언급한 데이터 타입 이외에도 더 많은 데이터 타입이 있다.</p>
-</section>
-<section id="mutable-vs-immutable">
-<h2>➕가변(Mutable)자료형 vs. 불변(Immutable)자료형<a class="headerlink" href="#mutable-vs-immutable" title="Permalink to this heading">#</a></h2>
+</div>
+<div class="section" id="mutable-vs-immutable">
+<h2>➕가변(Mutable)자료형 vs. 불변(Immutable)자료형<a class="headerlink" href="#mutable-vs-immutable" title="Permalink to this headline">#</a></h2>
 <p>여기서는 mutable 데이터타입과 immutable 데이타 타입에 대해 좀 더 자세히 알아보도록 한다.</p>
 <p>list, dict, set은 mutable 데이터타입에 속한다. mutable 데이타 타입은 객체가 만들어진 이후에도 value를 수정, 삭제, 추가가 가능하다.</p>
 <p>반면, int, float, str, tuple은 immutable 데이타 타입이며 객체가 만들어지면 value를 수정, 삭제, 추가할 수 없는 타입을 의미한다.
@@ -595,7 +593,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140709742833544
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140726568922608
 </pre></div>
 </div>
 </div>
@@ -603,7 +601,7 @@ document.write(`
 <ul class="simple">
 <li><p>변수 a에 100을 더하여 저장한 후, 다시 변수 a의 ID를 출력해보자.</p></li>
 <li><p>이전에 출력되었던 값과 다른 ID가 출력되었을 것이다. 즉 새로운 ID가 생성되었다는 것을 의미하며 이는 객체가 새로 만들어졌다는 뜻이다.</p></li>
-<li><p>변수 a는 정수형 데이터 타입으로 객체가 만들어진 후에 value를 수정 할 수 없는 타입이다. 따라서 100이 200으로 수정되는 것이 아니라 200을 가진 객체가 새로 생성된다.</p></li>
+<li><p>변수 a는 <code class="docutils literal notranslate"><span class="pre">정수형</span> <span class="pre">데이터</span> <span class="pre">타입으로</span> <span class="pre">객체가</span> <span class="pre">만들어진</span> <span class="pre">후에</span> <span class="pre">value를</span> <span class="pre">수정</span> <span class="pre">할</span> <span class="pre">수</span> <span class="pre">없는</span> <span class="pre">immutable</span> <span class="pre">데이타</span> <span class="pre">타입</span></code>이다. 따라서 100이 200으로 수정되는 것이 아니라 200을 가진 객체가 새로 생성된다.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -613,7 +611,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140709742836744
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140726568925808
 </pre></div>
 </div>
 </div>
@@ -621,7 +619,7 @@ document.write(`
 <div align="center"><img src="https://haesunbyun.github.io/Core-Computing/_images/C_chapter4_id.png" style="width:400px;"></div>
 <ul class="simple">
 <li><p>문자열 변수 str_data에 ‘Python Is fun’을 저장한 후 대문자 ‘I’를 소문자 ‘i’로 수정하려고 시도하면 에러가 나온다.</p></li>
-<li><p>문자열도 객체가 만들어진 이후에는 수정할 수 없는 immutable 데이타 타입이기 때문이다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">문자열도</span> <span class="pre">객체가</span> <span class="pre">만들어진</span> <span class="pre">이후에는</span> <span class="pre">수정할</span> <span class="pre">수</span> <span class="pre">없는</span> <span class="pre">immutable</span> <span class="pre">데이타</span> <span class="pre">타입</span></code>이기 때문이다.</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">str_data</span> <span class="o">=</span> <span class="s1">&#39;Python Is fun&#39;</span>
 <span class="n">str_data</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;i&#39;</span>
@@ -638,7 +636,7 @@ document.write(`
 </div>
 <ul class="simple">
 <li><p>튜플 변수 std_ID의 인덱스 2의 값을 수정하려고 시도했다면 에러를 만나게 될 것이다.</p></li>
-<li><p>튜플도 객체가 만들어진 이후에는 수정할 수 없는 immutable 데이타 타입이기 때문이다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">튜플도</span> <span class="pre">객체가</span> <span class="pre">만들어진</span> <span class="pre">이후에는</span> <span class="pre">수정할</span> <span class="pre">수</span> <span class="pre">없는</span> <span class="pre">immutable</span> <span class="pre">데이타</span> <span class="pre">타입</span></code>이기 때문이다.</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">std_ID</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;23345&#39;</span><span class="p">,</span> <span class="s1">&#39;23346&#39;</span><span class="p">,</span> <span class="s1">&#39;23347&#39;</span><span class="p">,</span> <span class="s1">&#39;23347&#39;</span><span class="p">)</span>
 <span class="n">std_ID</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;23348&#39;</span>
@@ -665,7 +663,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1846865715712
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2071030868040
 </pre></div>
 </div>
 </div>
@@ -673,7 +671,7 @@ document.write(`
 <ul class="simple">
 <li><p>리스트변수 a에 새로운 값을 추가하고 ID를 출력해보자.</p></li>
 <li><p>이전에 출력되었던 ID와 동일한 ID가 출력된 것을 볼 수 있다.</p></li>
-<li><p>즉 리스트는 mutable 데이터 타입이므로 데이터를 저장하기 위한 메모리가 가변이며 값을 수정, 추가, 삭제할 수 있다.</p></li>
+<li><p>즉 <code class="docutils literal notranslate"><span class="pre">리스트는</span> <span class="pre">mutable</span> <span class="pre">데이터</span> <span class="pre">타입이므로</span> <span class="pre">데이터를</span> <span class="pre">저장하기</span> <span class="pre">위한</span> <span class="pre">메모리가</span> <span class="pre">가변이며</span> <span class="pre">값을</span> <span class="pre">수정,</span> <span class="pre">추가,</span> <span class="pre">삭제할</span> <span class="pre">수</span> <span class="pre">있다.</span></code></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -687,15 +685,15 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 4]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1846865715712
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2071030868040
 </pre></div>
 </div>
 </div>
 </div>
 <div align="center"><img src="https://haesunbyun.github.io/Core-Computing/_images/C_chapter4_id2.png" style="width:400px;"></div>
-</section>
-<section id="array">
-<h2>배열(Array)<a class="headerlink" href="#array" title="Permalink to this heading">#</a></h2>
+</div>
+<div class="section" id="array">
+<h2>배열(Array)<a class="headerlink" href="#array" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>numpy는 Number와 python의 합성어이다.</p></li>
 <li><p>행렬이나 대규모 다차원 배열을 쉽고 빠르게 처리할 수 있도록 하는 파이썬 라이브러리이며, 간단한 기능부터 계산과학 분야의 복잡한 연산을 지원하기 위한 기능들까지 포함되어 있다.</p></li>
@@ -713,19 +711,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
-</pre></div>
 </div>
-</div>
-</div>
-<section id="d-array">
-<h3>1-D array 생성하기<a class="headerlink" href="#d-array" title="Permalink to this heading">#</a></h3>
+<div class="section" id="d-array">
+<h3>1-D array 생성하기<a class="headerlink" href="#d-array" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>1차원 배열부터 만들어보자.</p></li>
 <li><p>numpy모듈에서는 배열을 생성하는 다양한 방법을 지원한다.</p>
@@ -747,6 +735,13 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="n">ar1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ar11</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ar111</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3 4 5]
+[0 1 2 3 4 5 6 7 8 9]
+[1 2 3 4 5]
 </pre></div>
 </div>
 </div>
@@ -778,7 +773,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/583fe9d57bda15e1baed1cf2fbb32c9625f4e8bd0d1da3155e085c67d63e98df.png" src="_images/583fe9d57bda15e1baed1cf2fbb32c9625f4e8bd0d1da3155e085c67d63e98df.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 1 Axes&gt;
+</pre></div>
+</div>
 </div>
 </div>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
@@ -796,15 +793,17 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="id2">
-<h3>2-D array 생성하기<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="id2">
+<h3>2-D array 생성하기<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>2차원 배열은 행(Row)과 열(Column)로 구성되어 있다.</p></li>
 </ul>
 <div align="center"><img src="https://haesunbyun.github.io/Core-Computing/_images/ch11/array.png" style="width:400px;"></div>
-- 행은 가로 방향으로 줄을 세운 것이며, 열은 세로 방향으로 줄을 세운 것이다.
-- 2차원 배열은 array()에 중첩 리스트를 넣어주거나, 배열모양을 바꿔주는 reshape()을 통해서 생성할 수 있다.
+<ul class="simple">
+<li><p>행은 가로 방향으로 줄을 세운 것이며, 열은 세로 방향으로 줄을 세운 것이다.</p></li>
+<li><p>2차원 배열은 array()에 중첩 리스트를 넣어주거나, 배열모양을 바꿔주는 reshape()을 통해서 생성할 수 있다.</p></li>
+</ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">리스트</span> <span class="n">of</span> <span class="n">리스트</span><span class="p">])</span>
 <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">,</span><span class="n">step</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">column</span><span class="p">)</span>
 </pre></div>
@@ -823,6 +822,18 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1  2  3]
+ [ 4  5  6]
+ [ 7  8  9]
+ [10 11 12]]
+[[ 1  2  3]
+ [ 4  5  6]
+ [ 7  8  9]
+ [10 11 12]]
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>len() 함수를 통해 배열의 행, 열, 원소의 개수를 확인할 수 있다.</p></li>
@@ -833,6 +844,12 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;number of rows: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ar2</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;number of columns: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ar2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of rows: 4
+number of columns: 3
 </pre></div>
 </div>
 </div>
@@ -856,9 +873,9 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="id3">
-<h3>3-D array 생성하기<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="id3">
+<h3>3-D array 생성하기<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>3차원 배열은 면(page), 행, 열을 가진다.</p></li>
 <li><p>생성하는 방법은 2차원 배열과 유사하지만 리스트가 3번 중첩된다.</p></li>
@@ -875,13 +892,22 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[ 1  2  3]
+  [ 4  5  6]]
+
+ [[ 7  8  9]
+  [10 11 12]]]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-header bg-light docutils">
-<p class="sd-card-text">😄3차원 배열 생성하기</p>
+<p class="sd-card-text">😄3차원 배열 생성하기1</p>
 </div>
 <div class="sd-card-body docutils">
 <p class="sd-card-text">다음과 같은 배열을 생성하시오.</p>
@@ -905,7 +931,7 @@ document.write(`
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-header bg-light docutils">
-<p class="sd-card-text">😄문제4. 3차원 배열 생성하기</p>
+<p class="sd-card-text">😄3차원 배열 생성하기2</p>
 </div>
 <div class="sd-card-body docutils">
 <p class="sd-card-text">arange()와 reshape()으로 변수 ar3와 동일한 3차원 배열을 만들어보세요.</p>
@@ -927,6 +953,13 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;number of pages: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ar3</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;number of rows: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ar3</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;number of columns: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ar3</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of pages: 2
+number of rows: 2
+number of columns: 3
 </pre></div>
 </div>
 </div>
@@ -952,10 +985,17 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+(2, 2, 3)
+12
+</pre></div>
 </div>
-</section>
-<section id="vectorization-operation">
-<h3>Vectorization operation<a class="headerlink" href="#vectorization-operation" title="Permalink to this heading">#</a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="vectorization-operation">
+<h3>Vectorization operation<a class="headerlink" href="#vectorization-operation" title="Permalink to this headline">#</a></h3>
 <p>1차원으로 묶은 수를 수학에서 벡터(vector)라고 한다. numpy에서는 사칙연산, 논리연산, 비교연산에 대해 모두 벡터연산을 지원한다.</p>
 <ul class="simple">
 <li><p>모든 사칙연산에 대해 벡터연산을 한다.</p></li>
@@ -968,6 +1008,14 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[5 7 9]
+[-3 -3 -3]
+[ 4 10 18]
+[0.25 0.4  0.5 ]
 </pre></div>
 </div>
 </div>
@@ -984,6 +1032,19 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0  1  2]
+ [ 3  4  5]
+ [ 6  7  8]
+ [ 9 10 11]] 
+ [0 1 2] 
+ [[0]
+ [1]
+ [2]
+ [3]]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -991,10 +1052,26 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0,  2,  4],
+       [ 3,  5,  7],
+       [ 6,  8, 10],
+       [ 9, 11, 13]])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ar0</span> <span class="o">+</span> <span class="n">ar2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0,  1,  2],
+       [ 4,  5,  6],
+       [ 8,  9, 10],
+       [12, 13, 14]])
 </pre></div>
 </div>
 </div>
@@ -1006,6 +1083,12 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">&gt;</span><span class="mi">10</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">((</span><span class="n">b</span><span class="o">%</span><span class="k">2</span>)==1)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[False False False]
+[False  True False]
 </pre></div>
 </div>
 </div>
@@ -1029,11 +1112,19 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[False  True  True]
+</pre></div>
 </div>
-</section>
-</section>
-<section id="id4">
-<h2>➕배열과 리스트의 비교<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>➕배열과 리스트의 비교<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>얼핏 비슷해 보이지만 완전히 기능이 다른
 파이썬의 리스트(list)와 numpy의 배열(array)의 차이를 간단히 비교해보자.</p></li>
@@ -1041,8 +1132,8 @@ document.write(`
 <ul class="simple">
 <li><p>리스트와 배열의 생성에서,</p>
 <ul>
-<li><p>리스트는 정수, 실수, 문자열, 리스트 등 다양한 자료형을 담을 수 있다.</p></li>
-<li><p>배열은 정수형 또는 실수형만 담을 수 있는데 하나의 배열에는 하나의 자료형만 담을 수 있다.</p></li>
+<li><p>리스트는 정수, 실수, 문자열, 리스트 등 다양한 자료형을 하나의 리스트에 담을 수 있다.</p></li>
+<li><p>배열은 동일한 자료형만 하나의 배열에 담을 수 있다.</p></li>
 </ul>
 </li>
 </ul>
@@ -1070,6 +1161,13 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;바나나&#39;, &#39;딸기&#39;, 100, 5.5, [&#39;BTS&#39;, &#39;블랙핑크&#39;]]
+========
+[10 20 30]
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>리스트와 배열의 타입은,</p>
@@ -1087,6 +1185,13 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;list&#39;&gt;
+========
+&lt;class &#39;numpy.ndarray&#39;&gt;
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>리스트와 배열에 곱셈연산을 해보았을 때,</p>
@@ -1101,6 +1206,13 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">its_list</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;========&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">its_array</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;바나나&#39;, &#39;딸기&#39;, 100, 5.5, [&#39;BTS&#39;, &#39;블랙핑크&#39;], &#39;바나나&#39;, &#39;딸기&#39;, 100, 5.5, [&#39;BTS&#39;, &#39;블랙핑크&#39;]]
+========
+[20 40 60]
 </pre></div>
 </div>
 </div>
@@ -1153,8 +1265,8 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;배열 실행시간: </span><span class="si">{</span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> 
 </pre></div>
 </div>
-<section id="id5">
-<h3>인덱싱<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<div class="section" id="id5">
+<h3>인덱싱<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>1차원 배열을 인덱싱하는 것은 리스트와 동일하다.</p></li>
 </ul>
@@ -1163,6 +1275,14 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ar</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ar</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">===결과===&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ar</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0  1  2  3  4  5  6  7  8  9 10 11] 
+
+===결과===
+5
 </pre></div>
 </div>
 </div>
@@ -1197,6 +1317,18 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0  1  2]
+ [ 3  4  5]
+ [ 6  7  8]
+ [ 9 10 11]] 
+
+===결과===
+5
+5
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>3차원의 경우에도 2차원에서와 마찬가지로 면, 행, 열 순서로 인덱싱하면 된다.</p></li>
@@ -1210,10 +1342,23 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[ 0  1  2]
+  [ 3  4  5]]
+
+ [[ 6  7  8]
+  [ 9 10 11]]] 
+
+===결과===
+11
+11
+</pre></div>
 </div>
-</section>
-<section id="id6">
-<h3>슬라이싱<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>슬라이싱<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>슬라이싱의 경우에는 대괄호를 연속으로 사용하는 것과 하나의 대괄호에 콤마로 나열하는 것의 결과가 다를 수도 있다.</p></li>
 </ul>
@@ -1225,6 +1370,22 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="n">ar</span><span class="p">[</span><span class="mi">1</span><span class="p">:][</span><span class="mi">1</span><span class="p">:])</span> 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">===하나의 대괄호 결과===&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ar</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="mi">1</span><span class="p">:])</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0  1  2  3]
+ [ 4  5  6  7]
+ [ 8  9 10 11]]
+
+
+===연속된 대괄호 결과===
+[[ 8  9 10 11]]
+
+
+===하나의 대괄호 결과===
+[[ 5  6  7]
+ [ 9 10 11]]
 </pre></div>
 </div>
 </div>
@@ -1240,10 +1401,10 @@ document.write(`
 <li><p>이 결과를 변수 a에 저장했다면 ar[1:][1:]는 a[1:]와 같다. 즉, a의 1행부터 끝까지 이므로 [ 8  9 10 11]을 슬라이싱 한다.</p></li>
 <li><p>ar[1:, 1:]는 ar 전체를 대상으로 작업하므로 행은 1행부터 끝까지, 그 범위에서 열이 1열부터 끝까지를 슬라이싱한다.</p></li>
 </ul>
-</section>
-</section>
-<section id="shallow-copy-vs-deep-copy">
-<h2>➕Shallow Copy vs. Deep Copy<a class="headerlink" href="#shallow-copy-vs-deep-copy" title="Permalink to this heading">#</a></h2>
+</div>
+</div>
+<div class="section" id="shallow-copy-vs-deep-copy">
+<h2>➕Shallow Copy vs. Deep Copy<a class="headerlink" href="#shallow-copy-vs-deep-copy" title="Permalink to this headline">#</a></h2>
 <p>리스트, 딕셔너리, 집합, 배열 등의 데이터를 복사해서 복사된 데이터를 가지고 작업하기를 원할 때가 있다.
 이들은 모두 mutable 데이터타입이고, 이들 자료구조를 복사할 때의 문제점과 방법을 알아보자.</p>
 <p>데이터를 복사하는 방법에는 세 가지가 있다.</p>
@@ -1252,8 +1413,8 @@ document.write(`
 <li><p>Shallow Copy : 원조변수와 복사변수가 다른 메모리를 참조하나 2차원 이상인 경우 동일 메모리를 참조</p></li>
 <li><p>Deep Copy : 복사변수는 새로운 메모리를 할당하여 독립적으로 생성</p></li>
 </ul>
-<section id="id7">
-<h3>일반복사<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<div class="section" id="id7">
+<h3>일반복사<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">cp_a</span> <span class="pre">=</span> <span class="pre">a</span></code>와 같은 복사할 수 있다.</p></li>
 <li><p>그러나 이와 같은 복사의 문제는 복사 배열의 데이터를 작업을 하면 원조 배열의 데이터도 똑같이 작업된다는 것이다.</p></li>
@@ -1349,6 +1510,23 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Copy Data 수정 후 origin data=============
+리스트: [1, 100, 3, [10, 20, 30]]
+딕셔너리: {&#39;a&#39;: 1, &#39;b&#39;: 100, &#39;c&#39;: [10, 20, 30]}
+집합: {1, 2, 3, 5, 6, 7, (10, 20, 30)}
+배열: [[  1 100   3]
+ [ 10  20  30]]
+
+Copy Data 수정 후 copy data=============
+리스트: [1, 100, 3, [10, 20, 30]]
+딕셔너리: {&#39;a&#39;: 1, &#39;b&#39;: 100, &#39;c&#39;: [10, 20, 30]}
+집합: {1, 2, 3, 5, 6, 7, (10, 20, 30)}
+배열: [[  1 100   3]
+ [ 10  20  30]]
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>원조변수와 복사변수의 ID가 동일한지 알아보기 위해 is 연산자를 사용하여 확인해볼 수 있다.</p></li>
@@ -1364,10 +1542,18 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
+True
+True
+</pre></div>
 </div>
-</section>
-<section id="copy-shallow-copy">
-<h3>copy() 메서드(shallow copy)<a class="headerlink" href="#copy-shallow-copy" title="Permalink to this heading">#</a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="copy-shallow-copy">
+<h3>copy() 메서드(shallow copy)<a class="headerlink" href="#copy-shallow-copy" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>원조데이터가 수정되는 것을 방지하기 위해서는 copy() 메서드를 사용해보자.</p></li>
 <li><p>리스트, 딕셔너리, 집합, 배열 각각에 변수 a, b, c, d를 정의하였다.</p></li>
@@ -1386,6 +1572,16 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Origin Data===================
+리스트: [1, 2, 3, [10, 20, 30]]
+딕셔너리: {&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: [10, 20, 30]}
+집합: {1, 2, 3, (10, 20, 30)}
+배열: [[ 1  2  3]
+ [10 20 30]]
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>이번에는 copy() 메서드를 사용하여 복사하였다.</p></li>
@@ -1401,6 +1597,16 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;딕셔너리: </span><span class="si">{</span><span class="n">b1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;집합: </span><span class="si">{</span><span class="n">c1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;배열: </span><span class="si">{</span><span class="n">d1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Copy Data=============
+리스트: [1, 2, 3, [10, 20, 30]]
+딕셔너리: {&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: [10, 20, 30]}
+집합: {1, 2, 3, (10, 20, 30)}
+배열: [[ 1  2  3]
+ [10 20 30]]
 </pre></div>
 </div>
 </div>
@@ -1436,6 +1642,23 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Copy Data 수정 후 origin data=============
+리스트: [1, 2, 3, [10, 20, 30]]
+딕셔너리: {&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: [10, 20, 30]}
+집합: {1, 2, 3, (10, 20, 30)}
+배열: [[ 1  2  3]
+ [10 20 30]]
+
+Copy Data 수정 후 copy data=============
+리스트: [1, 100, 3, [10, 20, 30]]
+딕셔너리: {&#39;a&#39;: 1, &#39;b&#39;: 100, &#39;c&#39;: [10, 20, 30]}
+집합: {1, 2, 3, 5, 6, 7, (10, 20, 30)}
+배열: [[  1 100   3]
+ [ 10  20  30]]
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>또한 원조변수 a, b, c, d와 복사변수 a1, b1, c1, d1가 서로 다른 ID를 갖고 있는 것을 확인할 수 있다.</p></li>
@@ -1446,6 +1669,14 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span> <span class="ow">is</span> <span class="n">b1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">c</span> <span class="ow">is</span> <span class="n">c1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="ow">is</span> <span class="n">d1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+False
+False
+False
 </pre></div>
 </div>
 </div>
@@ -1499,10 +1730,17 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, [&#39;here&#39;, 20, 30]] [1, 2, 3, [&#39;here&#39;, 20, 30]]
+{&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: [&#39;here&#39;, 20, 30]} {&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: [&#39;here&#39;, 20, 30]}
+[{&#39;a&#39;: [100, 2]} {&#39;b&#39;: [1, 2]} {&#39;c&#39;: [1, 2]}] [{&#39;a&#39;: [100, 2]} {&#39;b&#39;: [1, 2]} {&#39;c&#39;: [1, 2]}]
+</pre></div>
 </div>
-</section>
-<section id="deepcopy">
-<h3>Deepcopy()<a class="headerlink" href="#deepcopy" title="Permalink to this heading">#</a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="deepcopy">
+<h3>Deepcopy()<a class="headerlink" href="#deepcopy" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Deep copy는 복사변수의 값을 작업(수정, 삭제, 추가 등)해도 원본변수의 값이 작업되지 않는다.</p></li>
 </ul>
@@ -1517,11 +1755,17 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, [10, 20, 30]]
+[1, 2, 3, [100, 20, 30]]
+</pre></div>
 </div>
-</section>
-</section>
-<section id="i">
-<h2>배열의 유용한 함수들I<a class="headerlink" href="#i" title="Permalink to this heading">#</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="i">
+<h2>배열의 유용한 함수들I<a class="headerlink" href="#i" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>배열을 생성할 때 사용할 수 있는 몇 가지 유용한 함수를 살펴본다.</p>
 <ul>
@@ -1533,8 +1777,8 @@ document.write(`
 </ul>
 </li>
 </ul>
-<section id="zeros">
-<h3>zeros()<a class="headerlink" href="#zeros" title="Permalink to this heading">#</a></h3>
+<div class="section" id="zeros">
+<h3>zeros()<a class="headerlink" href="#zeros" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>zeros(): 0으로 구성된 배열을 생성한다.</p></li>
 </ul>
@@ -1542,6 +1786,13 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ar_zero</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ar_zero</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0.]]
 </pre></div>
 </div>
 </div>
@@ -1561,9 +1812,9 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="ones">
-<h3>ones()<a class="headerlink" href="#ones" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="ones">
+<h3>ones()<a class="headerlink" href="#ones" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>ones(): 1로 구성된 배열을 생성한다.</p></li>
 </ul>
@@ -1571,6 +1822,13 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ar_one</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ar_one</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1. 1. 1. 1. 1. 1.]
+ [1. 1. 1. 1. 1. 1.]
+ [1. 1. 1. 1. 1. 1.]]
 </pre></div>
 </div>
 </div>
@@ -1590,9 +1848,9 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="np-random">
-<h3>np.random<a class="headerlink" href="#np-random" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="np-random">
+<h3>np.random<a class="headerlink" href="#np-random" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>0 ≤ 실수 &lt; 1로 채우기: np.random.random(배열의크기)</p></li>
 <li><p>a ≤ 실수 &lt; b로 채우기: np.random.uniform(a, b, 배열의크기)</p></li>
@@ -1604,6 +1862,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.11832885 0.52154405 0.98106164 0.59796128 0.03876525]
+ [0.50690466 0.84660019 0.57529887 0.03763732 0.59401279]]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1611,10 +1875,28 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[3.55474104 3.8906943 ]
+ [3.72538437 3.96986573]
+ [3.99636346 3.95556347]]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[-5 -5  3 -1]
+  [-2 -1 -2  4]
+  [-1  4  2  3]]
+
+ [[-5 -1 -2 -1]
+  [ 2 -4 -1 -4]
+  [ 1 -4  2 -1]]]
 </pre></div>
 </div>
 </div>
@@ -1637,6 +1919,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/063fa6c36c20ac4138bd8cd23626e0d0ce533e3b87ac856e3075c059a6e11ccc.png" src="_images/063fa6c36c20ac4138bd8cd23626e0d0ce533e3b87ac856e3075c059a6e11ccc.png" />
+</div>
 </div>
 <ul class="simple">
 <li><p>2차원 배열 rd_num의 0행부터 9행까지의 배열을 확인해보자.</p></li>
@@ -1644,6 +1929,20 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">rd_num</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[18 23]
+ [95 68]
+ [42 17]
+ [90 64]
+ [70 54]
+ [87 66]
+ [11 59]
+ [67  0]
+ [29 97]
+ [17 27]]
 </pre></div>
 </div>
 </div>
@@ -1678,9 +1977,9 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="linspace">
-<h3>linspace()<a class="headerlink" href="#linspace" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="linspace">
+<h3>linspace()<a class="headerlink" href="#linspace" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>linspace(): 일정한 간격으로 등분한 배열을 생성한다.</p></li>
 </ul>
@@ -1690,6 +1989,11 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.  5. 10. 15.]
 </pre></div>
 </div>
 </div>
@@ -1707,12 +2011,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/48bc69d8cf80388d8a52cb64d93ecc2244a4f902e1493c4bd4f7789cbbd5fee0.png" src="_images/48bc69d8cf80388d8a52cb64d93ecc2244a4f902e1493c4bd4f7789cbbd5fee0.png" />
+<img alt="_images/b1ecc1417f80568e03192126b2b7778dfdc4017a44f92c173927850c494f3d3d.png" src="_images/b1ecc1417f80568e03192126b2b7778dfdc4017a44f92c173927850c494f3d3d.png" />
 </div>
 </div>
-</section>
-<section id="transpose">
-<h3>transpose()<a class="headerlink" href="#transpose" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="transpose">
+<h3>transpose()<a class="headerlink" href="#transpose" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>transpose(): 행과 열을 교체한다.  <code class="docutils literal notranslate"><span class="pre">배열명.T</span></code>도 가능하다.</p></li>
 </ul>
@@ -1729,11 +2033,25 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0 1 2 3 4]
+ [5 6 7 8 9]]
+
+
+===결과===
+[[0 5]
+ [1 6]
+ [2 7]
+ [3 8]
+ [4 9]]
+</pre></div>
 </div>
-</section>
-</section>
-<section id="ii">
-<h2>배열의 유용한 함수들II<a class="headerlink" href="#ii" title="Permalink to this heading">#</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ii">
+<h2>배열의 유용한 함수들II<a class="headerlink" href="#ii" title="Permalink to this headline">#</a></h2>
 <p>배열을 다룰 때 사용할 수 있는 몇 가지 유용한 함수를 살펴본다.</p>
 <ul class="simple">
 <li><p>where()</p></li>
@@ -1746,8 +2064,8 @@ document.write(`
 <li><p>sin(), cos()</p></li>
 <li><p>dot()</p></li>
 </ul>
-<section id="where">
-<h3>where()<a class="headerlink" href="#where" title="Permalink to this heading">#</a></h3>
+<div class="section" id="where">
+<h3>where()<a class="headerlink" href="#where" title="Permalink to this headline">#</a></h3>
 <p>where(): 조건에 만족하는 인덱스를 반환하거나, 조건에 따라 값을 다르게 적용시킨다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">조건</span><span class="p">,</span> <span class="n">True일때</span> <span class="n">적용값</span><span class="p">,</span> <span class="n">False일때</span> <span class="n">적용값</span><span class="p">)</span>
 </pre></div>
@@ -1767,15 +2085,15 @@ document.write(`
 
 
 ===결과===
-(array([0, 2, 4, 6, 8]),)
+(array([0, 2, 4, 6, 8], dtype=int64),)
 [&#39;짝수&#39; &#39;홀수&#39; &#39;짝수&#39; &#39;홀수&#39; &#39;짝수&#39; &#39;홀수&#39; &#39;짝수&#39; &#39;홀수&#39; &#39;짝수&#39; &#39;홀수&#39;]
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="min-max">
-<h3>min(), max()<a class="headerlink" href="#min-max" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="min-max">
+<h3>min(), max()<a class="headerlink" href="#min-max" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>np.min(): 최소값을 반환한다.</p></li>
 <li><p>np.max(): 최대값을 반환한다.</p></li>
@@ -1792,10 +2110,27 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[0.3712422  0.82417813 0.21370112 0.99134722]
+  [0.99894226 0.95183491 0.57586419 0.41668173]]
+
+ [[0.40281322 0.43578388 0.48822994 0.27174694]
+  [0.83451293 0.06165615 0.60622827 0.62727862]]]
+
+
+===결과===
+0.06165615029822746
+
+
+===결과===
+0.9989422619044176
+</pre></div>
 </div>
-</section>
-<section id="argmin-argmax">
-<h3>argmin(), argmax()<a class="headerlink" href="#argmin-argmax" title="Permalink to this heading">#</a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="argmin-argmax">
+<h3>argmin(), argmax()<a class="headerlink" href="#argmin-argmax" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>argmin(): 최소값 인덱스를 반환한다.</p></li>
 <li><p>argmax(): 최대값 인덱스를 반환한다.</p></li>
@@ -1807,10 +2142,16 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13
+4
+</pre></div>
 </div>
-</section>
-<section id="sum-mean-median">
-<h3>sum(), mean(), median()<a class="headerlink" href="#sum-mean-median" title="Permalink to this heading">#</a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="sum-mean-median">
+<h3>sum(), mean(), median()<a class="headerlink" href="#sum-mean-median" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>np.sum(배열명): 합을 반환한다.</p></li>
 <li><p>np.mean(배열명): 평균을 반환한다.</p></li>
@@ -1836,6 +2177,21 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1  3  5  7  9]
+ [11 13 15 17 19]
+ [21 23 25 27 29]]
+225
+15.0
+15.0
+
+
+===결과===
+[33 39 45 51 57]
+[ 25  75 125]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
@@ -1854,9 +2210,9 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="var-std">
-<h3>var(), std()<a class="headerlink" href="#var-std" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="var-std">
+<h3>var(), std()<a class="headerlink" href="#var-std" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>np.var(): 분산을 구한다.</p></li>
 <li><p>np.std(): 표준편차를 구한다.</p></li>
@@ -1871,10 +2227,33 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 9.5600526  25.45378887 91.94382611 89.87281005 94.41275636 55.18534274
+ 54.44990359 47.22275903 68.40363891 43.73537686 63.92549211 45.20308577
+ 37.04112574 41.1299304  28.58843354 15.03651651 67.08676921 67.05155573
+ 33.85476484 68.56414324 32.99019461 39.49028289 90.17874303 74.00859161
+ 75.70907152 53.2156914  51.01231945 38.30028526 56.30495205 32.69652648
+ 97.08031924 18.06436343 87.13965734 75.30239034  6.63484639 33.49768627
+ 74.36389533 64.75232923  4.29962621 54.13351441 82.97307518 33.89477902
+ 67.94430134 79.85356537  6.99239599 11.00822425 50.33320536 52.73860285
+ 63.64240785 14.66454056 87.24503123 11.12548856 45.51166329 48.94233436
+ 94.66542068 32.51897166 61.45499685  2.42501303 66.43367354 97.79754402
+ 55.88025909 38.69919005 80.58985982 95.7698277  43.30380295 43.84966121
+ 13.68560418 60.80673362 13.0622238  59.56563333 95.84703808 66.16305645
+ 49.01251461 35.07507053  5.94671956 23.74202808 95.59611665 63.37725546
+ 51.67790211 78.58084102]
+
+
+===결과===
+711.8056457172809
+26.679686012344316
+</pre></div>
 </div>
-</section>
-<section id="unique">
-<h3>unique()<a class="headerlink" href="#unique" title="Permalink to this heading">#</a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="unique">
+<h3>unique()<a class="headerlink" href="#unique" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>np.unique(): 중복값을 제거하여 1차원으로 반환한다.</p></li>
 </ul>
@@ -1887,10 +2266,20 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-10  -3  -2   0   7]
+ [  0   2   1   3   6]]
+
+
+===결과===
+[-10  -3  -2   0   1   2   3   6   7]
+</pre></div>
 </div>
-</section>
-<section id="abs">
-<h3>abs()<a class="headerlink" href="#abs" title="Permalink to this heading">#</a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="abs">
+<h3>abs()<a class="headerlink" href="#abs" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>np.abs(): 절대값을 구한다.</p></li>
 </ul>
@@ -1903,10 +2292,21 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-5  5  9 -7 -5]
+ [ 0 -1 -2 -9 -1]]
+
+
+===결과===
+[[5 5 9 7 5]
+ [0 1 2 9 1]]
+</pre></div>
 </div>
-</section>
-<section id="sin-cos">
-<h3>sin(), cos()<a class="headerlink" href="#sin-cos" title="Permalink to this heading">#</a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="sin-cos">
+<h3>sin(), cos()<a class="headerlink" href="#sin-cos" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>np.sin(): sin 값을 구한다.</p></li>
 <li><p>np.cos(): cos 값을 구한다.</p></li>
@@ -1921,10 +2321,13 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/4e826b65dd43bfec2d72b51bcd937cda4ec57ab87e86008d8118c102a9d6d93d.png" src="_images/4e826b65dd43bfec2d72b51bcd937cda4ec57ab87e86008d8118c102a9d6d93d.png" />
 </div>
-</section>
-<section id="dot">
-<h3>dot()<a class="headerlink" href="#dot" title="Permalink to this heading">#</a></h3>
+</div>
+</div>
+<div class="section" id="dot">
+<h3>dot()<a class="headerlink" href="#dot" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>np.dot(a, b): 행렬의 곱을 구한다.</p></li>
 <li><p>a&#64;b와 같이 <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> 기호로 나타내기도 한다.</p></li>
@@ -1965,10 +2368,30 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>===a===
+[[ 1  2  3  4  5]
+ [ 6  7  8  9 10]]
+
+
+===b===
+[[ 3  4]
+ [ 5  6]
+ [ 7  8]
+ [ 9 10]
+ [11 12]]
+
+
+===결과===
+[[125 140]
+ [300 340]]
+</pre></div>
 </div>
-<div align="center"><img src="https://haesunbyun.github.io/AISW/_images/ch11/dot.png" style="width:400px;"></div></section>
-<section id="savetxt-loadtxt">
-<h3>파일저장 savetxt() , 읽어오기 loadtxt<a class="headerlink" href="#savetxt-loadtxt" title="Permalink to this heading">#</a></h3>
+</div>
+</div>
+<div align="center"><img src="https://haesunbyun.github.io/AISW/_images/ch11/dot.png" style="width:400px;"></div></div>
+<div class="section" id="savetxt-loadtxt">
+<h3>파일저장 savetxt() , 읽어오기 loadtxt<a class="headerlink" href="#savetxt-loadtxt" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>np.savetxt(파일명, 배열명): 배열을 텍스트 파일로 저장한다.</p></li>
 <li><p>np.loadtxt(파일명): 파일을 배열로 불러온다.</p></li>
@@ -1978,10 +2401,10 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="n">ar</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="id8">
-<h2>마무리<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>마무리<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>데이터를 저장할 때에는 어떠한 자료구조에 저장할 것인지를 먼저 생각해야 한다.</p></li>
 <li><p>자료구조에는 데이터의 수정, 삽입, 추가, 삭제가 자유로운 가변 데이터 타입과 한번 만들고 나면 수정, 삽입, 추가, 삭제 할 수 없는 불변 데이터 타입이 있다.</p></li>
@@ -1989,16 +2412,16 @@ document.write(`
 <li><p>numpy 모듈의 배열(array)과 리스트는 벡터연산 제공 여부와 메모리 접근 속도 측면에서 많은 차이가 있다.</p></li>
 <li><p>shallow copy(얕은 복사)와 deep copy(깊은 복사)의 차이를 이해하고 복사하여 사용할 때 주의해야 한다.</p></li>
 </ul>
-</section>
+</div>
 <div class="toctree-wrapper compound">
 </div>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "haesunbyun/Core-Computing",
+            repo: "HaesunByun/Core-Computing",
             ref: "gh-pages",
         },
         codeMirrorConfig: {
