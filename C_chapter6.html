@@ -98,6 +98,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'C_chapter6';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chapter 7. 파일시스템의 이해" href="C_chapter7.html" />
     <link rel="prev" title="함수(기초)" href="C_chapter5_function%28basic%29.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -219,6 +220,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 6. 재귀함수</a></li>
+<li class="toctree-l1"><a class="reference internal" href="C_chapter7.html">Chapter 7. 파일시스템의 이해</a></li>
 </ul>
 
     </div>
@@ -415,10 +417,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">재귀함수 정의와 호출</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-factorial">Good 예제) 팩토리얼(Factorial)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good">Good 예제) 재귀적으로 리스트의 합 구하기</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Good 예제) 재귀적으로 문자열 개수 세기</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bad">Bad 예제) 피보나치 수열</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-factorial">Good예) 팩토리얼(Factorial)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good">Good예) 재귀적으로 리스트의 합 구하기</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Good예) 재귀적으로 문자열 카운트</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bad">Bad예) 피보나치 수열</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vs">반복 VS. 재귀 피보나치 수열 계산량 비교</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">마무리</a></li>
 </ul>
@@ -562,7 +564,7 @@ document.write(`
 </div>
 <div align="center"><img src="https://haesunbyun.github.io/common/images/recursion2.png" style="width:600px;"></div></div>
 <div class="section" id="good-factorial">
-<h2>Good 예제) 팩토리얼(Factorial)<a class="headerlink" href="#good-factorial" title="Permalink to this headline">#</a></h2>
+<h2>Good예) 팩토리얼(Factorial)<a class="headerlink" href="#good-factorial" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>재귀함수의 가장 대표적인 예로 활용되는 팩토리얼을 정의해보자.</p></li>
 <li><p>팩토리얼은 <em>n</em>이 하나의 자연수일 때, 1에서 <em>n</em>까지의 모든 자연수의 곱을 <em>n</em>에 상대하여 이르는 말로 *n!*로 읽는다.</p></li>
@@ -640,7 +642,7 @@ document.write(`
 </div>
 <div align="center"><img src="https://haesunbyun.github.io/common/images/recursion3.png" style="width:500px;"></div></div>
 <div class="section" id="good">
-<h2>Good 예제) 재귀적으로 리스트의 합 구하기<a class="headerlink" href="#good" title="Permalink to this headline">#</a></h2>
+<h2>Good예) 재귀적으로 리스트의 합 구하기<a class="headerlink" href="#good" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>sum()함수는 iterable data를 전달인자로 주면 그 데이터들의 합을 반환한다.</p></li>
 </ul>
@@ -730,7 +732,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="id2">
-<h2>Good 예제) 재귀적으로 문자열 개수 세기<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2>Good예) 재귀적으로 문자열 카운트<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>재귀적으로 문자열을 찾아 개수 세기를 해보자.</p></li>
 <li><p>문자열.count(‘검색문자열’)은 문자열에서 ‘검색문자열’을 검색하여 개수를 반환하는 문자열 메서드이다.</p></li>
@@ -795,7 +797,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="bad">
-<h2>Bad 예제) 피보나치 수열<a class="headerlink" href="#bad" title="Permalink to this headline">#</a></h2>
+<h2>Bad예) 피보나치 수열<a class="headerlink" href="#bad" title="Permalink to this headline">#</a></h2>
 <p>반복문을 통해서 풀었던 모든 코드를 재귀로 풀수 있을까? 만약 그렇다면 재귀로 푸는 것이 항상 더 좋을까? 답은 No!이다.  Case by Case 어떤 문제에 적용하느냐에 따라 다르다.
 단도직입적으로 말하면 재귀는 함부로 써서는 안된다.
 재귀를 썼을 때 문제를 단순화시켜서 좋을 때도 있지만 절대 재귀를 써서는 안되는 문제도 있다. 가장 전형적인 예가 바로 피보나치 수열이다.</p>
@@ -990,6 +992,15 @@ document.write(`
         <p class="prev-next-title">함수(기초)</p>
       </div>
     </a>
+    <a class="right-next"
+       href="C_chapter7.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 7. 파일시스템의 이해</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -1006,10 +1017,10 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">재귀함수 정의와 호출</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-factorial">Good 예제) 팩토리얼(Factorial)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good">Good 예제) 재귀적으로 리스트의 합 구하기</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Good 예제) 재귀적으로 문자열 개수 세기</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bad">Bad 예제) 피보나치 수열</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-factorial">Good예) 팩토리얼(Factorial)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good">Good예) 재귀적으로 리스트의 합 구하기</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Good예) 재귀적으로 문자열 카운트</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bad">Bad예) 피보나치 수열</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vs">반복 VS. 재귀 피보나치 수열 계산량 비교</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">마무리</a></li>
 </ul>
