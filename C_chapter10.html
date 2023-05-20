@@ -590,7 +590,7 @@ ADT는 그 데이터 타입에 저장되는 데이터 즉, 데이터로 표현�
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Stack object at 0x000001CB2171D448&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Stack object at 0x0000015A0137D048&gt;
 </pre></div>
 </div>
 </div>
@@ -600,7 +600,7 @@ ADT는 그 데이터 타입에 저장되는 데이터 즉, 데이터로 표현�
 <h4><code class="docutils literal notranslate"><span class="pre">__str__()</span></code><a class="headerlink" href="#str" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">__str__()</span></code>를 활용하여 Stack을 출력했을 때 출력되는 형식을 추가해서 지정해보자.</p></li>
-<li><p>데이터 저장할 공간을 리스트로 만들고 있기 때문에 출력하면 리스트 형태로 출력된다. [],{},() 모두 리스트, 딕셔너리, 튜플로 각각 사용되고 있는 기호이므로 우리는 &lt;&gt;로 만들어보자.</p></li>
+<li><p>데이터 저장할 공간을 리스트로 만들고 있기 때문에 출력하면 리스트 형태로 출력된다. [],{},() 모두 리스트, 딕셔너리, 튜플로 각각 사용되고 있는 기호이므로 우리는 S&lt; &gt;S로 만들어보자.</p></li>
 <li><p>Stack 클래스에 아래의 <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> 메서드를 추가하자.</p></li>
 </ul>
 <div class="cell docutils container">
@@ -638,7 +638,7 @@ ADT는 그 데이터 타입에 저장되는 데이터 즉, 데이터로 표현�
 <div class="section" id="isempty">
 <h4><code class="docutils literal notranslate"><span class="pre">isEmpty()</span></code><a class="headerlink" href="#isempty" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
-<li><p>Stack에 isEmpty() 메서드를 정의해 보자. Stack에 item이 있으면 True를 없으면 False를 반환한다.</p></li>
+<li><p>Stack에 isEmpty() 메서드를 정의해 보자. Stack에 item이 없으면 True를, 있으면 False를 반환한다.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -679,7 +679,7 @@ ADT는 그 데이터 타입에 저장되는 데이터 즉, 데이터로 표현�
 <div class="section" id="peek">
 <h4><code class="docutils literal notranslate"><span class="pre">peek()</span></code><a class="headerlink" href="#peek" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
-<li><p>맨 위에 아이템을 반환한다.</p></li>
+<li><p>peek()은 맨 위에 아이템을 확인하기 위해 주로 사용한다. 맨 위에 아이템을 반환한다.(삭제는 하지 않는다.)</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -826,7 +826,7 @@ ADT는 그 데이터 타입에 저장되는 데이터 즉, 데이터로 표현�
 </ul>
 </li>
 </ul>
-<div align="center"><img src="https://haesunbyun.github.io/common/images/adt6.png" style="width:400px;"></div></div>
+<div align="center"><img src="https://haesunbyun.github.io/common/images/adt6.png" width= 400 style="width:400px;"></div></div>
 <div class="section" id="id6">
 <h3>큐의 값(values)<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
@@ -866,23 +866,163 @@ ADT는 그 데이터 타입에 저장되는 데이터 즉, 데이터로 표현�
     <span class="bp">self</span><span class="o">.</span><span class="n">qList</span> <span class="o">=</span> <span class="p">[]</span>
   
   <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Q&lt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">qList</span><span class="si">}</span><span class="s2">&gt;Q&quot;</span>
+    <span class="n">value</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">qList</span><span class="p">)[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Q&lt;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&gt;Q&quot;</span>
   
   <span class="k">def</span> <span class="nf">isEmpty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">return</span> <span class="ow">not</span> <span class="nb">bool</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">qList</span><span class="p">)</span>
 
   <span class="k">def</span> <span class="nf">enqueue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">qList</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">qList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 
   <span class="k">def</span> <span class="nf">dequeue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">qList</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">isEmpty</span><span class="p">()):</span>     
+      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">qList</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
   <span class="k">def</span> <span class="nf">peek</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">isEmpty</span><span class="p">()):</span>
-      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">qList</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  
+      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">qList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  
 
   <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
       <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">qList</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on class list in module builtins:
+
+class list(object)
+ |  list(iterable=(), /)
+ |  
+ |  Built-in mutable sequence.
+ |  
+ |  If no argument is given, the constructor creates a new empty list.
+ |  The argument must be an iterable if specified.
+ |  
+ |  Methods defined here:
+ |  
+ |  __add__(self, value, /)
+ |      Return self+value.
+ |  
+ |  __contains__(self, key, /)
+ |      Return key in self.
+ |  
+ |  __delitem__(self, key, /)
+ |      Delete self[key].
+ |  
+ |  __eq__(self, value, /)
+ |      Return self==value.
+ |  
+ |  __ge__(self, value, /)
+ |      Return self&gt;=value.
+ |  
+ |  __getattribute__(self, name, /)
+ |      Return getattr(self, name).
+ |  
+ |  __getitem__(...)
+ |      x.__getitem__(y) &lt;==&gt; x[y]
+ |  
+ |  __gt__(self, value, /)
+ |      Return self&gt;value.
+ |  
+ |  __iadd__(self, value, /)
+ |      Implement self+=value.
+ |  
+ |  __imul__(self, value, /)
+ |      Implement self*=value.
+ |  
+ |  __init__(self, /, *args, **kwargs)
+ |      Initialize self.  See help(type(self)) for accurate signature.
+ |  
+ |  __iter__(self, /)
+ |      Implement iter(self).
+ |  
+ |  __le__(self, value, /)
+ |      Return self&lt;=value.
+ |  
+ |  __len__(self, /)
+ |      Return len(self).
+ |  
+ |  __lt__(self, value, /)
+ |      Return self&lt;value.
+ |  
+ |  __mul__(self, value, /)
+ |      Return self*value.
+ |  
+ |  __ne__(self, value, /)
+ |      Return self!=value.
+ |  
+ |  __repr__(self, /)
+ |      Return repr(self).
+ |  
+ |  __reversed__(self, /)
+ |      Return a reverse iterator over the list.
+ |  
+ |  __rmul__(self, value, /)
+ |      Return value*self.
+ |  
+ |  __setitem__(self, key, value, /)
+ |      Set self[key] to value.
+ |  
+ |  __sizeof__(self, /)
+ |      Return the size of the list in memory, in bytes.
+ |  
+ |  append(self, object, /)
+ |      Append object to the end of the list.
+ |  
+ |  clear(self, /)
+ |      Remove all items from list.
+ |  
+ |  copy(self, /)
+ |      Return a shallow copy of the list.
+ |  
+ |  count(self, value, /)
+ |      Return number of occurrences of value.
+ |  
+ |  extend(self, iterable, /)
+ |      Extend list by appending elements from the iterable.
+ |  
+ |  index(self, value, start=0, stop=9223372036854775807, /)
+ |      Return first index of value.
+ |      
+ |      Raises ValueError if the value is not present.
+ |  
+ |  insert(self, index, object, /)
+ |      Insert object before index.
+ |  
+ |  pop(self, index=-1, /)
+ |      Remove and return item at index (default last).
+ |      
+ |      Raises IndexError if list is empty or index is out of range.
+ |  
+ |  remove(self, value, /)
+ |      Remove first occurrence of value.
+ |      
+ |      Raises ValueError if the value is not present.
+ |  
+ |  reverse(self, /)
+ |      Reverse *IN PLACE*.
+ |  
+ |  sort(self, /, *, key=None, reverse=False)
+ |      Stable sort *IN PLACE*.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Static methods defined here:
+ |  
+ |  __new__(*args, **kwargs) from builtins.type
+ |      Create and return a new object.  See help(type) for accurate signature.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data and other attributes defined here:
+ |  
+ |  __hash__ = None
 </pre></div>
 </div>
 </div>
@@ -903,8 +1043,8 @@ ADT는 그 데이터 타입에 저장되는 데이터 즉, 데이터로 표현�
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Q&lt;[&#39;python&#39;, &#39;hello&#39;, &#39;hi&#39;]&gt;Q
-Q&lt;[&#39;python&#39;, &#39;hello&#39;]&gt;Q
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Q&lt;&#39;hi&#39;, &#39;hello&#39;, &#39;python&#39;&gt;Q
+Q&lt;&#39;hello&#39;, &#39;python&#39;&gt;Q
 hello
 </pre></div>
 </div>
@@ -999,7 +1139,7 @@ hello
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.vector3 object at 0x000001CB21B08708&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.vector3 object at 0x0000015A01772BC8&gt;
 </pre></div>
 </div>
 </div>
