@@ -93,6 +93,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'C_chapter14';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -385,7 +387,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -401,6 +405,40 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">인공지능</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">인간처럼 행동하는 시스템</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">인공지능의 역사</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1950년</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1956년</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#artificial-neural-network">인공신경망(Artificial Neural Network)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">파벌싸움</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai">1980년: AI 첫번째 윈터</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">1997년</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2000년 이후</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">머신러닝 체험해보기</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quickdraw">QuickDraw</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">목소리 흉내</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">머신러닝 분류</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">머신러닝 용어</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">머신러닝을 위한 주요 패키지</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iris">예제: 붓꽃(iris) 품종 예측하기</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">데이타 확인 및 파악</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-set-test-set">train set과 test set으로 분리</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#k-nn">k-NN(최근접 이웃) 예측모델 적용</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">마무리</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -412,6 +450,448 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="chapter-14">
 <h1>Chapter 14. 인공지능의 이해<a class="headerlink" href="#chapter-14" title="Permalink to this headline">#</a></h1>
+<div class="info admonition">
+<p class="admonition-title">학습목표와 기대효과 </p>
+<ul class="simple">
+<li><p>학습목표</p>
+<ul>
+<li><p>인공지능의 개념을 이해해보자.</p></li>
+<li><p>인공지능의 역사를 알아보자.</p></li>
+</ul>
+</li>
+<li><p>기대효과</p>
+<ul>
+<li><p>인공지능의 개념과 역사를 알아봄으로서 인공지능에 한걸음 다가가본다.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2>인공지능<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>인공지능, 머신러닝, 딥러닝과 같은 기술들이 여러분들의 일상생활에 밀접하게 다가와 있다는 것을 느낄 것이다. 인공지능 분야를 여러분의 전공과 접목시키기 위해서는 인공지능이 무엇인지 먼저 알아야 한다.</p>
+<p>인공지능을 이해하기 위해서는 먼저 지능이 무엇인지 생각해보자. 지능은 무엇일까?</p>
+<p><strong>지능</strong>이란</p>
+<ul class="simple">
+<li><p>인간이 사물을 이해하고 학습하는 능력(learning)</p></li>
+<li><p>어떤 문제가 주어졌을 때 합리적으로 사고하여 문제를 해결하는 능력(problem solving)이다.</p></li>
+</ul>
+<p><strong>인공지능</strong>(Artificial Intelligence: AI)이란 <font color="blue">기계가 학습과 추리를 통해서</font> 인간의 인지적인 기능을 흉내내어 문제를 해결하기 위하여 인간의 지능과 비슷한 작업을 수행하는 것을 의미한다. 예를들어, 글자나 말의 의미를 인식한다던지, 어떠한 내용을 학습한다던지, 얼굴 표정을 인지한다던지 즉, 인간만이 할 수 있다고 생각했던 기능을 컴퓨터가 수행하는 것이다.</p>
+<p>인공지능의 정의는 다양한 분야에서 다양하게 정의되고 있다.</p>
+<ul class="simple">
+<li><p>컴퓨터를 사용하여 인간의 지능을 모델링하는 기술</p></li>
+<li><p>인간과 같이 인식하고, 사고하고, 학습하는 활동 방법 등을 연구하는 분야</p></li>
+<li><p>컴퓨터를 통해 지능을 구현하는 기계 지능(Machine Intelligence)</p></li>
+<li><p>컴퓨터가 언어를 인식하고, 스스로 학습하고, 인간의 감정 이해하는 기술</p></li>
+<li><p>인간과 유사한 지능이 요구되는 기계 장치를 만드는 기술</p></li>
+</ul>
+<p>이러한 인공지능은 아래 그림에서와 같이 컴퓨터과학, 수학, 생물학, 물리학, 뇌과학, 철학, 심리학, 의학, 언어학 등 다양한 분야에서 연구되고 있고 적용되고 있다.</p>
+<div align="center"><img src="https://haesunbyun.github.io/common/images/fu1.png" style="width:600px;"></div><p>인간이 할 수 있는 일을 기계가 하게 하려면 어떻게 해야 될까?</p>
+<p>기계가 일을 하도록 가르쳐야 한다. <strong>기계에게 뭔가를 가르치는 것을 머신러닝(기계학습)이라고 한다.</strong> 이 말은 기계에게 공부 즉, 학습을 시키겠다는 것이다.</p>
+<p>어떤 편의점 주인이 아르바이트생을 고용을 했다고 가정하자. 주인은 아르바이트생에게 처음 몇번은(최소 한번은) 일하는 방법을 알려준다. 마찬가지로 사람이 하는 일을 기계가 하게 하려면 기계에게 하는 방법을 알려줘야 한다.</p>
+<p>사람은 말로 알려주고, 하는 방법을 보여주면 따라할 수 있지만 기계에게는 어떻게 학습을 시켜야 할까? 기계는 바로 <strong>데이터에 대한 수학적 분석모델을 가지고 학습</strong>시킨다. 이게 바로 머신러닝이다.</p>
+<p>이러한 머신러닝중에서도 인식분야에 해당하는 딥러닝이 가장 활발하게 성과를 내고 있다. <strong>딥러닝</strong>은 인공신경망 기반의 인공지능 기법을 말한다. 말이 어려운데, 사람이 가지고 있는 신경망과 동일한 형태의 신경 네트워크를 만들어서 인간의 개입 없이 더 정확하게 객체를 식별하고 복잡한 작업을 수행하도록 한 것이 바로 딥러닝이다.</p>
+<p>머신러닝은 기계가 배우도록 교육을 시키는 것이라면, 딥러닝은 공부할 거리를 잔뜩 주고 ‘알아서 공부해’ 했더니 데이터를 통해 신경을 구성하면서 알아서 공부하더라는 것이다.</p>
+<p>데이터과학과 빅데이터 분야에서도 이러한 머신러닝이나 딥러닝의 기법들이 많이 사용되고 있다.</p>
+<div align="center"><img src="https://haesunbyun.github.io/common/images/fu2.png" ><img src="https://haesunbyun.github.io/common/images/fu3.png" height=250 ></div></div>
+<div class="section" id="id2">
+<h2>인간처럼 행동하는 시스템<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>기계가 인간처럼 행동하려면 어떤 일을 해야 할까?</p>
+<ul class="simple">
+<li><p>사람이 하는 말이나 사람이 쓴 글을 알아 들어야 하고 읽을 수 있어야 하니까 <strong>자연어처리</strong>가 필요하다.</p></li>
+<li><p>사람이 하는 말을 듣고 이게 무엇을 의미하는지 판단할 수 있어야 하므로 <strong>자동추론</strong>이 필요하다.</p></li>
+<li><p>사람이 하는 말을 인식할 수 있어야 하므로 <strong>음성인식</strong>이 필요하다.</p></li>
+<li><p>어떤 작업에 대한 학습을 해야 하므로 <strong>머신러닝</strong>이 필요하다.</p></li>
+<li><p>또한 기계가 배우려면 글이나, 이미지나, 상황을 봐야하는데 그게 바로 <strong>컴퓨터 비전</strong>이다.</p></li>
+<li><p>컴퓨터가 보고, 분석한 후, 액션을 취하려면 스스로 움직일 수 있어야 하는데 그게 바로 <strong>로보틱스</strong> 기술이다.</p></li>
+<li><p>컴퓨터가 사용할 수 있도록 수많은 데이터들을 가공하고 표현하는 것이 <strong>지식표현</strong>이다.</p></li>
+</ul>
+<p>인간처럼 행동하는 시스템을 만들기 위해서 다양한 분야에서 이와 같은 연구가 이루어지고 있다.</p>
+<div align="center"><img src="https://haesunbyun.github.io/common/images/fu4.png" style="width:600px;"></div> <출처.'정보적 사고에서 인공지능까지', 김현철, 2019, 한빛아카데미>
+<p>인공지능의 시대는 시작되었다. 그 흐름을 바꿀 수도 없고, 막을 수도 없다. 즉, 주어진 일을 비판없이 열심히 하면 되는 작업은 인공지능이 사람 대신 할 것이다.</p>
+<p>인간은 어떤 일을 할지 말지 최종적으로 결정하는 위치에 있고, 그 일을 인공지능에게 처리하도록 맡기는 사회가 오게 될 것이다.
+인공지능을 잘 이해하는 사람이 4차 산업혁명 시대의 경쟁에서 우위에 서게 될 것이다.
+인간이 산업혁명을 통해 사람의 <font color='red'><code class="docutils literal notranslate"><span class="pre">근육의</span> <span class="pre">한계</span></code></font>를 극복했다면, 지금은 인공지능으로 사람의 <font color='red'><code class="docutils literal notranslate"><span class="pre">두뇌의</span> <span class="pre">한계</span></code></font>를 뛰어넘는 시대가 온 것이다.</p>
+</div>
+<div class="section" id="id3">
+<h2>인공지능의 역사<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<p>인공지능의 역사를 살펴보면 역사는 길지는 않지만 드라마 같은 사건이 꽤 있었다.</p>
+<p>여러분이 이미 알고 있듯이, 2016년 알파고가 이세돌을 바둑에서 이긴 사건, 또 더 앞으로 거슬러 올라가면 2011년 IBM의 컴퓨터 왓슨이 게임쇼에서 인간을 이기고 우승한 사건 등 이와 같이 재밌는 사건이 몇 차례 있었다.</p>
+<p>오늘날의 컴퓨터는 인공지능 개발에 있어서 꼭 필요한 핵심장치이므로 많은 사람들이 관심을 가진다. 그러나 컴퓨터가 만들어지기 전, 1900년대쯤에도 사람들이 계산하는 기계에 대한 관심이 엄청나게 높았었다. 그 이유는 무엇이였을까?</p>
+<p>그 시기에 세계적으로 무슨일이 있었는지 생각해보면, 1차 세계대전(1914 ~ 1918), 2차 세계대전(1939 ~ 1945) 전쟁이 있던 시기이다. 전쟁에서 살아남기 위해서 대포를 쏠려면 정확한 위치 계산이 필요했고 그들에게는 계산을 잘하는게 죽고 살기의 문제였던 것이다. 그래서 계산하는 기계에 대한 관심이 높아졌다.</p>
+<p>그리고 일부의 사람들은 그 다음 단계를 준비한다. 계산하는 기계 뿐만 아니라, 생각하는 기계, 지능이 있는 기계, 인간과 같이 사고하고 행동하고 감정을 느끼는 기계에 대해 관심을 갖게 된 것이다.</p>
+<div align="center"><img src="https://haesunbyun.github.io/common/images/ai1.png" width=600, height=450></div><div class="section" id="id4">
+<h3>1950년<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<p>기계가 생각한다는 것은 무엇일까?</p>
+<p>기계가 지능이 있다는 것을 어떻게 증명할 수 있을까?</p>
+<p>이 질문이 1940년대쯤 널리 퍼져있던 질문이었다.</p>
+<p>그 질문에 첫번째 대답을 한 사람이 바로 앨런튜링(1912 ~ 1954)이다.</p>
+<p>앨런튜링은 “기계가 지능을 가지고 있다는 것은 <code class="docutils literal notranslate"><span class="pre">기계가</span> <span class="pre">이미테이션게임을</span> <span class="pre">통과하면</span> <span class="pre">지능을</span> <span class="pre">가지고</span> <span class="pre">있다</span></code>라고 정의했다.</p>
+<p>이미테이션게임은 사람이 막힌 공간에서 화면과 키보드만 가지고  대화를 하는데 처음에는 사람 A와 사람 B가 대화를 하고 있다가, 어느 한쪽 사람 예를 들어, B를 빼버리고 대신 기계가 대화를 계속 이어나가도록 한다. 그래도 사람 A는 자기가 대화하던 사람이 사람인지 기계인지 구분하지 못한다면 이 기계는 사람과 동일한 지능을 가지고 있다고 볼 수 있다는 것이다.</p>
+<p>이것을 이미테이션게임이라고 한다. 기계가 사람을 흉내내고 있는 것이다. 그리고 이러한 테스트를 튜링테스트라고 한다.
+1950년에 튜링테스트에 대한 논문이 나오고, 그 이후로 40~50년의 목표가 튜링테스트를 통과하는 것이였다. 그리고 <code class="docutils literal notranslate"><span class="pre">드디어</span> <span class="pre">70년만에</span> <span class="pre">이제야</span> <span class="pre">튜링테스트를</span> <span class="pre">통과할</span> <span class="pre">수</span> <span class="pre">있게</span> <span class="pre">되었다</span></code>라고 말한다.</p>
+<div align="center"><img src="https://haesunbyun.github.io/common/images/ai3.png" ></div>
+<p>영화 <code class="docutils literal notranslate"><span class="pre">이미테이션케임</span></code>은 앨런튜링에 대한 이야기지만 튜링테스트에 대한 얘기는 아니고 암호해독기에 대한 스토리다. 비운의 영국 수학자의 파란만장한 삶을 엿볼 수 있는 재밌는 영화이다.</p>
+</div>
+<div class="section" id="id5">
+<h3>1956년<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<p>인공지능이라는 말은 다트무스워크샵에서 처음으로 등장하였다.
+이 사진에 나오는 사람들이 인공지능의 대가들이다. 1956년 다트무스 워크샵에서 인공지능을 논한 사람들이 AI 50주년 기념으로 2006년에 다시 한번 모였다고 한다.</p>
+<div align="center"><img src="https://haesunbyun.github.io/common/images/ai4.png"></div>
+<p><a class="reference external" href="http://wedatalab.tistory.com/145">wedatalab.tistory.com/145</a></p>
+<p>이후에 이분들은 엄청난 전성기를 맞이한다. 다트무스워크샵부터 1974년 이전까지를 인공지능의 전성기, 인공지능의 황금기라고 불리는데, 이 시기에 굉장히 중요한 인공지능의 개념들이 많이 등장하였다.</p>
+<div align="center"><img src="https://haesunbyun.github.io/common/images/ai2.png"></div><p>그 당시 인공지능 연구자들은 “10년 후면 월드 체스 챔피언과 컴퓨터가 체스를 해서 컴퓨터가 이길 수 있을 것이다!”라고 주장했다. 실제로 체스게임에서 컴퓨터가 사람을 이긴 시기는 약 40년이나 지난 1997년, IBM이 만든 딥블루라는 컴퓨터 소프트웨어가 그 당시의 체스 챔피언이었던 카스파로프 라는 러시아인 체스마스터와 경기를 해서 이겼다.</p>
+<p>“또한 20년 후면 사람이 하는 일들을 컴퓨터가 다 할 수 있을 것이고, 우리가 보는 공상과학 영화에 나오는 로봇들이 1985년쯤이면 존재할 것이다.”, “평균적인 사람의 지능을 지닌 기계가 나타날 것이다.” 등의 희망적인 인공지능의 미래를 이야기 했다.</p>
+<p>그 당시에는 컴퓨터의 성능이 따라주지 못했는데도 뭐든 될 것 같은 얘기가 나오다가 1970년도쯤 점점 이 문제가 얼마나 어려운지 깨닫게 된다.</p>
+</div>
+<div class="section" id="artificial-neural-network">
+<h3>인공신경망(Artificial Neural Network)<a class="headerlink" href="#artificial-neural-network" title="Permalink to this headline">#</a></h3>
+<p>인공지능의 전성기에는 <strong>인공신경망</strong>(Artificial Neural Network)에 대한 연구도 이루어졌다.</p>
+<p>인공신경망은 인간의 뇌의 동작방식을 흉내 내는 것이다. 인간의 뇌는 뉴런이라는 것으로 복잡하게 얽혀 있는 구조를 가졌는데, 이 뉴런이라는 것은 입력단과 출력단이 존재하고
+입력단에 뭔가 전기적 자극이 주어지면 비교적
+심플한 계산 과정을 거쳐서 출력단에 아웃풋을 내주는
+방식으로 동작을 한다.</p>
+<div align="center"><img src="https://haesunbyun.github.io/common/images/ai5.png"></div>
+<p>즉, 사람이 기억을 한다든지, 계산을 한다든지 하는 것들은 실제로 뉴런이 어떤 성질을 갖도록 학습이라는 과정을 거친다는 것이다. 그래서 인간의 지능을 흉내 내는 것을 만들고 싶으면 사람의 뇌가 동작하는 방식을 흉내내서 즉,
+인공신경망을 만들어 놓고 그 인공신경망에
+학습이라는 과정을 통해서 뭔가를 담아 보면 되겠다라는 것이다.</p>
+<p>예를 들어, 고양이 사진을 입력으로 주고 고양이가 맞다면 1, 아니라면 0으로 출력시키는 것이 목표라고 해보자. 고양이 사진을 약 천만장 모아서 1이라고 주고, 고양이가 아닌 사진을 1억장 모아서 0이라고 주고, 이 사진을 가지고 인공신경망에 넣어서 학습시킨다.</p>
+<p>여기서 학습한다는것은 고양이의 특징을 하나하나 파라미터로 찾겠다는 것이다. 즉 고양이는 귀가 뽀족하고, 수염이 있고, 점프를 잘하고, 눈이 크고, 입이 오목하고, 줄무늬색도 있고 하얀색도 있고, 날카로운 손톱도 있고, 등등 이러한 특징들이 픽셀값으로 들어가 있고 그 파라미터들이 매핑이 되면 1, 아니면 0으로 출력하는 것이다.</p>
+<p>그 수많은 파라미터를 찾는데 코딩으로 해야한다면 얼마나 복잡할지 상상이 되는가?
+상상이 안될 정도의 복잡한 문제를 코딩으로 하지 않아도 인공신경망에 넣으면 학습을 해서 알려준다니까 그 당시에도 굉장히 솔깃한 제안이였을 것이다.
+그렇지만 그게 가능했겠는가?
+간단한 문제는 효과적으로 해결할 수 있지만 규모가 조금만 커져도 너무 많은 시간과 메모리 공간을 사용했던 것이다.</p>
+</div>
+<div class="section" id="id6">
+<h3>파벌싸움<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<p>인공지능의 목표는 인간의 지능을 기계로 구현하는 것이다. 인간의 지능을 어떻게 구현하고 발현시킬 것인가에 대한 생각의 차이로 <strong>세 가지 접근 방법</strong>이 있다.</p>
+<ul class="simple">
+<li><p>기호주의(symbolism): 기호와 규칙(rule)을 사용하는 규칙기반(Rule-based) 인공지능</p></li>
+<li><p>연결주의(connectionism): 뉴런의 연결을 모방하는 신경망(Neural Network) 기반 인공지능</p></li>
+<li><p>통계적(statistics): 인간의 지능과 두뇌구조에 대한 고찰보다 문제를 통계적으로 풀어내는가에 관심. 1990년대부터 사용되기 시작</p></li>
+</ul>
+<p>인공지능의 연구는 다트머스 워크샵에 참여했던 대가들은 기호주의(symbolism)로, 뉴럴네트워크를 연구하는 사람들은 연결주의(connectionism)로 나뉘어졌고, 그래서 경쟁하는 두 파들의 파벌싸움이 엄청났다.</p>
+<p>그런 상태에서 컴퓨터의 성능도 별로 안좋았고, 규모가 조금만 커져도 너무 많은 시간과 메모리 공간을 필요로 하고,
+현실은 결국 인공지능을 기대했던 세상의 사람들에게 인공 지능이라는 것에 대해 회의감을 갖게 만든다.
+(실제로는 별 것도 없는데 저렇게 멋진 얘기들로 사람들을 현혹 시키면서 연구비만 챙겨왔던 허풍쟁이구나! 라고 생각하게 된다.)</p>
+<p>1974년부터는 인공지능에 대한 거의 모든 연구비가 중단되면서 인공지능의 암흑기가 시작된다.</p>
+</div>
+<div class="section" id="ai">
+<h3>1980년: AI 첫번째 윈터<a class="headerlink" href="#ai" title="Permalink to this headline">#</a></h3>
+<p>연구비가 중단된 상황에서도 불굴의 의지로 연구를 이어나가는 사람들이 있다.
+1980년대 특히 성공적인 연구가 바로 전문가 시스템(expert system)이다. 전문가 시스템이란 인간 전문가의 의사결정을 흉내내는 시스템을 의미하는데, 규칙기반 시스템을 잘 활용한 경우라고 볼 수 있다.</p>
+<p>전문가 시스템중에 굉장히 성공적인 시스템이 바로 <code class="docutils literal notranslate"><span class="pre">마이신</span></code>이다. 마이신 시스템은 의사들이 환자에게 항생제를 쓸때 증상과 상황과 메디컬 스토리를 보면서, 열은 얼마나 나는지, 붓기는 얼마나 붓는지, 기침을 하는지 등 오만가지 검사를 해서 나오는 테스트의 수치들을 규칙으로 만들어 놓고 규칙기반으로 이 환자에게 적합한 최적의 항생제를 권해주는 시스템이다.</p>
+<p>이 마이신 시스템이 성공적인 전문가 시스템이라고 평을 받는 이유는 처음으로 인간 의사보다 항생제 처방 성공률이 더 높았다. 특정한 분야에 지식들을 압축해 놓은 컴퓨터는 사람보다 더 잘 판단할 수 있었던 것이다.
+그런데 마이신 시스템의 문제는 어마어마한 룰들을 계속 지속적으로 업데이트를 해줘야 한다는 것이다. 처음 몇번은 불굴의 의지로 수만건의 룰을 넣어서 운영했지만 매년마다 계속 업데이트를 해야 하므로 이 시스템을 유지하는 것이 더 힘들다라는 것을 깨닫게 된다.</p>
+<p>이러한 문제로 전문가 시스템이 산업(industry)에서 외면받게 된다. 첫 번째 AI의 암흑기는 정부차원에서 외면받았지만 이번에는 산업분야에서 관심을 끊으면서 두 번째 AI의 암흑기가 시작된다.</p>
+</div>
+<div class="section" id="id7">
+<h3>1997년<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<p>두번째 암흑기가 시작되면서 AI 호응은 긴 공백기간을 가진다. 그러면서도 물밑에서는 꾸준한 연구가 이루어졌다. 그러다가 1997년 드드어 IBM의 딥블루가 체스시합에서 세계 챔피언을 상대로 승리하는 사건이 발생한다. 이로 딥블루는 인간을 넘어선 최초의 컴퓨터라는 타이틀을 가진다.</p>
+<p>물밑에서 꾸준한 연구를 한 사람들의 결과가 하나 둘 드러나고 ‘이게 정말 될까?’ 했던 것들이 하나 둘씩 되기 시작하면서 2000년대 들어서서 인공지능은 폭발적인 성장을 맞이하게 된다.</p>
+</div>
+<div class="section" id="id8">
+<h3>2000년 이후<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<p>2009년 구글이 자율주행 자동차를 선보이게 되었다.</p>
+<p>2011년 IBM의 왓슨이 퀴즈쇼에서 우승을 차지하게 되었다.</p>
+<p>2011~2014년 시리나 나우같은 음성인식 개인 비서가 등장하였다.</p>
+<p>2016년 구글의 인공지능 바둑 프로그램인 알파고(AlphaGo)가 이세돌과의 경기에서 4-1로 승리하게 되었다.</p>
+<p>지금의 인공지능은 규칙기반 인공지능, 신경망(Neural Network) 기반 인공지능, 통계적 인공지능이 융합되어서 이루어지고 있다.</p>
+<p>인공지능을 분류해보면 아래 그림과 같다.</p>
+<div align="center"><img src="https://haesunbyun.github.io/common/images/ai6.png"></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>머신러닝 체험해보기<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
+<p>머신러닝이란 컴퓨터가 학습할 수 있도록 하는 알고리즘과 기술을 개발하는 분야이다.</p>
+<div class="section" id="quickdraw">
+<h3>QuickDraw<a class="headerlink" href="#quickdraw" title="Permalink to this headline">#</a></h3>
+<p>신경망이 제시된 단어에 부합하는 그림을 제대로 그렸는지를 판정하는 프로그램이다.
+시작하기를 누르고 제시된 그림을 마우스로 그리면 되는데, 각 20초 안에 제시되는 6개 단어에 해당하는 그림을 그리면, 신경망은 계속해서 그린 그림에 대한 단어 맞추기를 시도한다.
+<a class="reference external" href="https://quickdraw.withgoogle.com/">https://quickdraw.withgoogle.com/</a></p>
+</div>
+<div class="section" id="id10">
+<h3>목소리 흉내<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+<p>텐서플로로 구현된 신경망이 특정화자 목소리를 흉내내어 문장을 읽어준다. 손**의 목소리를 15시간 이상 학습하여 흉내낸다.
+<a class="reference external" href="https://carpedm20.github.io/tacotron/">https://carpedm20.github.io/tacotron/</a></p>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>머신러닝 분류<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
+<p>머신러닝의 분류는 학습하는 동안의 감독 형태나 정보량에 따라 다음과 같이 세가지로 나뉜다.</p>
+<ul class="simple">
+<li><p>지도 학습(Supervised learning): 트레이닝 데이터에 답(레이블)이 포함되어 있는 것이다.</p>
+<ul>
+<li><p>분류</p></li>
+<li><p>회귀</p></li>
+<li><p>추천시스템</p></li>
+<li><p>시각/음성 감지/인지</p></li>
+<li><p>텍스트 분석, NLP</p></li>
+</ul>
+</li>
+<li><p>비지도 학습(Unsupervised learning): 트레이닝 데이터에 답이 없는 것</p>
+<ul>
+<li><p>클러스터링</p></li>
+<li><p>차원 축소</p></li>
+</ul>
+</li>
+<li><p>강화학습(Reinforcement learning): 현재의 상태(State)에서 어떤 행동(Action)을 취하는 것이 최적인지를 경험을 통해 학습</p></li>
+</ul>
+</div>
+<div class="section" id="id12">
+<h2>머신러닝 용어<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h2>
+<p>머신러닝은 항상 입력을 받아서 출력하는 함수 y=f(x)를 학습한다고 생각할 수 있다.</p>
+<ul class="simple">
+<li><p>features(특징): 학습모델에게 제공하는 입력값으로 y=f(x)에서 x에 해당한다.</p></li>
+<li><p>labels(레이블): y = f(X)에서 y에 해당한다.</p></li>
+<li><p>samples(샘플) 또는 examples(예제): 샘플은 머신러닝에 주어지는 특정한 예이다. 레이블이 있는 샘플은 (x,y)와 같이 x,y가 모두 주어지며, 레이블이 없는 샘플은 (x, ?)와 같이 x만 준 후 레이블이 있는 예를 통해 y를 예측한다.</p></li>
+<li><p>model(모델): 특징과 레이블의 관계를 정의하는 것을 의미한다.</p></li>
+<li><p>학습(training) : 모델을 만들거나 배우는 것을 의미한다.</p></li>
+<li><p>예측(prediction), Inference(추론) : 학습된 모델을 레이블이 없는 샘플에 적용하는 것을 의미한다. 즉 학습된 모델을 사용하여 유용한 예측(y’)을 해내는 것을 말한다.</p></li>
+</ul>
+</div>
+<div class="section" id="id13">
+<h2>머신러닝을 위한 주요 패키지<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Scikit-Learn(사이킷 런): 2007년 구글에 개발한 라이브러리로, 현재 파이썬으로 구현된 라이브러리 중에서 머신러닝 교육 및 실무용으로 가장 많이 사용되고 있는 오픈소스 라이브러리이다. 회귀, 분류, 군집 등 실무에서 적용하는 대부분의 머신러닝 모형을 제공한다. <a class="reference external" href="https://pypi.org/project/scikit-learn/">https://pypi.org/project/scikit-learn/</a></p></li>
+<li><p>Numpy(넘파이): 머신러닝의 이론적 백그라운드는 선형대수와 통계이다. 넘파이는 이러한 선형대수, 통계, 행렬을 다루는 패키지로서, 사이킷 런을 비롯한 많은 머신러닝 패키지가 넘파이 기반으로 되어 있다.</p></li>
+<li><p>Pandas(판다스): 대표적인 데이터 처리 패키지로 2차원 일반 데이터에 특화되어 있는 패키지다.(넘파이는 수치데이터에 특화되어 있으므로 문자와 같은 일반데이터를 처리하기에는 불편한 부분이 많다.)</p></li>
+<li><p>matplotlib, seaborn: 시각화를 위한 패키지이다.</p></li>
+</ul>
+</div>
+<div class="section" id="iris">
+<h2>예제: 붓꽃(iris) 품종 예측하기<a class="headerlink" href="#iris" title="Permalink to this headline">#</a></h2>
+<p>붓꽃 데이터는 1936년 한 영국 통계학자에 의해 선형분류 문제의 예제로 활용되면서 머신러닝의 대표적인 예제로 활용되고 있다.</p>
+<p>붓꽃의 특징(feature)은 꽃받침 길이(sepal length), 꽃받침 폭(sepal width), 꽃잎 길이(petal length), 꽃잎 폭(petal width)으로 나눠지며ㅏ, 얻고자 하는 목표값(label)은 setosa, versicolor, verginica이다.</p>
+<p>붓꽃 데이터에는 세 품종 각각 50개씩 총 150개의 데이터가 들어있다.
+<a class="reference external" href="https://en.wikipedia.org/wiki/Iris_flower_data_set">https://en.wikipedia.org/wiki/Iris_flower_data_set</a></p>
+<div class="section" id="id14">
+<h3>데이타 확인 및 파악<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>사이킷런 모듈의 이름은 sklearn이며, 붓꽃 데이터는 워낙 유명한 데이터라 sklearn의 datasets에 이미 들어가 있다.</p></li>
+<li><p>먼저 이를 import 시킨다.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
+<span class="n">iris</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">b4e493327ea5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">dir</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;iris&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">filename</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">target</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">target_names</span>
+<span class="c1">#dtype 참조 : https://engineer-mole.tistory.com/85</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">iris_data</span><span class="o">=</span><span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;iris&#39;</span><span class="p">)</span>
+<span class="n">iris_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">iris_data</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="train-set-test-set">
+<h3>train set과 test set으로 분리<a class="headerlink" href="#train-set-test-set" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>지도학습에서는 트레이닝 데이터 즉, 학습을 위한 특징(feature)와 결정값인 레이블(label)데이터로 모델을 학습 한 뒤, 별도의 테스트 데이터에서 미지의 레이블을 예측한다.</p></li>
+<li><p>명확한 정답이 주어진 데이터를 먼저 학습하고 미지의 정답을 예측하는 방식이다.</p></li>
+<li><p>그래서 붓꽃 데이터를 train_test_split()을 사용하여 트레이닝 데이터와 테스트 데이터로 나눈다.</p></li>
+<li><p>train_test_split()함수는 별도의 옵션을 설정하지 않으면 트레이닝:테스트의 비율을 75:25로 분리한다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">y_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">X_train</span><span class="p">[:</span><span class="mi">5</span><span class="p">],</span> <span class="n">y_train</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="k-nn">
+<h3>k-NN(최근접 이웃) 예측모델 적용<a class="headerlink" href="#k-nn" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>머신러닝 알고리즘으로는 k-NN 알고리즘을 적용해보자.</p></li>
+<li><p>k-NN알고리즘은 거리기반 분류분석 모델이다.</p></li>
+<li><p>거리가 가까운 k개의 다른 데이터의 레이블을 참조하여 유사 속성에 따라 분류하는 알고리즘으로 거리를 측정할 때 유클리디안 거리 계산법을 사용한다.</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(d(i,j) = \sqrt{(x_j-x_i)^2 + (y_j-y_i)^2}\)</span></p>
+<div align="center"><img src="https://haesunbyun.github.io/common/images/ai8.png" ></div>
+<ul class="simple">
+<li><p>지난 완전실습문제로 나왔던 가장 가까운 이웃찾기가 k-NN알고리즘의 일부를 구현하는 예제이다.</p></li>
+<li><p>간단한 알고리즘이지만 이미지 처리, 영상에서 글자 인식, 얼굴 인식, 선호도 예측, 유전자 패턴 인식 등 많은 분야에서 사용되고 있다.</p></li>
+<li><p>sklearn모듈에서 k-NN 알고리즘은 sklearn.neighbors에 KNeighborsClassifier()로 구현되어 있다.</p></li>
+<li><p>k-NN에서 k값은 옵션 n_neighbors로 설정가능하다. 디폴트는 5이다.</p></li>
+<li><p>여기서는 아주 심플하게 k를 1로 설정한 k-NN 알고리즘으로 모델을 만들어보자.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-1 {color: black;background-color: white;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>KNeighborsClassifier(n_neighbors=1)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">KNeighborsClassifier</label><div class="sk-toggleable__content"><pre>KNeighborsClassifier(n_neighbors=1)</pre></div></div></div></div></div></div></div>
+</div>
+<ul class="simple">
+<li><p>KNeighborsClassifier()뿐만 아니라 sklearn모듈에 구현되어 있는 많은 머신러닝 알고리즘들은 파라미터를 통해 알고리즘의 성능을 튜닝할 수 있다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">KNeighborsClassifier</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>이제 만들어진 모델에 트레이닝데이터를 입력으로 넣어서 학습하도록 시키자.</p></li>
+<li><p>학습은 fit()함수를 통해서 이루어진다.</p></li>
+<li><p>feature로 X_train과 label(답)로 y_train을 입력으로 줘서 학습시킨다.</p></li>
+<li><p>데이터가 150개뿐이라 학습은 금방 끝난다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span> <span class="c1">#data(입력값) target(출력값)을 줄테니 학습해봐</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-2 {color: black;background-color: white;}#sk-container-id-2 pre{padding: 0;}#sk-container-id-2 div.sk-toggleable {background-color: white;}#sk-container-id-2 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-2 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-2 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-2 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-2 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-2 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-2 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-2 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-2 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-2 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-2 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-2 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-2 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-2 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-2 div.sk-item {position: relative;z-index: 1;}#sk-container-id-2 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-2 div.sk-item::before, #sk-container-id-2 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-2 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-2 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-2 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-2 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-2 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-2 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-2 div.sk-label-container {text-align: center;}#sk-container-id-2 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-2 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-2" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>KNeighborsClassifier(n_neighbors=1)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" checked><label for="sk-estimator-id-2" class="sk-toggleable__label sk-toggleable__label-arrow">KNeighborsClassifier</label><div class="sk-toggleable__content"><pre>KNeighborsClassifier(n_neighbors=1)</pre></div></div></div></div></div></div></div>
+</div>
+<ul class="simple">
+<li><p>학습이 완료되었으니 샘플 하나를 입력으로 줘서 예측해보도록 하자.</p></li>
+<li><p>이때 샘플이 하나일지라도 2차원 배열로 줘야 한다.</p></li>
+<li><p>임의값 [[6,3,4,1.5]]을 줬더니 array([1])의 값을 반환한다. 즉, ‘versicolor’로 예측한다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mf">1.5</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>모델이 학습을 잘했는지 테스트셋(X_test)을 입력으로 넣어보자. 이때 모델이 잘 만들어졌는지 평가하기 위해 y_test도 함께 넣어서 평가점수를 획득해보자.</p></li>
+<li><p>만든 모델의 예측 정확도는 0.9736정도로 높은 평가점수가 나온다.</p></li>
+<li><p>이 데이터는 원래 잘 분리된 데이터라 모델 평가 점수가 높게 나온다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>정답을 제대로 예측했는지 하나 하나 확인해보기 위해 X_test를 predict()에 넣어준 후, 정답인 y_test와 모델이 예측한 y_pred를 확인해보자.</p></li>
+<li><p>딱 하나만 예측이 빗나간것을 확인할 수 있다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">y_test</span> <span class="o">==</span> <span class="n">y_pred</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">y_test</span> <span class="o">==</span> <span class="n">y_pred</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id15">
+<h2>마무리<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>인공지능의 개념을 이해해보고 역사를 살펴보았다.</p></li>
+<li><p>머신러닝을 지원하는 모듈인 scikit-learn에 구현되어 있는 지도학습 알고리즘 가운데 하나인 k-NN알고리즘을 이용하여 머신러닝 모델을 만들어보고 붓꽃 데이터의 품종을 예측해보았다.</p></li>
+</ul>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -457,6 +937,46 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">인공지능</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">인간처럼 행동하는 시스템</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">인공지능의 역사</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1950년</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1956년</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#artificial-neural-network">인공신경망(Artificial Neural Network)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">파벌싸움</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai">1980년: AI 첫번째 윈터</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">1997년</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2000년 이후</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">머신러닝 체험해보기</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quickdraw">QuickDraw</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">목소리 흉내</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">머신러닝 분류</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">머신러닝 용어</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">머신러닝을 위한 주요 패키지</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iris">예제: 붓꽃(iris) 품종 예측하기</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">데이타 확인 및 파악</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-set-test-set">train set과 test set으로 분리</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#k-nn">k-NN(최근접 이웃) 예측모델 적용</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">마무리</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
