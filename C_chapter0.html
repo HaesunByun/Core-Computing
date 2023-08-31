@@ -430,7 +430,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idle">파이썬 IDLE</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">파이선 IDLE 설치하기</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">파이썬 IDLE 설치하기</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">파이썬 IDLE 실행하기</a></li>
 </ul>
 </li>
@@ -452,7 +452,7 @@ document.write(`
 <h1>Chapter 0. 프로그래밍 언어와 파이썬<a class="headerlink" href="#chapter-0" title="Permalink to this headline">#</a></h1>
 <p>이 장에서는 컴퓨터, 프로그래밍 언어, 파이썬에 대해 소개한다.</p>
 <div class="info admonition">
-<p class="admonition-title">학습목표와 기대효과 </p>
+<p class="admonition-title">학습목표와 기대효과</p>
 <ul class="simple">
 <li><p>학습목표</p>
 <ul>
@@ -601,7 +601,7 @@ document.write(`
 </ul>
 <p>셀을 실행을 시키면 셀 아래에 결과가 출력된다.</p>
 <p>코드셀은 코랩 메뉴 아래에 ‘+코드’를 클릭하거나, 추가하고자 하는 셀 아래 중간쯤에 마우스를 움직이면 ‘+코드’, ‘+텍스트’ 버튼이 나타나는데 여기에서 ‘+코드’를 클릭하여 추가할 수 있다.</p>
-<div align="center"><img src="https://haesunbyun.github.io/Core-Computing/_images/ch01/colab_3.png" style="width:200px;"></div><div class="cell docutils container">
+<div align="center"><img src="https://haesunbyun.github.io/Core-Computing/_images/ch01/colab_3.png" style="width:400px;"></div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">10</span>
 <span class="n">b</span><span class="o">=</span><span class="mi">20</span>
@@ -614,12 +614,11 @@ document.write(`
 <h4>텍스트셀과 마크다운<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h4>
 <p><strong>텍스트셀</strong>은 목차 만들기, 코드에 대한 설명, 이미지, 링크, 코드 형식 넣기 등 텍스트를 넣을 때 사용한다.
 텍스트셀은 <strong>마크다운</strong> 형식을 지원한다.</p>
-<div align="center"><img src="https://haesunbyun.github.io/Core-Computing/_images/ch01/colab_4.png" style="width:200px;"></div><ul class="simple">
-<li><p><strong>마크다운</strong>이란 읽고, 쓰고, 편집하기 쉬운 목적으로 만들어진 문서 작성을 위한 문법을 의미한다. README 파일이나 온라인
-문서, 혹은 일반 텍스트 편집기로 문서 양식을 편집할 때 쓰인다.</p></li>
+<div align="center"><img src="https://haesunbyun.github.io/Core-Computing/_images/ch01/colab_4.png" style="width:400px;"></div><ul class="simple">
+<li><p><strong>마크다운</strong>이란 읽고, 쓰고, 편집하기 쉬운 목적으로 만들어진 문서 작성을 위한 문법을 의미한다. 대표적으로 GitHub에서 README 파일을 작성하거나 온라인 문서, 혹은 일반 텍스트 편집기로 문서 양식을 편집할 때 쓰인다.</p></li>
 <li><p>마크다운을 이용해 작성된 문서는
 쉽게 HTML, PDF, Word등 다른 문서형태로 변환이 가능해서 많은 프로그래밍 보고서를 마크다운으로 작성하기도 한다.</p></li>
-<li><p>직관적으로 읽기 쉽다는 장점이 있으며, 대표적으로 GitHub에서 <a class="reference external" href="http://README.md">README.md</a> 파일을 작성할 때 자주 사용한다.</p></li>
+<li><p>직관적으로 읽기 쉽다는 장점이 있다.</p></li>
 <li><p>코랩에서 제공하는 마크다운에 대한 설명은 다음 사이트를 참고하면 된다.
 <a class="reference external" href="https://colab.research.google.com/notebooks/markdown_guide.ipynb">https://colab.research.google.com/notebooks/markdown_guide.ipynb</a></p></li>
 </ul>
@@ -640,7 +639,7 @@ document.write(`
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">코드블럭</span></code></p>
 <ul class="simple">
-<li><p>코드 형식으로 보이도록 만들어준다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">```코드```</span></code>는 코드 형식으로 보이도록 만들어준다.</p></li>
 <li><p>텍스트셀의 아이콘은 **&lt;&gt;**이다.</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello python&#39;</span><span class="p">)</span>
@@ -648,8 +647,9 @@ document.write(`
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">링크</span> <span class="pre">달기</span></code></p>
 <ul class="simple">
+<li><p><a class="reference external" href="https://haesunbyun.github.io/Core-Computing/intro.html">컴퓨팅핵심</a></p></li>
 <li><p>보통 홈페이지의 링크, 코드의 출처, 자료의 출처를 표기할 때 이용한다.</p></li>
-<li><p>텍스트셀의 아이콘은 다섯 번째 클립모양이다.</p></li>
+<li><p>텍스트셀의 아이콘은 다섯 번째 클립📎 모양이다.</p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">이미지</span> <span class="pre">첨부</span></code></p>
 <p><img alt="이미지" src="http://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" /></p>
@@ -684,12 +684,13 @@ document.write(`
 <div class="section" id="id11">
 <h4>파일명 변경하기<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h4>
 <p>파일의 이름을 변경하기 위해서는 코랩 마크 옆에 Untitled0.ipynb 부분을 클릭하여 변경할 수 있다. 코랩이나 주피터 노트북에서 작성한 코드는 확장자가 .ipynb를 갖는다. 코랩은 구글 드라이브와 연동되며 여러분이 저장한 노트는 구글 드라이브의 <strong>Colab Notebooks</strong> 폴더에 자동 저장된다.</p>
-<div align="center"><img src="https://haesunbyun.github.io/Core-Computing/_images/ch01/colab_2.png" style="width:300px;"></div></div>
+<div align="center"><img src="https://haesunbyun.github.io/Core-Computing/_images/ch01/colab_2.png" style="width:400px;"></div></div>
 </div>
 <div class="section" id="idle">
 <h3>파이썬 IDLE<a class="headerlink" href="#idle" title="Permalink to this headline">#</a></h3>
+<p>이 강좌에서는 코랩 기준으로 실습을 진행하므로 아래 내용부터는 파이썬 IDLE 설치하기에 관심있는 분만 살펴보기 바란다.</p>
 <div class="section" id="id12">
-<h4>파이선 IDLE 설치하기<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h4>
+<h4>파이썬 IDLE 설치하기<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h4>
 <p>파이썬 IDLE은 파이썬 공식사이트인 <a class="reference external" href="http://www.python.org">http://www.python.org</a> 에서 다운로드 받을 수 있다. IDLE은 Interactive DeveLopment Environment의 약자로 대화형 개발 환경을 의미한다.</p>
 <p>Downloads 메뉴에는 Windows, macOS, Other platforms 등 운영체제별로 다운로드 받을 수 있는 설치파일이 존재한다.</p>
 <div align="center"><img src="https://haesunbyun.github.io/Core-Computing/_images/ch01/python_site.png" style="width:700px;"></div><p>현재의 버전은 2023년 2월 기준 Python 3.11.2이다. 설치하는 과정은 매우 간단하다. Windows 버전으로 설명하자면, 다운로드 받은 설치 파일을 실행하여 특별히 설정해줄 옵션없이 Next&gt; 버튼만 눌러주면 쉽게 설치완료된다.</p>
@@ -699,7 +700,7 @@ document.write(`
 <p>설치가 완료되었다면 파이썬 IDLE을 실행시켜보자. 윈도우 시작버튼을 클릭하여 Python 3.11 목록을 펼친 후 IDLE을 클릭하면
 <strong>Python 대화형모드</strong>가 열린다. 이 모드에서는 기본 프롬프트 <font color='red'><strong>&gt;&gt;&gt;</strong></font>를 표시해서 다음 명령을 요청한다.
 기본 프롬프트 옆에</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>코드를 입력하고 엔터를 눌러보자. 그 결과가 아래에 출력된다.</p>
@@ -802,7 +803,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idle">파이썬 IDLE</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">파이선 IDLE 설치하기</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">파이썬 IDLE 설치하기</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">파이썬 IDLE 실행하기</a></li>
 </ul>
 </li>

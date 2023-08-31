@@ -458,7 +458,7 @@ document.write(`
 <h1>Chapter 1. 기본자료형과 변수<a class="headerlink" href="#chapter-1" title="Permalink to this headline">#</a></h1>
 <p>이 장에서는 기본 자료형(정수형, 실수형, 문자열)과  변수에 대해 알아본다.</p>
 <div class="info admonition">
-<p class="admonition-title">학습목표와 기대효과 </p>
+<p class="admonition-title">학습목표와 기대효과</p>
 <ul class="simple">
 <li><p>학습목표</p>
 <ul>
@@ -495,7 +495,7 @@ document.write(`
 <div class="tip admonition">
 <p class="admonition-title">Tip</p>
 <p>다른 프로그래밍 언어에서는 실수형에 float과 double형이 존재하지만 파이썬에서는 double형은 따로 존재하지 않는다.</p>
-<p>또한 문자(char) 와 문자열(string)을 따로 분류하고 있지만, 파이썬에서는 문자 길이에 상관 없이 모두 문자열로 다루고 있다.</p>
+<p>또한 문자(char)와 문자열(string)을 따로 분류하고 있지만, 파이썬에서는 문자 길이에 상관 없이 모두 문자열로 다루고 있다.</p>
 </div>
 <div class="section" id="id2">
 <h3>숫자 데이터 타입<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
@@ -580,7 +580,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">1.23e-4</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">1.23e-4</span>
 </pre></div>
 </div>
 </div>
@@ -724,11 +724,11 @@ True
 <p class="admonition-title">참고</p>
 <p>정수값으로 연산을 하면 그 결과는 정수형으로 나오고, 실수값으로 연산을 하면 그 결과는 실수형으로 나온다.</p>
 <p>그러나 나눗셈(Division) 연산의 경우의 정수값, 실수값 관계없이 항상 그 결과는 실수형으로 나온다.</p>
-<p>파이썬에서는 대괄호[ ], 중괄호{ }가 특정 의미를 갖고 있으므로 수식을 묶을 때에는 소괄호( )만 사용할 수 있다.</p>
 </div>
 <div class="warning admonition">
 <p class="admonition-title">주의</p>
-<p>제곱연산자의 경우 ^로 표기하지 않도록 주의하자.</p>
+<p>파이썬에서는 대괄호[ ], 중괄호{ }가 특정 의미를 갖고 있으므로 수식을 묶을 때에는 소괄호( )만 사용할 수 있다.</p>
+<p>또한 제곱연산자의 경우 ^로 표기하지 않도록 주의하자.</p>
 </div>
 </div>
 <div class="section" id="id6">
@@ -757,41 +757,20 @@ True
 <td class="text-left"><p>a 나누기 b한 몫을 a에 저장</p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">a%=b</span></code></p></td>
-<td class="text-left"><p>a 나누기 b한 나머지를 a에 저장)</p></td>
+<td class="text-left"><p>a 나누기 b한 나머지를 a에 저장</p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">a**=b</span></code></p></td>
-<td class="text-left"><p>a에 b의 제곱한 결과를 a에 저장</p></td>
+<td class="text-left"><p>a에 b 제곱한 결과를 a에 저장</p></td>
 </tr>
 </tbody>
 </table>
-<p>코드셀에 간단한 수식을 작성해보자.</p>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
-<div class="sd-card-header bg-light docutils">
-<p class="sd-card-text">😄문제1. 수식을 코드로 표현해보기</p>
-</div>
-<div class="sd-card-body docutils">
-<p class="sd-card-text">연산자가 손에 익히도록 아래의 수식을 코드로 작성해보자.</p>
-<p class="sd-card-text"><span class="math notranslate nohighlight">\( 5^2*10÷4 \)</span></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<p>코드셀을 실행하는 방법은 앞 장에서 설명한 바와 같이, 코드셀 앞에 플레이 버튼처럼 생긴 실행버튼을 눌러도 되고, 단축키를 사용해도 된다. 셀을 실행을 시키면 셀 아래에 결과가 출력된다.</p>
-<ul class="simple">
-<li><p><strong>Ctrl + Enter</strong> : 코드셀 실행 후 커서는 방금 실행한 셀에 있다.</p></li>
-<li><p><strong>Shift + Enter</strong> : 코드셀 실행 후 커서가 다음 셀로 넘어간다. 다음 셀이 없을 경우, 새로운 셀이 만들어진다.</p></li>
-</ul>
 </div>
 </div>
 <div class="section" id="id7">
 <h3>문자열 데이터<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <p>문자열은 텍스트의 묶음으로 <strong>홑 따옴표, 쌍 따옴표, 트리플 따옴표</strong>로 묶어준다. 즉 코드에서 이들 기호를 만나면 문자열의 시작 또는 끝을 나타내는 기호로 인식한다. 문자열이 한줄인 경우에는 홑 따옴표, 쌍 따옴표, 트리플 따옴표 구분없이 사용 가능하다. 문자열이 여러줄인 경우, 이를 멀티라인 스트링(multi-line string)이라 부르는데, 이때에는 트리플 따옴표만 사용 가능하다.</p>
 <ul class="simple">
-<li><p>문자열을 작성해보자. 문자열을 print() 괄호에 넣지 않고 실행시키면 홑 따옴표를 포함한 문자열을 출력한다. print()는 다음 장에서 설명하겠지만 문자열 또는 연산의 결과를 화면에 출력하라는 함수이다.</p></li>
+<li><p>문자열을 작성해보자. 실행시키면 홑 따옴표를 포함한 문자열을 출력한다.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -806,7 +785,7 @@ True
 </div>
 </div>
 <ul class="simple">
-<li><p>이번에는 print()에 문자열을 넣어서 작성해보자.</p></li>
+<li><p>이번에는 print()에 문자열을 넣어서 작성해보자. print()는 다음 장에서 설명하겠지만 문자열 또는 연산의 결과를 화면에 출력하라는 함수이다.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -954,14 +933,14 @@ True
 </div>
 <div class="section" id="escape-characters">
 <h4>➕Escape characters<a class="headerlink" href="#escape-characters" title="Permalink to this headline">#</a></h4>
-<p>이스케이프 문자(Escape Character)는 역슬래시(\)와 특정 문자를 결합한 것으로 \ 다음에 나오는 문자가 특수 기능을 가지고 있는 문자임을 알리기 위해 사용한다.
-한글글꼴에서는 \대신에 통화기호(₩)로 표시된다.</p>
+<p>이스케이프 문자(Escape Character)는 역슬래시(<code class="docutils literal notranslate"><span class="pre">\</span></code>)와 특정 문자를 결합한 것으로 <code class="docutils literal notranslate"><span class="pre">\</span></code> 다음에 나오는 문자가 특수 기능을 가지고 있는 문자임을 알리기 위해 사용한다.
+한글글꼴에서는 <code class="docutils literal notranslate"><span class="pre">\</span></code>대신에 통화기호(₩)로 표시된다.</p>
 <ul class="simple">
-<li><p>\n: 줄바꿈 기능</p></li>
-<li><p>\t: 탭 기능</p></li>
-<li><p>': 홑 따옴표 문자 표현</p></li>
-<li><p>&quot;: 쌍 따옴표 문자 표현</p></li>
-<li><p>\: 역슬래시 문자</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\n</span></code>: 줄바꿈 기능</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\t</span></code>: 탭 기능</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\'</span></code>: 홑 따옴표 문자 표현</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\&quot;</span></code>: 쌍 따옴표 문자 표현</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\\</span></code>: 역슬래시 문자</p></li>
 <li><p>… 등이 있다.</p></li>
 </ul>
 <div class="cell docutils container">
@@ -1042,20 +1021,6 @@ True
 </div>
 </div>
 </div>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-header bg-light docutils">
-<p class="sd-card-text">➕문자열 포맷팅 ✏️</p>
-</div>
-<div class="sd-card-body docutils">
-<p class="sd-card-text">자세한 문자열 포매팅 방법은 여기를 참고하자.</p>
-</div>
-<span class="sd-stretched-link"></span></div>
-</div>
-</div>
-</div>
 </div>
 <div class="section" id="id8">
 <h4>문자열 연산자<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h4>
@@ -1123,7 +1088,7 @@ True
 <p><strong>인덱스</strong>는 데이터의 순서를 나타내는 주소이다.</p>
 <div class="info admonition">
 <p class="admonition-title">참고</p>
-<p>문자열 뿐만 아니라 리스트, 튜플 등의 데이터 타입에서도 인덱스가 사용된다.</p>
+<p>문자열 뿐만 아니라 리스트, 튜플 등의 데이터 타입에서도 인덱스가 사용되므로 잘 익혀두기 바란다.</p>
 </div>
 <div class="section" id="positive-index">
 <h5>양의 인덱스(positive index)<a class="headerlink" href="#positive-index" title="Permalink to this headline">#</a></h5>
@@ -1169,9 +1134,9 @@ True
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>start: 시작 인덱스, 디폴트는 step이 양수이면 인덱스 0, step이 음수이면 인덱스 -1이다.</p></li>
-<li><p>end: 끝 인덱스+1</p></li>
-<li><p>step: 이동간격, 양수이면 오른쪽으로 step만큼 이동한다. 음수이면 왼쪽으로 step만큼 이동한다.</p></li>
+<li><p>start: 시작 인덱스. 디폴트는 step이 양수이면 시작 인덱스는 0, step이 음수이면 시작 인덱스는 -1이다.</p></li>
+<li><p>end: 끝 인덱스. 끝 인덱스 -1까지 슬라이싱 된다.</p></li>
+<li><p>step: 이동간격. 양수이면 오른쪽으로 step만큼 이동한다. 음수이면 왼쪽으로 step만큼 이동한다.</p></li>
 <li><p>start, end, step 모두 생략 가능하다.</p></li>
 </ul>
 <ul class="simple">
@@ -1197,7 +1162,7 @@ True
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;Life is too short, You need Python&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span> <span class="p">])</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span> <span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1222,11 +1187,14 @@ True
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Life is too short, You need Pyt
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </div>
 </div>
 <ul class="simple">
 <li><p>처음부터 -3 이전까지 왼쪽으로 이동하여 슬라이싱한다.</p></li>
-<li><p>이때 시작의 위치가 인덱스 -1이므로 -3 이전은 ‘o’가 된다.</p></li>
+<li><p>이때 시작인덱스가 -1이므로 -3 이전은 알파벳 ‘o’가 된다.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1317,7 +1285,10 @@ Life is too short, You need Python
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>원의 넓이(S) 314.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>원의 넓이(S)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 314.0
 </pre></div>
 </div>
 </div>
@@ -1343,7 +1314,9 @@ Life is too short, You need Python
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;False&#39;, &#39;None&#39;, &#39;True&#39;, &#39;and&#39;, &#39;as&#39;, &#39;assert&#39;, &#39;async&#39;, &#39;await&#39;, &#39;break&#39;, &#39;class&#39;, &#39;continue&#39;, &#39;def&#39;, &#39;del&#39;, &#39;elif&#39;, &#39;else&#39;, &#39;except&#39;, &#39;finally&#39;, &#39;for&#39;, &#39;from&#39;, &#39;global&#39;, &#39;if&#39;, &#39;import&#39;, &#39;in&#39;, &#39;is&#39;, &#39;lambda&#39;, &#39;nonlocal&#39;, &#39;not&#39;, &#39;or&#39;, &#39;pass&#39;, &#39;raise&#39;, &#39;return&#39;, &#39;try&#39;, &#39;while&#39;, &#39;with&#39;, &#39;yield&#39;]
-35
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>35
 </pre></div>
 </div>
 </div>
@@ -1373,7 +1346,7 @@ str(42) 등과 같이 작성하면 기존에 정의된 기능이 동작하지 �
 </li>
 </ul>
 <div class="warning admonition">
-<p class="admonition-title">내장함수명, 클래스명을 변수명 만들어 실행시켰다면!</p>
+<p class="admonition-title">내장함수명, 클래스명을 변수명으로 만들어 실행시켰다면!</p>
 <p>내장함수명, 클래스명을 변수명 만들어 실행시켰다면 당황하지 말고,</p>
 <ul class="simple">
 <li><p>메뉴 <code class="docutils literal notranslate"><span class="pre">런타임</span> <span class="pre">&gt;&gt;</span> <span class="pre">런타임</span> <span class="pre">다시</span> <span class="pre">시작</span></code>을 하면 된다.</p></li>
@@ -1402,21 +1375,26 @@ str(42) 등과 같이 작성하면 기존에 정의된 기능이 동작하지 �
 변수에 값을 할당하려면 대입연산자 기호인 =를 기준으로 왼쪽에는 변수명, 오른쪽에는 값 또는 표현식을 적는다.</p>
 <p>아래 코드를 설명해보면,</p>
 <ul class="simple">
-<li><p>변수 num에 정수 100을 저장한다.</p></li>
-<li><p>변수 hello에 문자열 ‘hi!’를 저장한다.</p></li>
-<li><p>변수 num과 hello에 저장된 값을 출력한다. 결과는 100 hi!가 출력된다.</p></li>
-<li><p>이와 같이 변수에는 숫자뿐만 아니라 문자열을 저장할 수 있다.</p></li>
+<li><p>변수 num에 정수 10000을 저장한다.</p></li>
+<li><p>변수 won에 문자열 ‘원!’를 저장한다.</p></li>
+<li><p>변수 num과 won을 활용하여 문자열을 출력한다.</p></li>
+<li><p>변수에는 숫자뿐만 아니라 문자열을 저장할 수 있다.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">hello</span> <span class="o">=</span> <span class="s1">&#39;hi!&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">hello</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">won</span> <span class="o">=</span> <span class="s1">&#39;원!&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">won</span><span class="p">,</span> <span class="s1">&#39;입니다!&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">num</span><span class="si">}{</span><span class="n">won</span><span class="si">}</span><span class="s1"> 입니다.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 hi!
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 원! 입니다!
+10000원! 입니다.
 </pre></div>
 </div>
 </div>
@@ -1474,7 +1452,8 @@ str(42) 등과 같이 작성하면 기존에 정의된 기능이 동작하지 �
 <ul class="simple">
 <li><p>변수 spam에 100을 저장한다.</p></li>
 <li><p>변수 spam에 200을 더해서 출력한다. 결과는 300이 출력된다.</p></li>
-<li><p>현재 변수 spam에는 어떤 값이 저장되어 있을까? 당연히 100이 저장되어 있다. 우리는 spam+200의 결과를 변수 spam에 저장한 것이 아니므로 변수 spam의 값은 변화가 없다.</p></li>
+<li><p>현재 변수 spam에는 어떤 값이 저장되어 있을까?
+<font color="white">당연히 100이 저장되어 있다. 우리는 spam+200의 결과를 변수 spam에 저장한 것이 아니므로 변수 spam의 값은 변화가 없다.</font></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1601,7 +1580,10 @@ str(42) 등과 같이 작성하면 기존에 정의된 기능이 동작하지 �
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20 10
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 10
 </pre></div>
 </div>
 </div>
@@ -1624,7 +1606,9 @@ str(42) 등과 같이 작성하면 기존에 정의된 기능이 동작하지 �
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 [3, 4, 5]
 &lt;class &#39;int&#39;&gt; &lt;class &#39;int&#39;&gt; &lt;class &#39;list&#39;&gt;
 </pre></div>
@@ -1632,7 +1616,7 @@ str(42) 등과 같이 작성하면 기존에 정의된 기능이 동작하지 �
 </div>
 </div>
 <ul class="simple">
-<li><p>print(c)는 리스트형태로 출력 해주지만 print(*c)는 리스트변수 안의 아이템들만 출력해준다.</p></li>
+<li><p>print(c)는 리스트형태로 출력 해주지만 print(*c)는 리스트변수 안의 아이템들만 출력해준다. 리스트안의 값만 출력할때 매우 유용하다.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1658,36 +1642,6 @@ str(42) 등과 같이 작성하면 기존에 정의된 기능이 동작하지 �
     <span class="o">^</span>
 <span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">starred</span> <span class="n">assignment</span> <span class="n">target</span> <span class="n">must</span> <span class="n">be</span> <span class="ow">in</span> <span class="n">a</span> <span class="nb">list</span> <span class="ow">or</span> <span class="nb">tuple</span>
 </pre></div>
-</div>
-</div>
-<ul class="simple">
-<li><p>하나의 값을 갖고 있는 정수형 변수와 여러개의 값을 갖고 있는 리스트변수를 교환하면 어떻게 될까?</p></li>
-<li><p>리스트 변수의 맨 앞 값이 정수형 변수로 저장되고, 정수형 변수의 값은 리스트의 맨 끝에 추가된다.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;===swap전===&#39;</span><span class="p">)</span>
-<span class="n">a</span><span class="p">,</span><span class="o">*</span><span class="n">c</span><span class="o">=</span> <span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a: </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;c: </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;===swap후===&#39;</span><span class="p">)</span>
-<span class="n">a</span><span class="p">,</span><span class="o">*</span><span class="n">c</span> <span class="o">=</span> <span class="o">*</span><span class="n">c</span><span class="p">,</span> <span class="n">a</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a: </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;c: </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>===swap전===
-a: 20
-c: [30, 40]
-
-===swap후===
-a: 30
-c: [40, 20]
-</pre></div>
-</div>
 </div>
 </div>
 </div>
