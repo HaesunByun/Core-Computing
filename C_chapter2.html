@@ -428,7 +428,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ast-literal-eval">➕ ast.literal_eval()</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-interaction">➕ User Interaction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">종합 연습문제</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">마무리</a></li>
 </ul>
@@ -446,7 +445,7 @@ document.write(`
 <h1>Chapter 2. 입출력과 타입변환<a class="headerlink" href="#chapter-2" title="Permalink to this headline">#</a></h1>
 <p>이 장에서는 주석을 처리하는 방법, 데이터를 입력하고, 출력하는 방법, 데이터 타입을 변환하는 방법, 사용자 인터렉션에 대해 알아본다.</p>
 <div class="info admonition">
-<p class="admonition-title">학습목표와 기대효과 </p>
+<p class="admonition-title">학습목표와 기대효과</p>
 <ul class="simple">
 <li><p>학습목표</p>
 <ul>
@@ -454,7 +453,6 @@ document.write(`
 <li><p>결과를 출력하는 print() 함수에 대해 배워보자.</p></li>
 <li><p>데이터를 입력받는 input() 함수에 대해 배워보자.</p></li>
 <li><p>형변환 함수를 알아보자.</p></li>
-<li><p>사용자 인터렉션을 위한 ipywidgets을 배워보자.</p></li>
 </ul>
 </li>
 <li><p>기대효과</p>
@@ -468,7 +466,7 @@ document.write(`
 <h2>Sample Source Code<a class="headerlink" href="#sample-source-code" title="Permalink to this headline">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This program says hello and asks for my name.</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello world!&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Input your name. &#39;</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Input your name. &#39;</span><span class="p">)</span>
 <span class="n">myName</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Welcome, &#39;</span> <span class="o">+</span> <span class="n">myName</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="p">)</span>
 </pre></div>
@@ -518,8 +516,8 @@ ctrl + a를 누르면 현재 셀의 모든 코드를 한꺼번에 블럭설정 �
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello world!&#39;</span><span class="p">)</span>
 <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">print(&#39;Input your name. &#39;)</span>
-<span class="sd">멀티라인 스트링 기호를 써서 </span>
-<span class="sd">여러 줄을 주석으로 처리할 수도 있다. </span>
+<span class="sd">멀티라인 스트링 기호를 써서</span>
+<span class="sd">여러 줄을 주석으로 처리할 수도 있다.</span>
 <span class="sd">&#39;&#39;&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Welcome!!&#39;</span><span class="p">)</span>
 </pre></div>
@@ -755,9 +753,6 @@ Nice to meet you
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>민지는 20살이야
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 <ul class="simple">
@@ -771,10 +766,7 @@ Nice to meet you
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>나
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 너 우리	나 너 우리^^;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>나 너 우리	나 너 우리^^;
 </pre></div>
 </div>
 </div>
@@ -869,10 +861,7 @@ print(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>홍길동
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 님의 나이는 20 살 입니다.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>홍길동 님의 나이는 20 살 입니다.
 홍길동님의 나이는20살 입니다.
 홍길동님의 나이는 20살 입니다.
 </pre></div>
@@ -886,13 +875,11 @@ print(...)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">님의 나이는 </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s1">살입니다.&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">님의 나이는 </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s1">살입니다.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>홍길동님의 나이는 20살입니다.
-홍길동님의 나이는 20살입니다.
 </pre></div>
 </div>
 </div>
@@ -954,14 +941,14 @@ print(...)
 </pre></div>
 </div>
 <p>사용자에게 무엇을 입력받을 때에는 다짜고짜 입력하라고 하지말고 무엇을 입력할것인지를 알려주는 것이 좋다. 즉, 질문을 주고 입력을 받아야 한다. 질문을 넣어주려면 input() 괄호안에 넣어주면 된다. 이때 입력박스는 질문 오른쪽에 생긴다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">myName</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Input your name.&#39;</span><span class="p">)</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">myName</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Input your name.&#39;</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Welcome, </span><span class="si">{</span><span class="n">myName</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>➕input() 함수의 인자는 반드시 하나의 문자열이어야 한다. 아래와 같이 컴마로 두개의 인자를 전달하면 에러가 난다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Alice&#39;</span> 
-<span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;, how old are you?&#39;</span><span class="p">)</span> 
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;You are &#39;</span>  <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="s1">&#39; years old.&#39;</span><span class="p">)</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Alice&#39;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;, how old are you?&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;You are &#39;</span>  <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="s1">&#39; years old.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--------------------------------------------------------------------</span>
@@ -970,7 +957,7 @@ print(...)
       <span class="mi">1</span> <span class="n">name</span><span class="o">=</span> <span class="s1">&#39;Alice&#39;</span>
 <span class="o">----&gt;</span> <span class="mi">2</span> <span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;, how old are you?&#39;</span><span class="p">)</span>
       <span class="mi">3</span> <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;You are &#39;</span>  <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="s1">&#39; years old.&#39;</span><span class="p">)</span>
-      <span class="mi">4</span> 
+      <span class="mi">4</span>
       <span class="mi">5</span> <span class="c1"># TypeError: raw_input() takes from 1 to 2 positional arguments but 3 were given.</span>
 
 <span class="ne">TypeError</span><span class="p">:</span> <span class="n">raw_input</span><span class="p">()</span> <span class="n">takes</span> <span class="kn">from</span> <span class="mi">1</span> <span class="n">to</span> <span class="mi">2</span> <span class="n">positional</span> <span class="n">arguments</span> <span class="n">but</span> <span class="mi">3</span> <span class="n">were</span> <span class="n">given</span>
@@ -982,7 +969,7 @@ print(...)
 </div>
 <p>input() 함수에는 절대 잊어서는 안될 중요한 특징 하나가 있다. <font color='red'>입력받은 모든 데이터를 문자열로 처리된다는 것이다.</font> 숫자를 입력해도 문자열로 처리된다. 아래 코드에서 변수 age에는 문자열이 들어 있으므로 문자열과 변수를 더해도 에러가 발생하지 않는다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;How old are you? &#39;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;You are &#39;</span>  <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="s1">&#39; years old.&#39;</span><span class="p">)</span> 
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;You are &#39;</span>  <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="s1">&#39; years old.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>How old are you? 20
@@ -1094,13 +1081,13 @@ You are 20 years old.
 <p class="sd-card-text"><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-1</span></code></font></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">문자열</span><span class="p">:</span> <span class="n">즐거워</span>
 <span class="n">횟수</span><span class="p">:</span> <span class="mi">3</span>
-<span class="n">즐거워</span> <span class="n">즐거워</span> <span class="n">즐거워</span> 
+<span class="n">즐거워</span> <span class="n">즐거워</span> <span class="n">즐거워</span>
 </pre></div>
 </div>
 <p class="sd-card-text"><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-2</span></code></font></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">문자열</span><span class="p">:</span> <span class="n">코딩은</span> <span class="n">즐거워</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">문자열</span><span class="p">:</span> <span class="n">코딩은</span> <span class="n">즐거워</span>
 <span class="n">횟수</span><span class="p">:</span> <span class="mi">5</span>
-<span class="n">코딩은</span> <span class="n">즐거워</span> <span class="n">코딩은</span> <span class="n">즐거워</span> <span class="n">코딩은</span> <span class="n">즐거워</span> <span class="n">코딩은</span> <span class="n">즐거워</span> <span class="n">코딩은</span> <span class="n">즐거워</span> 
+<span class="n">코딩은</span> <span class="n">즐거워</span> <span class="n">코딩은</span> <span class="n">즐거워</span> <span class="n">코딩은</span> <span class="n">즐거워</span> <span class="n">코딩은</span> <span class="n">즐거워</span> <span class="n">코딩은</span> <span class="n">즐거워</span>
 </pre></div>
 </div>
 </div>
@@ -1208,9 +1195,7 @@ int()는 정수로 변환해주는 함수이다.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.5
+3.5
 42
 3.5
 </pre></div>
@@ -1221,7 +1206,7 @@ int()는 정수로 변환해주는 함수이다.</p>
 <p class="admonition-title">참고</p>
 <p>아래와 같이 입력받아서 변수 num에 저장한 후, 다음 라인에서 형변환을 했다. 그런 후에 type(num)을 통해 변수 num의 타입을 확인해보면 어떤 타입으로 나올까?
 그리고 그 타입으로 나오는 이유가 무엇인지 생각해보자.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
 <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
 <span class="nb">type</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
 </pre></div>
@@ -1242,9 +1227,6 @@ int()는 정수로 변환해주는 함수이다.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;hello&#39;, &#39;world&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -1360,124 +1342,6 @@ int()는 정수로 변환해주는 함수이다.</p>
 <li><p>악의적인 사용자가 시스템에 손상을 주는 함수호출을 입력값으로 넣는다던지 고의적으로 함수를 실행시킨다던지 등 보안상 문제를 일으킬 수 있으므로 신중히 사용하기 바란다.</p></li>
 </ul>
 </div>
-</div>
-</div>
-<div class="section" id="user-interaction">
-<h2>➕ User Interaction<a class="headerlink" href="#user-interaction" title="Permalink to this headline">#</a></h2>
-<p>프로그램은 사용자와의 인터렉션(상호 작용)이 매우 중요하다.  **사용자 인터렉션(User Interaction)**이란 사용자의 입력에 의해 프로그램이 응답하고 결과를 표시하는 것을 말한다. 앞서 봤던, input()이나 print()는 파이썬에서 사용자와 상호 작용하기 위한 가장 기본적인 인터렉션 방법이다.</p>
-<p>파이썬에서는 이 밖에도 그래픽으로 사용자와의 인터렉션을 지원하는 <strong>tkinter 모듈</strong>을 제공한다. tkinter는 ‘Tk interface’의 약자로, 여기서의 Tk는 GUI(Graphic User Interface) tool kit의 라이브러리 이름이다.</p>
-<p>GUI란 사용자가 프로그램을 편리하게 사용할 수 있도록 입출력 등의 기능을 아이콘(위젯)으로 나타낸 것이다. tkinter 모듈에는 다양한 위젯을 제공하고 있으며, 이러한 위젯들을 이용하여 GUI기반의 프로그램을 만들어 볼 수 있다.</p>
-<p>아래 그림은 tkinter 모듈에서 제공하는 위젯들로 구성된 윈도우을 보이고 있다.</p>
-<div align="center"><img src="https://haesunbyun.github.io/Core-Computing/_images/ch02/widgets.png" style="width:600px;"></div><p>아쉽게도, 구글 코랩에서는 tkinter 모듈을 지원하지 않는다. 그러나 tkinter 모듈과 유사한 <strong>ipywidgets 모듈</strong>을 지원한다. ipywidgets도 사용자 인터렉션을 위한 라이브러리이며, ipywidgets을 이용하여 GUI 기반의 프로그램을 만들어 볼 수 있다. ipywidgets의 설명은 <a class="reference external" href="https://ipywidgets.readthedocs.io/en/latest/">https://ipywidgets.readthedocs.io/en/latest/</a>에서 확인해볼 수 있다.</p>
-<p>여기에서  ipywidgets의 일부를 소개하는 이유는 프로그램에서 사용자 인터렉션의 많은 부분이 GUI 기반의 입출력으로 이루어지고 있으며,
-여러분이 객체지향 프로그래밍의 개념에 자연스럽게 스며들어 익숙해지기를 바라는 마음에서이다. 객체지향 프로그래밍을 가장 잘 반영하는 것이 GUI이기 때문이다.</p>
-<ul class="simple">
-<li><p>간단한 위젯을 이용하여 GUI 기반의 온도변환 프로그램을 만들어보자.</p></li>
-<li><p>여기서 사용할 위젯은 Label, FloatText, button이다.</p></li>
-<li><p>전체 코드는 다음과 같다.</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ipywidgets</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
-
-<span class="k">def</span> <span class="nf">c_to_f</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-      <span class="n">c</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">text1</span><span class="o">.</span><span class="n">value</span><span class="p">)</span> 
-      <span class="n">f</span><span class="o">=</span><span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">c</span><span class="o">+</span><span class="mf">32.0</span>
-      <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-
-<span class="n">header</span><span class="o">=</span><span class="n">ipywidgets</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s1">&#39;온도변환프로그램&#39;</span><span class="p">)</span>
-
-<span class="n">text1</span><span class="o">=</span><span class="n">ipywidgets</span><span class="o">.</span><span class="n">FloatText</span><span class="p">(</span>
-    <span class="n">value</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
-    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;섭씨:&#39;</span><span class="p">,</span>
-    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span>
-<span class="p">)</span>
-
-<span class="n">btn_1</span><span class="o">=</span><span class="n">ipywidgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;섭씨-&gt;화씨&#39;</span><span class="p">)</span> 
-
-<span class="n">display</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">text1</span><span class="p">,</span> <span class="n">btn_1</span><span class="p">)</span>
-<span class="n">btn_1</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">c_to_f</span><span class="p">)</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>전체 코드를 부분별로 살펴보자.</p></li>
-<li><p>먼저, 위젯들을 만들기 위해 ipywidgets 모듈을 불러온다.</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ipywidgets</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>ipywidgets.Label()은 제목이나 한줄 정도의 간단한 텍스트를 나타내는 위젯이다.</p></li>
-<li><p>옵션 value에는 표시할 텍스트를 넣는다.</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">header</span><span class="o">=</span><span class="n">ipywidgets</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s1">&#39;온도변환프로그램&#39;</span><span class="p">)</span> 
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>ipywidgets.FloatText()는 실수형문자열을 입력받을 수 있는 위젯이다.</p>
-<ul>
-<li><p>value: 초기값</p></li>
-<li><p>description: 나타낼 질문텍스트</p></li>
-<li><p>disabled: True이면 값 입력을 할 수 없도록 비활성화되고, False이면 활성화된다.</p></li>
-</ul>
-</li>
-<li><p>아래와 같이 섭씨온도를 실수형 데이터로 입력받을 수 있도록 FloatText()를 만든다.</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text1</span><span class="o">=</span><span class="n">ipywidgets</span><span class="o">.</span><span class="n">FloatText</span><span class="p">(</span>
-    <span class="n">value</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
-    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;섭씨:&#39;</span><span class="p">,</span>
-    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>ipywidgets.Button()은 버튼을 만드는 위젯이다.</p>
-<ul>
-<li><p>description: 버튼에 나타낼 텍스트를 넣어준다.</p></li>
-</ul>
-</li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">btn_1</span><span class="o">=</span><span class="n">ipywidgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;섭씨-&gt;화씨&#39;</span><span class="p">)</span> 
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>display()는 화면에 위젯, 그림, 영상, 오디오 등을 나타내는 함수이다.</p></li>
-<li><p>아래에서는 display() 괄호안에 화면을 구성할 순서대로 위젯을 단순히 나열하였다. 좀 더 멋지게 구성하는 것은 추후에 레이아웃에서 다루자.</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">text1</span><span class="p">,</span> <span class="n">btn_1</span><span class="p">)</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>이제 온도를 변환해주는 함수를 정의하자.</p></li>
-<li><p>파이썬 클래스에서 self의 의미를 정확히 이해하는 것이 중요하지만 이 코드에서는 클래스를 정의하지도 않았고 설명되지도 않아서 self를 설명하기는 조금 이른 감이 있다. 일단 위젯을 통해 호출되는 함수는 반드시 매개변수가 하나가 있어야 하고, 여기서는 self로 명시했다고 생각하자.</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">c_to_f</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-  <span class="n">c</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">text1</span><span class="o">.</span><span class="n">value</span><span class="p">)</span> 
-  <span class="n">f</span><span class="o">=</span><span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">c</span><span class="o">+</span><span class="mf">32.0</span>
-  <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-header bg-light docutils">
-<p class="sd-card-text">함수 ✏️</p>
-</div>
-<div class="sd-card-body docutils">
-<p class="sd-card-text">함수 정의와 호출을 알고 싶다면
-함수(기초)를 먼저 학습하기 바란다.</p>
-</div>
-<span class="sd-stretched-link"></span></div>
-</div>
-</div>
-</div>
-<ul class="simple">
-<li><p>이제 버튼을 클릭했을 때 해당 기능이 동작하도록 앞에서 정의한 함수와 버튼을 연동해보자.</p></li>
-<li><p>클릭과 함수를 연동할때에는 on_click() 괄호안에 함수명을 써준다. 이때 함수명뒤에 괄호를 붙이면 에러가 난다.</p></li>
-<li><p>함수를 호출할 때는 <code class="docutils literal notranslate"><span class="pre">함수명()</span></code>과 같이 괄호를 붙이지만 마우스 이벤트와 연동한 함수호출에서는 코드가 실행될때 함수를 호출해야 하는 것이 아니라 버튼이 클릭되었을때 호출되야 하기 때문이다.</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">btn_1</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">c_to_f</span><span class="p">)</span>
-</pre></div>
 </div>
 </div>
 <div class="section" id="id3">
@@ -1642,7 +1506,6 @@ int()는 정수로 변환해주는 함수이다.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ast-literal-eval">➕ ast.literal_eval()</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-interaction">➕ User Interaction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">종합 연습문제</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">마무리</a></li>
 </ul>
