@@ -456,7 +456,7 @@ document.write(`
   <div class="tex2jax_ignore mathjax_ignore section" id="chapter-6">
 <h1>Chapter 6. 모듈과 함수<a class="headerlink" href="#chapter-6" title="Permalink to this headline">#</a></h1>
 <div class="info admonition">
-<p class="admonition-title">학습목표와 기대효과 </p>
+<p class="admonition-title">학습목표와 기대효과</p>
 <ul class="simple">
 <li><p>학습목표</p>
 <ul>
@@ -551,13 +551,13 @@ document.write(`
 <span class="s1">                          ,__\,\                   /&#39;</span>
 <span class="s1">                          ,--____&gt;    /\.         ./&#39;</span>
 <span class="s1">                          </span><span class="se">\&#39;</span><span class="s1">-__________&gt;  \.______/&#39;</span>
-<span class="s1">      &#39;&#39;&#39;</span><span class="p">)</span>  
+<span class="s1">      &#39;&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="info admonition">
-<p class="admonition-title">함수에 도움말 기능 넣기 </p>
+<p class="admonition-title">함수에 도움말 기능 넣기</p>
 <ul class="simple">
 <li><p>여러분이 정의한 함수가 어떤 함수이고 어떻게 사용하면 되는 것인지 도움말을 넣어주고 싶다면 함수안에서 멀티라인 스트링으로 넣어줄 수 있다.</p></li>
 <li><p>도움말을 넣어주면 help(함수명) 했을 때 도움말이 출력된다.</p></li>
@@ -566,9 +566,9 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
-<span class="w">  </span><span class="sd">&#39;&#39;&#39; </span>
+<span class="w">  </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">  안녕하세요. 반갑습니다를 출력한다.</span>
-<span class="sd">  &#39;&#39;&#39;</span>  
+<span class="sd">  &#39;&#39;&#39;</span>
   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;안녕하세요. 반갑습니다.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -691,12 +691,12 @@ Gives you my treasure!
 <li><p>함수를 정의할 때 함수명() 괄호안에 <code class="docutils literal notranslate"><span class="pre">매개변수</span></code>를 적어줄 수도 있다. (위에서 봤던 심플한 함수 정의와 같이 전달받아야 할 데이터가 없다면 생략한다.)</p></li>
 <li><p>매개변수는 함수 안과 함수 밖을 연결해주는 매개체 역할을 해준다고 해서 매개변수이다.</p></li>
 <li><p>함수 밖에서부터 함수안으로 전달되는 데이터를 받는 변수이다.</p></li>
-<li><p>전달받아야 할 하나 이상이라면 매개변수 명을 콤마로 나열한다.</p></li>
+<li><p>전달받아야 할 인자가 하나 이상이라면 매개변수 명을 콤마로 나열한다.</p></li>
 <li><p>매개변수는 함수 정의파트 본문에서 사용되는 것이 일반적이다.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hello2</span><span class="p">(</span><span class="n">name</span><span class="p">):</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hello2</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">님 안녕하세요. 반갑습니다.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -724,7 +724,7 @@ Gives you my treasure!
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hello2</span><span class="p">(</span><span class="s1">&#39;홍길동&#39;</span><span class="p">)</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hello2</span><span class="p">(</span><span class="s1">&#39;홍길동&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -763,7 +763,7 @@ Gives you my treasure!
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myMax</span><span class="p">(</span> <span class="o">*</span><span class="n">data</span> <span class="p">):</span>
   <span class="nb">print</span><span class="p">(</span> <span class="n">data</span> <span class="p">)</span>
   <span class="n">temp_max</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;-inf&#39;</span><span class="p">)</span>
-  
+
   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">i</span><span class="o">&gt;</span><span class="n">temp_max</span><span class="p">:</span>
       <span class="n">temp_max</span> <span class="o">=</span> <span class="n">i</span>
@@ -778,7 +778,7 @@ Gives you my treasure!
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myMax</span><span class="p">(</span><span class="mi">34</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">62</span><span class="p">)</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myMax</span><span class="p">(</span><span class="mi">34</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">62</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -801,11 +801,11 @@ def first_word( word1, word2, word3, word4 ): 이와 같이 매개변수를 여�
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">first_word</span><span class="p">(</span> <span class="o">*</span><span class="n">word</span> <span class="p">):</span>
   <span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
   <span class="n">first</span> <span class="o">=</span> <span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-  
+
   <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">w</span><span class="o">&lt;</span><span class="n">first</span><span class="p">:</span>
       <span class="n">first</span><span class="o">=</span><span class="n">w</span>
-  
+
   <span class="k">return</span> <span class="n">first</span>
 </pre></div>
 </div>
@@ -819,9 +819,6 @@ def first_word( word1, word2, word3, word4 ): 이와 같이 매개변수를 여�
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;banana&#39;, &#39;apple&#39;, &#39;cider&#39;, &#39;data&#39;)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;apple&#39;
@@ -1028,7 +1025,7 @@ His last name is Hong
 
 <span class="k">def</span> <span class="nf">func2</span><span class="p">():</span>
   <span class="n">v2</span><span class="o">=</span><span class="mi">200</span>
-  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;func2의 local area: </span><span class="si">{</span><span class="n">v2</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>    
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;func2의 local area: </span><span class="si">{</span><span class="n">v2</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="n">func1</span><span class="p">()</span>
 <span class="n">func2</span><span class="p">()</span>
@@ -1117,7 +1114,7 @@ func2의 local area: 200
     <span class="n">v3</span> <span class="o">=</span> <span class="mi">300</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;func3의 local area: </span><span class="si">{</span><span class="n">v3</span><span class="p">,</span><span class="w"> </span><span class="n">v1</span><span class="p">,</span><span class="w"> </span><span class="n">v4</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
 
-<span class="n">v4</span> <span class="o">=</span> <span class="mi">400</span>    
+<span class="n">v4</span> <span class="o">=</span> <span class="mi">400</span>
 <span class="n">func1</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1178,9 +1175,7 @@ Global area: 400
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>func1의 local area: 800
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Global area: 800
+Global area: 800
 </pre></div>
 </div>
 </div>
@@ -1200,7 +1195,7 @@ Global area: 400
   <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;관악구 유재석&#39;</span>
   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;func2의 local area: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
-<span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;유재석&#39;</span> 
+<span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;유재석&#39;</span>
 <span class="n">func1</span><span class="p">()</span>
 <span class="n">func2</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Global area: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -1244,7 +1239,7 @@ Global area: 유재석
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 일반 함수로 정의한 코드</span>
 <span class="k">def</span> <span class="nf">func1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-  <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> 
+  <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="n">func1</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">func1</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -1274,7 +1269,9 @@ Global area: 유재석
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25
-100
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100
 </pre></div>
 </div>
 </div>
@@ -1452,7 +1449,7 @@ Global area: 유재석
 <span class="nb">print</span><span class="p">(</span><span class="n">myGop</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">34</span><span class="p">))</span>
 
 <span class="c1"># reduce() 함수로 간결하게 쓴 코드</span>
-<span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">34</span><span class="p">])</span> 
+<span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">34</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>

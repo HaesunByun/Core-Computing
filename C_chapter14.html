@@ -475,7 +475,7 @@ document.write(`
 <li><p>인간이 사물을 이해하고 학습하는 능력(learning)</p></li>
 <li><p>어떤 문제가 주어졌을 때 합리적으로 사고하여 문제를 해결하는 능력(problem solving)이다.</p></li>
 </ul>
-<p><strong>인공지능</strong>(Artificial Intelligence: AI)이란 <font color="blue">기계가 학습과 추리를 통해서</font> 인간의 인지적인 기능을 흉내내어 문제를 해결하기 위하여 인간의 지능과 비슷한 작업을 수행하는 것을 의미한다. 예를들어, 글자나 말의 의미를 인식한다던지, 어떠한 내용을 학습한다던지, 얼굴 표정을 인지한다던지 즉, 인간만이 할 수 있다고 생각했던 기능을 컴퓨터가 수행하는 것이다.</p>
+<p><strong>인공지능</strong>(Artificial Intelligence: AI)이란 <font color="blue">기계가 학습과 추리를 통해서</font> 인간의 인지적인 기능을 흉내내어 문제를 해결하기 위하여 인간의 지능과 비슷한 작업을 수행하는 것을 의미한다. 예를들어, 글자나 말의 의미를 인식한다든지, 어떠한 내용을 학습한다든지, 얼굴 표정을 인지한다든지 즉, 인간만이 할 수 있다고 생각했던 기능을 컴퓨터가 수행하는 것이다.</p>
 <p>인공지능의 정의는 다양한 분야에서 다양하게 정의되고 있다.</p>
 <ul class="simple">
 <li><p>컴퓨터를 사용하여 인간의 지능을 모델링하는 기술</p></li>
@@ -586,7 +586,7 @@ document.write(`
 </div>
 <div class="section" id="id7">
 <h3>1997년<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
-<p>두번째 암흑기가 시작되면서 AI 호응은 긴 공백기간을 가진다. 그러면서도 물밑에서는 꾸준한 연구가 이루어졌다. 그러다가 1997년 드드어 IBM의 딥블루가 체스시합에서 세계 챔피언을 상대로 승리하는 사건이 발생한다. 이로 딥블루는 인간을 넘어선 최초의 컴퓨터라는 타이틀을 가진다.</p>
+<p>두번째 암흑기가 시작되면서 AI에 대한 관심은 공백기간을 가진다. 그러면서도 물밑에서는 꾸준한 연구가 이루어졌다. 그러다가 1997년 드디어 IBM의 딥블루가 체스시합에서 세계 챔피언을 상대로 승리하는 사건이 발생한다. 이로 딥블루는 인간을 넘어선 최초의 컴퓨터라는 타이틀을 가진다.</p>
 <p>물밑에서 꾸준한 연구를 한 사람들의 결과가 하나 둘 드러나고 ‘이게 정말 될까?’ 했던 것들이 하나 둘씩 되기 시작하면서 2000년대 들어서서 인공지능은 폭발적인 성장을 맞이하게 된다.</p>
 </div>
 <div class="section" id="id8">
@@ -662,9 +662,9 @@ document.write(`
 <h2>예제: 붓꽃(iris) 품종 예측하기<a class="headerlink" href="#iris" title="Permalink to this headline">#</a></h2>
 <p>붓꽃 데이터는 1936년 한 영국 통계학자에 의해 선형분류 문제의 예제로 활용되면서 머신러닝의 대표적인 예제로 활용되고 있다.</p>
 <p>붓꽃의 특징(feature)은 꽃받침 길이(sepal length), 꽃받침 폭(sepal width), 꽃잎 길이(petal length), 꽃잎 폭(petal width)으로 나눠지며ㅏ, 얻고자 하는 목표값(label)은 setosa, versicolor, verginica이다.</p>
-<p>붓꽃 데이터에는 세 품종 각각 50개씩 총 150개의 데이터가 들어있다.
-<a class="reference external" href="https://en.wikipedia.org/wiki/Iris_flower_data_set">https://en.wikipedia.org/wiki/Iris_flower_data_set</a></p>
-<div class="section" id="id14">
+<p>붓꽃 데이터에는 세 품종 각각 50개씩 총 150개의 데이터가 들어있다.</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Iris_flower_data_set">https://en.wikipedia.org/wiki/Iris_flower_data_set</a></p>
+<div align="center"><img src="https://haesunbyun.github.io/common/images/ai7.png"></div><div class="section" id="id14">
 <h3>데이타 확인 및 파악<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>사이킷런 모듈의 이름은 sklearn이며, 붓꽃 데이터는 워낙 유명한 데이터라 sklearn의 datasets에 이미 들어가 있다.</p></li>
@@ -792,7 +792,9 @@ document.write(`
 <ul class="simple">
 <li><p>머신러닝 알고리즘으로는 k-NN 알고리즘을 적용해보자.</p></li>
 <li><p>k-NN알고리즘은 거리기반 분류분석 모델이다.</p></li>
-<li><p>거리가 가까운 k개의 다른 데이터의 레이블을 참조하여 유사 속성에 따라 분류하는 알고리즘으로 거리를 측정할 때 유클리디안 거리 계산법을 사용한다.</p></li>
+<li><p>거리가 가까운 k개의 다른 데이터의 레이블을 참조하여 유사 속성에 따라 분류하는 알고리즘이다.</p></li>
+<li><p>k-NN을 사용해보는 이유는 붓꽃이 꽃잎의 길이, 너비, 꽃받침의 길이, 너비에 따라 품종이 유사성이 있으므로 이 값들을 기반으로 유사한 너비와 길이를 가진 값들을 동일 품종으로 예측하기 위함이다. 즉 가까운 k개의 너비와 길이를 기반으로 품종을 결정짓고자 한다.</p></li>
+<li><p>거리를 측정할 때 유클리디안 거리 계산법을 사용한다.</p></li>
 </ul>
 <p><span class="math notranslate nohighlight">\(d(i,j) = \sqrt{(x_j-x_i)^2 + (y_j-y_i)^2}\)</span></p>
 <div align="center"><img src="https://haesunbyun.github.io/common/images/ai8.png" ></div>
